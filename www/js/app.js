@@ -17,6 +17,14 @@ angular.module('starter', ['ionic'])
           }
         }
       })
+      .state('selection', {
+        url:'/selection',
+        views: {
+          'mainContent': {
+            templateUrl: 'templates/selection.html'
+          }
+        }
+      });
       $urlRouterProvider.otherwise("/login")
   })
   .run(function ($ionicPlatform) {
@@ -29,4 +37,4 @@ angular.module('starter', ['ionic'])
         StatusBar.styleDefault();
       }
     });
-  })
+  });

@@ -4,3 +4,10 @@
 node_modules/
 platforms/
 plugins/
+.idea/Wheels-Mobile-Client.iml
+.idea/modules.xml
+.idea/workspace.xml
+www/lib/angular-animate/
+www/lib/angular-sanitize/
+www/lib/angular-ui-router/
+www/lib/angular/

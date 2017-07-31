@@ -7,17 +7,33 @@ angular.module('starter', ['ionic'])
           'mainContent': {
             templateUrl: 'templates/login.html'
           }
-        }
+        },
+        controller: 'LoginCtrl',
+        authenticate: false
       })
+
       .state('main', {
         url:'/main',
         views: {
           'mainContent': {
             templateUrl: 'templates/main.html'
           }
-        }
+        },
+        controller: 'MainCtrl',
+        authenticate: true
       })
-      $urlRouterProvider.otherwise("/login")
+
+    .state('selection', {
+      url:'/selection',
+      views: {
+        'mainContent': {
+          templateUrl: 'templates/selection.html'
+        }
+      },
+      authenticate: true
+    });
+    $urlRouterProvider.otherwise('/login')
+
   })
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -29,4 +45,4 @@ angular.module('starter', ['ionic'])
         StatusBar.styleDefault();
       }
     });
-  })
+  });

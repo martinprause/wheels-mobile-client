@@ -2,9 +2,6 @@
 # http://git-scm.com/docs/gitignore
 
 node_modules/
-platforms/
-plugins/
-.idea/Wheels-Mobile-Client.iml
 .idea/modules.xml
 .idea/workspace.xml
 www/lib/angular-animate/

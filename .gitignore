@@ -11,3 +11,8 @@ www/lib/angular-animate/
 www/lib/angular-sanitize/
 www/lib/angular-ui-router/
 www/lib/angular/
+.idea/inspectionProfiles/
+.idea/misc.xml
+Wheels-Mobile-Client.iml
+/.idea/
+/hooks/

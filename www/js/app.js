@@ -1,18 +1,31 @@
-angular.module('starter', ['ionic'])
-  .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
-    $httpProvider.interceptors.push('AuthInterceptor');
-    $stateProvider
-      .state('login', {
-        url: '/login',
-        views: {
-          'mainContent': {
-            templateUrl: 'templates/login.html'
-          }
-        },
-        controller: 'LoginCtrl',
-        authenticate: false,
-        showHeader: true
-      })
+ angular.module('starter', ['ionic', 'pascalprecht.translate'])
+      .config(function ($stateProvider, $urlRouterProvider,$httpProvider, $translateProvider) {
+        $httpProvider.interceptors.push('AuthInterceptor');
+        $translateProvider
+          .useStaticFilesLoader({
+            prefix: 'js/locales/',
+            suffix: '.json'
+          })
+          .registerAvailableLanguageKeys(['en', 'de'], {
+            'en': 'en', 'en_GB': 'en', 'en_US': 'en',
+            'de': 'de', 'de_DE': 'de', 'de_CH': 'de'
+          })
+          .preferredLanguage('de')
+          .fallbackLanguage('de')
+          .determinePreferredLanguage()
+          .useSanitizeValueStrategy('escapeParameters');
+        $stateProvider
+          .state('login', {
+            url: '/login',
+            views: {
+              'mainContent': {
+                templateUrl: 'templates/login.html'
+              }
+            },
+            controller: 'LoginCtrl',
+            authenticate: false,
+            showHeader: true
+          })
 
       .state('main', {
         url: '/main',
@@ -78,5 +91,4 @@ angular.module('starter', ['ionic'])
         StatusBar.styleDefault();
       }
     });
-
   });

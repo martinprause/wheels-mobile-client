@@ -1,6 +1,6 @@
 angular.module('starter')
 
-  .controller('further_contacts_ctrl', function($scope, $http){
+  .controller('StatusUpdateCtrl', function($scope, $http, $ionicPopup){
     $scope.order = {
       "id": 2,
       "orderNo": "20170728164103",
@@ -148,11 +148,43 @@ angular.module('starter')
         }
       ]
     };
+    $scope.showPopup = function() {
+      $scope.data = {};
+
+      // Custom popup
+      var myPopup = $ionicPopup.show({
+        title: 'Title',
+        subTitle: 'Subtitle',
+        scope: $scope,
+
+        buttons: [
+          { text: 'Cancel' }, {
+            text: '<b>Save</b>',
+            type: 'button-positive',
+            onTap: function(e) {
+
+              if (!$scope.data.model) {
+                //don't allow the user to close unless he enters model...
+                e.preventDefault();
+              } else {
+                return $scope.data.model;
+              }
+            }
+          }
+        ]
+      });
+
+      myPopup.then(function(res) {
+        console.log('Tapped!', res);
+      });
+    };
     $scope.getCurrentOrder = function () {
       return this.order;
     };
-    $scope.getFurtherContacts = function () {
-      return this.order.customer.customerContacts
-    }
-
+    $scope.getWheelRimPositions = function () {
+      return this.order.wheelRimPositions;
+    };
+    $scope.updateStatus = function (value) {
+      return this.order.status = value
+    };
   });

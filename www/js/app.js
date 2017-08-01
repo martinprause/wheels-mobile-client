@@ -38,14 +38,14 @@
         authenticate: true,
         showHeader: true
       })
-      .state('further_contacts', { //TODO make it children of order
+      .state('further-contacts', { //TODO make it children of order
         url: '/further-contacts',
         views: {
           'mainContent': {
             templateUrl: 'templates/further_contacts.html'
           }
         },
-        controller: 'further_contacts_ctrl',
+        controller: 'FurtherContactsCtrl',
         authenticate: false
       })
       .state('status-update', { //TODO make it children of order
@@ -55,7 +55,7 @@
             templateUrl: 'templates/status_update.html'
           }
         },
-        controller: 'status_update_ctrl',
+        controller: 'StatusUpdateCtrl',
         authenticate: false
       })
 

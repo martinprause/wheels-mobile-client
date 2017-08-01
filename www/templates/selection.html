@@ -1,5 +1,12 @@
-<ion-view>
-  <ion-content>
+<ion-view view-title="Login" name="login-view" ng-controller="LoginCtrl">
+  <ion-nav-view class="header" ng-if="showHeader">
+    <ion-view>
+      <ion-content>
+        <img ng-src="{{headerImg}}" class="headerImage" alt="">
+      </ion-content>
+    </ion-view>
+  </ion-nav-view>
+  <ion-content class="header-padding">
     <div class="button button-full btn-heaven">Scan Barcode</div>
     <div class="button button-full btn-heaven">Search Order</div>
     <div class="row responsive-sm padding">

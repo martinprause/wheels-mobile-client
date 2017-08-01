@@ -9,19 +9,21 @@ angular.module('starter', ['ionic'])
           }
         },
         controller: 'LoginCtrl',
-        authenticate: false
+        authenticate: false,
+        showHeader: true
       })
 
-      .state('main', {
-        url:'/main',
-        views: {
-          'mainContent': {
-            templateUrl: 'templates/main.html'
-          }
-        },
-        controller: 'MainCtrl',
-        authenticate: true
-      })
+      // .state('main', {
+      //   url:'/main',
+      //   views: {
+      //     'mainContent': {
+      //       templateUrl: 'templates/main.html'
+      //     }
+      //   },
+      //   controller: 'MainCtrl',
+      //   authenticate: true,
+      //   showHeader: true
+      // })
 
     .state('selection', {
       url:'/selection',
@@ -30,7 +32,8 @@ angular.module('starter', ['ionic'])
           templateUrl: 'templates/selection.html'
         }
       },
-      authenticate: true
+      authenticate: true,
+      showHeader: true
     });
     $urlRouterProvider.otherwise('/login')
 

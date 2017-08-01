@@ -4,3 +4,14 @@
   font-size: 22px;
   background-color: #8cb1d7;
 }
+.headerImage {
+  width: 90%;
+  height: 70px;
+}
+.header-padding {
+  padding-top: 110px;
+}
+.header {
+  height: 70px;
+  text-align: center;
+}

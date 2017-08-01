@@ -1,6 +1,16 @@
 <ion-view view-title="Login" name="login-view" ng-controller="LoginCtrl">
-  <ion-content class="padding">
+
+  <ion-nav-view class="header" ng-if="showHeader">
+    <ion-view>
+      <ion-content>
+        <img ng-src="{{headerImg}}" class="headerImage" alt="">
+      </ion-content>
+    </ion-view>
+  </ion-nav-view>
+
+  <ion-content class="padding has-header">
     <div class="list list-inset">
+
       <label class="item item-input">
         <input type="text" placeholder="Username" ng-model="user.login">
       </label>
@@ -11,6 +21,6 @@
         <input type="text" placeholder="Result" ng-model="result">
       </label>
     </div>
-    <button class="button button-block button-calm" ng-click="login()">Login</button>
+    <button class="button button-block button-calm" ng-click="login()" ui-sref="selection">Login</button>
   </ion-content>
 </ion-view>

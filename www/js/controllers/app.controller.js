@@ -1,6 +1,4 @@
-/**
- * Created by palag on 01.08.2017.
- */
+
 angular.module('starter')
 
   .controller('AppController', AppController);

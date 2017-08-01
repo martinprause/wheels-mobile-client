@@ -1,13 +1,9 @@
 angular.module('starter')
 
-.controller('LoginCtrl', LoginCtrl);
-
-LoginCtrl.$inject = [
-  '$scope', '$http', '$rootScope'
-];
-
-function LoginCtrl($scope, $http, $rootScope){
+.controller('LoginCtrl', function($scope, $http, AuthService, $rootScope){
+  window.scope = $scope;
   $scope.user = {login: '', password: ''};
+  $scope.authMessage = "";
 
   $scope.showHeader = true;
   $scope.headerImg = 'img/felgen.png';
@@ -21,12 +17,15 @@ function LoginCtrl($scope, $http, $rootScope){
   }
 
   $scope.login = function(){
-    $http.get('http://192.168.88.97:8080/user/0', {
-      headers: {'Authorization': 'Basic YWRtaW46cA=='}
-    }).then(function (user) {
-      console.log(user);
-    }).catch(function (err) {
-      console.log(err);
-    })
+    AuthService.login($scope.user)
+      .catch(function () {
+        $scope.authMessage = 'Bad creds';
+      });
+  };
+
+  $scope.logout = function () {
+    AuthService.logout();
   }
-}
+});
+
+

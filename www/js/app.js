@@ -1,5 +1,6 @@
 angular.module('starter', ['ionic'])
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+    $httpProvider.interceptors.push('AuthInterceptor');
     $stateProvider
       .state('login', {
         url: '/login',
@@ -13,17 +14,17 @@ angular.module('starter', ['ionic'])
         showHeader: true
       })
 
-      // .state('main', {
-      //   url:'/main',
-      //   views: {
-      //     'mainContent': {
-      //       templateUrl: 'templates/main.html'
-      //     }
-      //   },
-      //   controller: 'MainCtrl',
-      //   authenticate: true,
-      //   showHeader: true
-      // })
+      .state('main', {
+        url:'/main',
+        views: {
+          'mainContent': {
+            templateUrl: 'templates/main.html'
+          }
+        },
+        controller: 'MainCtrl',
+        authenticate: true,
+        showHeader: true
+      })
 
     .state('selection', {
       url:'/selection',
@@ -35,10 +36,19 @@ angular.module('starter', ['ionic'])
       authenticate: true,
       showHeader: true
     });
-    $urlRouterProvider.otherwise('/login')
+    $urlRouterProvider.otherwise('/selection')
 
   })
-  .run(function ($ionicPlatform) {
+  .run(function ($ionicPlatform, $rootScope, AuthService, $state, $location) {
+    function onChangeStageStart(event, toState, toParams, fromState, fromParams) {
+      if (!AuthService.checkAuth()){
+        if (toState.name !== 'login'){
+          $location.path('/login');
+        }
+      }
+    }
+    $rootScope.$on('$stateChangeStart', onChangeStageStart);
+
     $ionicPlatform.ready(function () {
       if (window.cordova && window.cordova.plugins.Keyboard) {
         cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -48,4 +58,5 @@ angular.module('starter', ['ionic'])
         StatusBar.styleDefault();
       }
     });
+
   });

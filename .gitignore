@@ -7,3 +7,6 @@ www/lib/angular-sanitize/
 www/lib/angular-ui-router/
 www/lib/angular/
 Wheels-Mobile-Client.iml
+
+.idea/*
+hooks/*

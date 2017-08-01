@@ -15,7 +15,7 @@ angular.module('starter', ['ionic'])
       })
 
       .state('main', {
-        url:'/main',
+        url: '/main',
         views: {
           'mainContent': {
             templateUrl: 'templates/main.html'
@@ -24,6 +24,26 @@ angular.module('starter', ['ionic'])
         controller: 'MainCtrl',
         authenticate: true,
         showHeader: true
+      })
+      .state('further_contacts', { //TODO make it children of order
+        url: '/further-contacts',
+        views: {
+          'mainContent': {
+            templateUrl: 'templates/further_contacts.html'
+          }
+        },
+        controller: 'further_contacts_ctrl',
+        authenticate: false
+      })
+      .state('status-update', { //TODO make it children of order
+        url: '/status-update',
+        views: {
+          'mainContent': {
+            templateUrl: 'templates/status_update.html'
+          }
+        },
+        controller: 'status_update_ctrl',
+        authenticate: false
       })
 
     .state('selection', {

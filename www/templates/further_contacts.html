@@ -1,0 +1,48 @@
+<ion-view view-title="Further Contacts" name="further-contacts-view" ng-controller="further_contacts_ctrl">
+  <div class="bar bar-header bar-light">
+    <h1 class="title">Further contacts</h1>
+  </div>
+  <ion-content direction="y" class="has-header has-footer" scroll="false">
+    <div class="card">
+      <div class="row">
+        <div class="col h4">{{getCurrentOrder().orderNo}}</div>
+        <div class="col h4">{{getCurrentOrder().status}}</div>
+      </div>
+      <div class="row">
+        <div class="col">{{getCurrentOrder().customer.firstname}}</div>
+        <div class="col">Created: {{getCurrentOrder().created | date:'dd.mm.yyyy'}}</div>
+      </div>
+      <div class="row">
+        <div class="col">{{getCurrentOrder().customer.lastname}}</div>
+        <div class="col">Deadline: {{getCurrentOrder().deadlineFinish | date:'dd.mm.yyyy'}}</div>
+      </div>
+      <div class="row">
+        <div class="col">{{getCurrentOrder().customer.companyName}}</div>
+        <div class="col">Delivery: {{getCurrentOrder().deadlineDelivery | date:'dd.mm.yyyy'}}</div>
+      </div>
+      <div class="row">
+        <div class="col">{{getCurrentOrder().customerNumberOrder}}</div>
+        <div class="col">{{getCurrentOrder().driver}}</div>
+      </div>
+    </div>
+    <ion-scroll style="height: 480px" scrollbar-y="false">
+      <ul class="list" ng-repeat="contact in getFurtherContacts()">
+        <li class="item">
+          <h3>{{contact.firstname + " " + contact.lastname}}</h3>
+          <div class="row"></div>
+          <div class="row"></div>
+          <div>{{contact.address1}}</div>
+          <div>{{contact.address2}}</div>
+          <div>{{contact.zip + " " + contact.city}}</div>
+          <div>{{contact.country.description}}</div>
+          <div>{{contact.email}}</div>
+          <div>{{contact.phone}}</div>
+          <div>{{contact.mobile}}</div>
+        </li>
+      </ul>
+    </ion-scroll>
+  </ion-content>
+  <div class="bar bar-footer">
+    <button class="button button-positive btn-back">Back</button>
+  </div>
+</ion-view>

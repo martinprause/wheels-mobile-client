@@ -1,5 +1,36 @@
 <ion-view view-title="Login" name="login-view" ng-controller="LoginCtrl">
 
+  <style>
+    .scroll-content {
+      display: table !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    .scroll {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+    }
+    .list.list-inset, .list.list-inset > * {
+      background-color: transparent !important;
+      border: none;
+    }
+    .item.item-input, .item .item-input > input {
+      background-color: transparent;
+      padding-left: 0;
+    }
+    .item {
+      margin: 0;
+    }
+    ion-item, ion-item > *, ion-item > *::placeholder {
+      color: white !important;
+    }
+    ion-content {
+      background-image: url("../img/login-background.jpg");
+    }
+  </style>
+
   <ion-nav-view class="header">
     <ion-view>
       <ion-content scroll="false">
@@ -8,16 +39,26 @@
     </ion-view>
   </ion-nav-view>
 
-  <ion-content class="padding has-header">
-    <div class="list list-inset">
-      <label class="item item-input">
-        <input type="text" placeholder="Username" ng-model="user.login">
-      </label>
-      <label class="item item-input">
-        <input type="password" placeholder="Password" ng-model="user.password">
-      </label>
+  <ion-content class="padding">
+    <div class="text-center login-inner-background">
+      <div class="with-padding" style="background: transparent;">
+        <div class="list list-inset">
+          <ion-item style="padding: 0 0 0 0">
+            <ion-label>Username</ion-label>
+          </ion-item>
+          <ion-item class="item item-input">
+            <input type="text" placeholder="Username" ng-model="user.login">
+          </ion-item>
+          <ion-item style="padding: 0 0 0 0">
+            <ion-label>Password</ion-label>
+          </ion-item>
+          <ion-item class="item item-input">
+            <input type="password" placeholder="Password" ng-model="user.password">
+          </ion-item>
+        </div>
+        <ion-label>{{ authMessage }}</ion-label>
+        <button class="button button-block button-calm" ng-click="login()">Login</button>
+      </div>
     </div>
-    <ion-label>{{ authMessage }}</ion-label>
-    <button class="button button-block button-calm" ng-click="login()">Login</button>
   </ion-content>
 </ion-view>

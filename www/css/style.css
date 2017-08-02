@@ -47,3 +47,35 @@
   margin-left: 30px;
   margin-right: 30px;
 }
+.list.list-inset.transparent-background,
+.list.list-inset.transparent-background > * {
+  background-color: transparent !important;
+  border: none;
+}
+.item.item-input.login-input, .item .item-input.login-input > input {
+  background-color: transparent;
+  padding-left: 0;
+}
+.item.no-margin {
+  margin: 0;
+}
+
+ion-item.white-placeholder-children,
+ion-item.white-placeholder-children > *,
+ion-item.white-placeholder-children > *::placeholder {
+  color: white !important;
+}
+.item.item-input.login-input > input {
+  border: solid 1px white;
+}
+.login-image-background {
+  background: url("../img/login-background.jpg") no-repeat center center fixed;
+  -moz-background-size: 100%; /* Firefox 3.6+ */
+  -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+  -o-background-size: 100%; /* Opera 9.6+ */
+  background-size: 100%;
+}
+
+.no-padding {
+  padding: 0 0 0 0;
+}

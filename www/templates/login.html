@@ -12,23 +12,6 @@
       vertical-align: middle;
       text-align: center;
     }
-    .list.list-inset, .list.list-inset > * {
-      background-color: transparent !important;
-      border: none;
-    }
-    .item.item-input, .item .item-input > input {
-      background-color: transparent;
-      padding-left: 0;
-    }
-    .item {
-      margin: 0;
-    }
-    ion-item, ion-item > *, ion-item > *::placeholder {
-      color: white !important;
-    }
-    ion-content {
-      background-image: url("../img/login-background.jpg");
-    }
   </style>
 
   <ion-nav-view class="header">
@@ -39,20 +22,20 @@
     </ion-view>
   </ion-nav-view>
 
-  <ion-content class="padding">
+  <ion-content class="padding login-image-background">
     <div class="text-center login-inner-background">
       <div class="with-padding" style="background: transparent;">
-        <div class="list list-inset">
-          <ion-item style="padding: 0 0 0 0">
+        <div class="list list-inset transparent-background">
+          <ion-item class="white-placeholder-children no-padding">
             <ion-label>Username</ion-label>
           </ion-item>
-          <ion-item class="item item-input">
+          <ion-item class="item no-margin item-input login-input white-placeholder-children">
             <input type="text" placeholder="Username" ng-model="user.login">
           </ion-item>
-          <ion-item style="padding: 0 0 0 0">
+          <ion-item class="white-placeholder-children no-padding">
             <ion-label>Password</ion-label>
           </ion-item>
-          <ion-item class="item item-input">
+          <ion-item class="item no-margin item-input login-input white-placeholder-children">
             <input type="password" placeholder="Password" ng-model="user.password">
           </ion-item>
         </div>

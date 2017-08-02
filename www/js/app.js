@@ -46,7 +46,10 @@
           }
         },
         controller: 'FurtherContactsCtrl',
-        authenticate: false
+        authenticate: false,
+        params: {
+          order: null
+        }
       })
       .state('status-update', { //TODO make it children of order
         url: '/status-update',

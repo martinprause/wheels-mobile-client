@@ -61,12 +61,35 @@
 }
 
 ion-item.white-placeholder-children,
-ion-item.white-placeholder-children > *,
-ion-item.white-placeholder-children > *::placeholder {
+ion-item.white-placeholder-children > input::placeholder{
+  color: white;
+}
+ion-item.white-placeholder-children > * {
   color: white !important;
 }
+ion-item.white-placeholder-children > input::placeholder {
+  color: white !important;
+}
+
+ion-item.white-placeholder-children > input::-webkit-input-placeholder {
+  color:white !important;
+}
+
+ion-item.white-placeholder-children > input::-moz-placeholder {
+  color:white !important;
+}
+
+ion-item.white-placeholder-children > input:-ms-input-placeholder {
+  color:white !important;
+}
+
+ion-item.white-placeholder-children > input::placeholder {
+  color:white !important;
+}
+
 .item.item-input.login-input > input {
   border: solid 1px white;
+  border-radius: 4px;
 }
 .login-image-background {
   background: url("../img/login-background.jpg") no-repeat center center fixed;

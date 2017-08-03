@@ -2,11 +2,11 @@
 # http://git-scm.com/docs/gitignore
 
 node_modules/
-www/lib/angular-animate/*
-www/lib/angular-sanitize/*
-www/lib/angular-ui-router/*
-www/lib/angular/*
-Wheels-Mobile-Client.iml
-
-.idea/*
 hooks/*
+/gen/
+/platforms/
+/plugins/
+/.idea/
+/resources/android/
+/resources/ios/
+/www/lib/

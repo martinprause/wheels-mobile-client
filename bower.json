@@ -8,7 +8,8 @@
     "angular-resource": "^1.6.5",
     "angular": "1.6.3",
     "angular-translate": "^2.15.2",
-    "angular-translate-loader-static-files": "^2.15.2"
+    "angular-translate-loader-static-files": "^2.15.2",
+    "ngCordova": "^0.1.27-alpha"
   },
   "resolutions": {
     "angular": "1.6.5"

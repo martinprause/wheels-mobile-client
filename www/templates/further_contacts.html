@@ -7,28 +7,7 @@
     </ion-view>
   </ion-nav-view>
   <ion-content direction="y" class="has-header has-footer" scroll="false">
-    <div class="card">
-      <div class="row">
-        <div class="col h4">{{getCurrentOrder().orderNo}}</div>
-        <div class="col h4">{{getCurrentOrder().status}}</div>
-      </div>
-      <div class="row">
-        <div class="col">{{getCurrentOrder().customer.firstname}}</div>
-        <div class="col">Created: {{getCurrentOrder().created | date:'dd.mm.yyyy'}}</div>
-      </div>
-      <div class="row">
-        <div class="col">{{getCurrentOrder().customer.lastname}}</div>
-        <div class="col">Deadline: {{getCurrentOrder().deadlineFinish | date:'dd.mm.yyyy'}}</div>
-      </div>
-      <div class="row">
-        <div class="col">{{getCurrentOrder().customer.companyName}}</div>
-        <div class="col">Delivery: {{getCurrentOrder().deadlineDelivery | date:'dd.mm.yyyy'}}</div>
-      </div>
-      <div class="row">
-        <div class="col">{{getCurrentOrder().customerNumberOrder}}</div>
-        <div class="col">{{getCurrentOrder().driver.firstname + " " + getCurrentOrder().driver.lastname}}</div>
-      </div>
-    </div>
+    <order order-data="getCurrentOrder()"></order>
     <ion-scroll style="height: 480px" scrollbar-y="false">
       <ul class="list" ng-repeat="contact in getFurtherContacts()">
         <li class="item">

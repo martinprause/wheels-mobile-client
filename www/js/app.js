@@ -51,6 +51,20 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'ngCordova'])
           order: null
         }
       })
+      .state('take-photo', {
+        url: '/take-photo',
+        views: {
+          'mainContent': {
+            templateUrl: 'templates/take_photo.html'
+          }
+        },
+        controller: 'TakePhotoCtrl',
+        authenticate: false,
+        params: {
+          order: null
+        }
+      })
+
       .state('assign-driver', {
         url: '/assign-driver',
         views: {

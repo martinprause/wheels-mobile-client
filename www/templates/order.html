@@ -7,28 +7,7 @@
     </ion-view>
   </ion-nav-view>
   <ion-content class="header-padding">
-    <div class="card">
-      <div class="row">
-        <div class="col h4">{{order.orderNo}}</div>
-        <div class="col h4">{{order.status}}</div>
-      </div>
-      <div class="row">
-        <div class="col">{{order.customer.firstname}}</div>
-        <div class="col">Created: {{order.created | date:'dd.mm.yyyy'}}</div>
-      </div>
-      <div class="row">
-        <div class="col">{{order.customer.lastname}}</div>
-        <div class="col">Deadline: {{order.deadlineFinish | date:'dd.mm.yyyy'}}</div>
-      </div>
-      <div class="row">
-        <div class="col">{{order.customer.companyName}}</div>
-        <div class="col">Delivery: {{order.deadlineDelivery | date:'dd.mm.yyyy'}}</div>
-      </div>
-      <div class="row">
-        <div class="col">{{order.customerNumberOrder}}</div>
-        <div class="col">{{order.driver.firstname + " " + order.driver.lastname}}</div>
-      </div>
-    </div>
+    <order order-data="order"></order>
     <div class="order-buttons">
       <button>Order Details</button>
       <button ng-click="navigateToUpdateStatus()">Update Status</button>

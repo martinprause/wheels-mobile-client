@@ -1,0 +1,31 @@
+<ion-view view-title="Take Photo" name="take-photo-view" ng-controller="TakePhotoCtrl as ctrl">
+  <ion-nav-view class="header">
+      <ion-content scroll="false">
+        <h2>Take photo</h2>
+      </ion-content>
+  </ion-nav-view>
+  <ion-content direction="y" class="has-header has-footer" scroll="true">
+    <order order-data="ctrl.order"></order>
+    <div class="photo-btn-panel">
+      <button class="photo-btn">One</button>
+      <button class="photo-btn">One</button>
+      <button class="photo-btn">One</button>
+      <button class="photo-btn">One</button>
+    </div>
+    <div class="photo-panel">
+      <div class="photo-cam-live">Photo here</div>
+      <div class="photo-panel-btn-wrapper">
+        <button class="photo-panel-btn">One</button>
+        <button class="photo-panel-btn">Two</button>
+      </div>
+    </div>
+    <ion-slide-box class="slider-panel">
+      <ion-slide ng-repeat="slide in ctrl.slides">
+        <div class="slide-content" ng-bind="slide"></div>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+  <div class="bar bar-footer">
+    <button class="button button-positive btn-back">Back</button>
+  </div>
+</ion-view>

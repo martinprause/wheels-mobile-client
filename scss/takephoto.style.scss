@@ -1,0 +1,101 @@
+.order-panel {
+  /*height: 20vh;*/
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  padding: 0 10px;
+
+  .order-no {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .order-row {
+    display: flex;
+    flex-direction: row;
+    margin: 4px 0;
+  }
+
+  .order-col {
+    display: inline-block;
+    width: 50%;
+    height: 35px;
+    padding: 0 10px;
+  }
+
+  .order-field {
+    color: darkgray;
+  }
+
+  .order-status {
+    text-align: right;
+  }
+
+}
+
+.photo-btn-panel {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  padding: 0 25px;
+
+  .photo-btn {
+    background: none;
+    border: none;
+    background: grey;
+    color: #fff;
+    padding: 8px 20px;
+
+    &:active{
+      border: 4px solid green;
+      padding: 4px 16px;
+    }
+
+  }
+
+}
+
+.photo-panel {
+  padding: 5px 20px;
+
+  .photo-cam-live {
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+    background: grey;
+  }
+
+  .photo-panel-btn-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+    .photo-panel-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      padding: 20px 50px;
+      background: #387ef5;
+      border-radius: 2px;
+
+      &:active {
+        background: #0c60ee;
+      }
+
+    }
+
+  }
+
+}
+
+.slider-panel {
+  height: 250px;
+
+  .slide-content {
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    background: grey;
+  }
+
+}

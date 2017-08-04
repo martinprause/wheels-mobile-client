@@ -10,7 +10,15 @@ angular.module('starter')
       }
       return config;
     },
-
+    response: function (response) {
+      var responseData = response.data;
+      if (typeof responseData === 'string' || responseData instanceof String) {
+        if (responseData === 'ADMIN' || responseData === 'ENGINEER' || responseData === 'DRIVER') {
+          $rootScope.USER_ROLE = responseData;
+        }
+      }
+      return response;
+    },
     responseError: function (response) {
       if (response.status === 401) {
         $location.path('/');

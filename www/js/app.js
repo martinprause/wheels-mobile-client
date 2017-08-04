@@ -51,6 +51,27 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'ngCordova'])
           order: null
         }
       })
+      .state('assign-driver', {
+        url: '/assign-driver',
+        views: {
+          'mainContent': {
+            templateUrl: 'templates/assign_driver.html'
+          }
+        },
+        controller: 'AssignDriverCtrl',
+        authenticate: false,
+        params: {
+          order: null
+        },
+        resolve: {
+          drivers: function ($q, $stateParams, AssignDriverService) {
+            var deferred = $q.defer();
+            AssignDriverService.loadAllDrivers().then(deferred.resolve, deferred.resolve);
+            AssignDriverService.order = $stateParams.order;
+            return deferred.promise;
+          }
+        }
+      })
       .state('selection', {
         url:'/selection',
         views: {

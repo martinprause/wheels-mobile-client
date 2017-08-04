@@ -26,7 +26,7 @@
       </div>
       <div class="row">
         <div class="col">{{getCurrentOrder().customerNumberOrder}}</div>
-        <div class="col">{{getCurrentOrder().driver}}</div>
+        <div class="col">{{getCurrentOrder().driver.firstname + " " + getCurrentOrder().driver.lastname}}</div>
       </div>
     </div>
     <ion-scroll style="height: 480px" scrollbar-y="false">

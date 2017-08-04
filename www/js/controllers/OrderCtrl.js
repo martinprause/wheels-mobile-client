@@ -6,6 +6,10 @@ angular.module('starter')
 
   $scope.navigateToUpdateStatus = function () {
     $state.go('status-update', {order: $scope.order});
+  };
+
+  $scope.navigateToAssignDriver = function () {
+    $state.go('assign-driver', {order: $scope.order});
   }
 
 });

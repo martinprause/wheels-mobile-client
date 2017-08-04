@@ -1,4 +1,4 @@
-<ion-view view-title="Update Status" name="status-update-view" ng-controller="StatusUpdateCtrl">
+<ion-view view-title="Update Status" name="status-update-view" ng-controller="StatusUpdateCtrl as ctrl">
   <ion-nav-view class="header">
     <ion-view>
       <ion-content scroll="false">
@@ -9,28 +9,28 @@
   <ion-content direction="y" class="has-header has-footer" scroll="false">
     <div class="card">
       <div class="row">
-        <div class="col h4">{{getCurrentOrder().orderNo}}</div>
-        <div class="col h4">{{getCurrentOrder().status}}</div>
+        <div class="col h4">{{ctrl.order.orderNo}}</div>
+        <div class="col h4">{{ctrl.order.status}}</div>
       </div>
       <div class="row">
-        <div class="col">{{getCurrentOrder().customer.firstname}}</div>
-        <div class="col">Created: {{getCurrentOrder().created | date:'dd.mm.yyyy'}}</div>
+        <div class="col">{{ctrl.order.customer.firstname}}</div>
+        <div class="col">Created: {{ctrl.order.created | date:'dd.mm.yyyy'}}</div>
       </div>
       <div class="row">
-        <div class="col">{{getCurrentOrder().customer.lastname}}</div>
-        <div class="col">Deadline: {{getCurrentOrder().deadlineFinish | date:'dd.mm.yyyy'}}</div>
+        <div class="col">{{ctrl.order.customer.lastname}}</div>
+        <div class="col">Deadline: {{ctrl.order.deadlineFinish | date:'dd.mm.yyyy'}}</div>
       </div>
       <div class="row">
-        <div class="col">{{getCurrentOrder().customer.companyName}}</div>
-        <div class="col">Delivery: {{getCurrentOrder().deadlineDelivery | date:'dd.mm.yyyy'}}</div>
+        <div class="col">{{ctrl.order.customer.companyName}}</div>
+        <div class="col">Delivery: {{ctrl.order.deadlineDelivery | date:'dd.mm.yyyy'}}</div>
       </div>
       <div class="row">
-        <div class="col">{{getCurrentOrder().customerNumberOrder}}</div>
-        <div class="col">{{getCurrentOrder().driver}}</div>
+        <div class="col">{{ctrl.order.customerNumberOrder}}</div>
+        <div class="col">{{ctrl.order.driver}}</div>
       </div>
     </div>
     <ion-scroll overflow-scroll="false" style="height: 230px; overflow-y: hidden" scrollbar-y="false">
-      <ul class="list" ng-repeat="wheelRim in getWheelRimPositions()">
+      <ul class="list" ng-repeat="wheelRim in ctrl.order.wheelRimPositions">
         <li class="item card no-margin-card">
           <div class="row">
             <div class="col"><h2 style="font-weight: bolder">{{wheelRim.positionNo}}</h2></div>
@@ -69,17 +69,17 @@
       <div class="row">
         <div class="col">
           <div class="self-align-center">
-            <button class="btn-status" ng-click="showPopup()">In Process</button>
+            <button class="btn-status" ng-class="{'status-active' : ctrl.order.status === 'IN_PROCESS'}" ng-click="updateStatus('IN_PROCESS')">In Process</button>
           </div>
         </div>
         <div class="col">
           <div class="self-align-center">
-            <button class="btn-status" ng-click="showPopup()">Processed</button>
+            <button class="btn-status" ng-class="{'status-active' : ctrl.order.status === 'PROCESSED'}" ng-click="updateStatus('PROCESSED')">Processed</button>
           </div>
         </div>
         <div class="col">
           <div class="self-align-center">
-            <button class="btn-status" ng-click="showPopup()">In Delivery</button>
+            <button class="btn-status" ng-class="{'status-active' : ctrl.order.status === 'IN_DELIVERY'}" ng-click="updateStatus('IN_DELIVERY')">In Delivery</button>
           </div>
         </div>
       </div>

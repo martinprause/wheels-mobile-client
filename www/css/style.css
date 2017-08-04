@@ -102,3 +102,7 @@ ion-item.white-placeholder-children > input::placeholder {
 .no-padding {
   padding: 0 0 0 0;
 }
+
+.status-active {
+  color: green;
+}

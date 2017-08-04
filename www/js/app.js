@@ -46,7 +46,10 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'ngCordova'])
           }
         },
         controller: 'StatusUpdateCtrl',
-        authenticate: false
+        authenticate: false,
+        params: {
+          order: null
+        }
       })
 
       .state('selection', {

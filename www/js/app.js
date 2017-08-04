@@ -51,7 +51,6 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'ngCordova'])
           order: null
         }
       })
-
       .state('selection', {
         url:'/selection',
         views: {
@@ -60,7 +59,20 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'ngCordova'])
           }
         },
         authenticate: true
+      })
+      .state('order', {
+        url:'/order',
+        views: {
+          'mainContent': {
+            templateUrl: 'templates/order.html'
+          }
+        },
+        authenticate: true,
+        params: {
+          order: null
+        }
       });
+
     $urlRouterProvider.otherwise('/selection')
 
   })

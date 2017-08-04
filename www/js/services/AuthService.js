@@ -17,6 +17,9 @@ angular.module('starter')
       return $http.get('http://192.168.88.97:8080/login')
         .then(function () {
           $state.go("selection");
+        }).catch(function (error) {
+          console.log(error);
+          console.log($http);
         })
     }
 

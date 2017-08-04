@@ -8,7 +8,7 @@ angular.module('starter')
   $scope.login = function(){
     AuthService.login($scope.user)
       .catch(function () {
-        $scope.authMessage = 'Bad creds';
+        $scope.authMessage = 'Bad credentials';
       });
   };
 

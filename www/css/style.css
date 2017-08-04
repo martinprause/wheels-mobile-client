@@ -106,3 +106,8 @@ ion-item.white-placeholder-children > input::placeholder {
 .status-active {
   color: green;
 }
+
+
+body{
+  font: 14px sans-serif;
+}

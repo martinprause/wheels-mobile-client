@@ -8,7 +8,7 @@ angular.module('starter')
 
     function updateStatus(value) {
       self.order.status = value;
-      $http.post('http://192.168.88.98:8080/order/update-status/' + self.order.id + '?status=' + self.order.status)
+      $http.post('/order/update-status/' + self.order.id + '?status=' + self.order.status)
         .then(function (result) {
           console.log(result.data);
           // self.order = result.data;

@@ -10,6 +10,10 @@ angular.module('starter')
 
   $scope.navigateToAssignDriver = function () {
     $state.go('assign-driver', {order: $scope.order});
+  };
+
+  $scope.navigateToConfirmDelivery = function () {
+    $state.go('confirm-delivery', {order: $scope.order});
   }
 
 });

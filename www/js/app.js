@@ -95,6 +95,18 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'ngCordova'])
         },
         authenticate: true
       })
+      .state('confirm-delivery', {
+        url:'/confirm-delivery',
+        views: {
+          'mainContent': {
+            templateUrl: 'templates/confirm-delivery.html'
+          }
+        },
+        authenticate: true,
+        params: {
+          order:null
+        }
+      })
       .state('order', {
         url:'/order',
         views: {
@@ -131,3 +143,17 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'ngCordova'])
       }
     });
   });
+
+if (!String.prototype.endsWith) {
+  Object.defineProperty(String.prototype, 'endsWith', {
+    value: function(searchString, position) {
+      var subjectString = this.toString();
+      if (position === undefined || position > subjectString.length) {
+        position = subjectString.length;
+      }
+      position -= searchString.length;
+      var lastIndex = subjectString.indexOf(searchString, position);
+      return lastIndex !== -1 && lastIndex === position;
+    }
+  });
+}

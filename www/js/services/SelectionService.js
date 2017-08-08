@@ -6,11 +6,15 @@ angular.module('starter')
   };
 
   function select() {
-    $http.get('http://192.168.88.97:8080/order/2')
+    $http.get('/order/2')
       .then(function(result) {
         console.log(result.data);
         $state.go('further-contacts', {order:result.data});
-      });
+      })
+      .catch(function (error) {
+        console.log(error);
+        console.log($http);
+      })
   }
 
 });

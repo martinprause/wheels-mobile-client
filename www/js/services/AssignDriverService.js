@@ -12,9 +12,10 @@ angular.module('starter')
 
     function assignDriver(driver) {
       self.order.driver = driver;
-      $http.post('http://192.168.88.98:8080/order/assign-driver/' + self.order.id + '?driverId=' + driver.id)
+      $http.post('/order/assign-driver/' + self.order.id + '?driverId=' + driver.id)
         .then(function (result) {
           self.order = result.data;
+          console.log(self.order);
         });
     }
 
@@ -24,7 +25,7 @@ angular.module('starter')
 
     function loadAllDrivers() {
       var deferred = $q.defer();
-      $http.get('http://192.168.88.98:8080/user/drivers')
+      $http.get('/user/drivers')
         .then(
           function (result) {
             self.drivers = result.data;

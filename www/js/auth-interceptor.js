@@ -4,8 +4,8 @@ angular.module('starter')
   return {
     request: function (config) {
       config.headers = config.headers || {};
-      // config.url = "http://192.168.88.97:8080" + config.url;
-      if ($window.localStorage.Authorization) {
+      if (!config.url.endsWith('.html') && !config.url.endsWith('.json')) {
+        config.url = 'http://192.168.88.97:8080' + config.url;
         config.headers.Authorization = $window.localStorage.Authorization;
       }
       return config;

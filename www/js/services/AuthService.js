@@ -14,7 +14,7 @@ angular.module('starter')
 
     function login(user){
       window.localStorage.setItem("Authorization", "Basic " + btoa(user.login + ":" + user.password));
-      return $http.get('http://192.168.88.97:8080/login')
+      return $http.get('/login')
         .then(function () {
           $state.go("selection");
         }).catch(function (error) {

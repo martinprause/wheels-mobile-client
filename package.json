@@ -1,45 +1,49 @@
 {
-  "name": "Wheels-Mobile",
-  "version": "0.0.1",
-  "description": "An Ionic project",
-  "devDependencies": {
-    "@ionic/cli-plugin-cordova": "1.5.0",
-    "@ionic/cli-plugin-gulp": "1.1.0",
-    "@ionic/cli-plugin-ionic1": "2.1.0",
-    "grunt-contrib-jshint": "^1.1.0",
-    "gulp": "^3.5.6",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-clean-css": "^3.7.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-rename": "^1.2.0",
-    "gulp-sass": "^3.1.0"
-  },
-  "dependencies": {
-    "@ionic-native/barcode-scanner": "^4.1.0",
-    "cordova-android": "^6.2.3",
-    "cordova-ios": "^4.4.0",
-    "cordova-plugin-console": "^1.0.7",
-    "cordova-plugin-device": "^1.1.6",
-    "cordova-plugin-splashscreen": "^4.0.3",
-    "cordova-plugin-statusbar": "^2.2.1",
-    "cordova-plugin-whitelist": "^1.3.1",
-    "ionic-plugin-keyboard": "^2.2.1",
-    "phonegap-plugin-barcodescanner": "^6.0.8",
-    "signature_pad": "^2.2.1"
-  },
-  "cordova": {
-    "plugins": {
-      "cordova-plugin-console": {},
-      "cordova-plugin-device": {},
-      "cordova-plugin-splashscreen": {},
-      "cordova-plugin-statusbar": {},
-      "cordova-plugin-whitelist": {},
-      "ionic-plugin-keyboard": {},
-      "phonegap-plugin-barcodescanner": {}
+    "name": "Wheels-Mobile",
+    "version": "0.0.1",
+    "description": "An Ionic project",
+    "devDependencies": {
+        "@ionic/cli-plugin-cordova": "1.5.0",
+        "@ionic/cli-plugin-gulp": "1.1.0",
+        "@ionic/cli-plugin-ionic1": "2.1.0",
+        "grunt-contrib-jshint": "^1.1.0",
+        "gulp": "^3.5.6",
+        "gulp-autoprefixer": "^4.0.0",
+        "gulp-clean-css": "^3.7.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-rename": "^1.2.0",
+        "gulp-sass": "^3.1.0"
     },
-    "platforms": [
-      "android",
-      "ios"
-    ]
-  }
+    "dependencies": {
+        "@ionic-native/barcode-scanner": "^4.1.0",
+        "cordova-android": "^6.2.3",
+        "cordova-ios": "^4.4.0",
+        "cordova-plugin-camera": "git+https://github.com/apache/cordova-plugin-camera.git",
+        "cordova-plugin-compat": "^1.1.0",
+        "cordova-plugin-console": "^1.0.7",
+        "cordova-plugin-device": "^1.1.6",
+        "cordova-plugin-splashscreen": "^4.0.3",
+        "cordova-plugin-statusbar": "^2.2.1",
+        "cordova-plugin-whitelist": "^1.3.1",
+        "ionic-plugin-keyboard": "^2.2.1",
+        "phonegap-plugin-barcodescanner": "^6.0.8",
+        "signature_pad": "^2.2.1"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-console": {},
+            "cordova-plugin-device": {},
+            "cordova-plugin-splashscreen": {},
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-whitelist": {},
+            "ionic-plugin-keyboard": {},
+            "phonegap-plugin-barcodescanner": {},
+            "cordova-plugin-compat": {},
+            "cordova-plugin-camera": {}
+        },
+        "platforms": [
+            "android",
+            "ios"
+        ]
+    }
 }

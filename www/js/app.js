@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'pascalprecht.translate', 'ngCordova'])
+angular.module('starter', ['ionic', 'pascalprecht.translate', 'ngCordova', 'ngCordova.plugins.camera'])
   .config(function ($stateProvider, $urlRouterProvider,$httpProvider, $translateProvider) {
     $httpProvider.interceptors.push('AuthInterceptor');
     $translateProvider

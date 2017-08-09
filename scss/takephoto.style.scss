@@ -1,5 +1,4 @@
 .order-panel {
-  /*height: 20vh;*/
   display: flex;
   flex-direction: column;
   font-size: 15px;
@@ -98,4 +97,7 @@
     background: grey;
   }
 
+  .slider-slide {
+    text-align: center;
+  }
 }

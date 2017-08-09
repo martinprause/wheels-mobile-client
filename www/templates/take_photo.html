@@ -6,26 +6,28 @@
   </ion-nav-view>
   <ion-content direction="y" class="has-header has-footer" scroll="true">
     <order order-data="ctrl.order"></order>
-    <div class="photo-btn-panel">
-      <button class="photo-btn">One</button>
-      <button class="photo-btn">One</button>
-      <button class="photo-btn">One</button>
-      <button class="photo-btn">One</button>
-    </div>
     <div class="photo-panel">
-      <div class="photo-cam-live">Photo here</div>
       <div class="photo-panel-btn-wrapper">
-        <button class="photo-panel-btn">One</button>
-        <button class="photo-panel-btn">Two</button>
+        <button class="photo-panel-btn" ng-click="ctrl.submitPhoto()">Submit photo</button>
+        <button class="photo-panel-btn" ng-click="ctrl.clearPhoto()">Clear photo</button>
       </div>
     </div>
-    <ion-slide-box class="slider-panel">
-      <ion-slide ng-repeat="slide in ctrl.slides">
-        <div class="slide-content" ng-bind="slide"></div>
+    <ion-slide-box show-pager="true" class="slider-panel" on-slide-changed="ctrl.onSlideChanged(index)">
+      <ion-slide ng-click="ctrl.takePhoto()">
+        <img src="" height="200px" width="200px" id="wheelsRimPicture1">
+      </ion-slide>
+      <ion-slide ng-click="ctrl.takePhoto()">
+        <img src="" height="200px" width="200px" id="wheelsRimPicture2">
+      </ion-slide>
+      <ion-slide ng-click="ctrl.takePhoto()">
+        <img src="" height="200px" width="200px" id="wheelsRimPicture3">
+      </ion-slide>
+      <ion-slide ng-click="ctrl.takePhoto()">
+        <img src="" height="200px" width="200px" id="wheelsRimPicture4">
       </ion-slide>
     </ion-slide-box>
   </ion-content>
-  <div class="bar bar-footer">
+  <div class="bar bar-footer" data-ng-init="ctrl.init()">
     <button class="button button-positive btn-back">Back</button>
   </div>
 </ion-view>

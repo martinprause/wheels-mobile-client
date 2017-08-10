@@ -5,15 +5,15 @@ angular.module('starter')
   $scope.order = $stateParams.order;
 
   $scope.navigateToUpdateStatus = function () {
-    $state.go('status-update', {order: $scope.order});
+    $state.go('.status-update', {order: $scope.order});
   };
 
   $scope.navigateToAssignDriver = function () {
-    $state.go('assign-driver', {order: $scope.order});
+    $state.go('.assign-driver', {order: $scope.order});
   };
 
   $scope.navigateToConfirmDelivery = function () {
-    $state.go('confirm-delivery', {order: $scope.order});
+    $state.go('.confirm-delivery', {order: $scope.order});
   }
 
 });

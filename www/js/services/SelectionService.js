@@ -9,7 +9,7 @@ angular.module('starter')
     $http.get('/order/2')
       .then(function(result) {
         console.log(result.data);
-        $state.go('further-contacts', {order:result.data});
+        $state.go('app.further-contacts', {order:result.data});
       })
       .catch(function (error) {
         console.log(error);

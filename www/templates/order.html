@@ -1,11 +1,4 @@
-<ion-view view-title="Order" name="login-view" ng-controller="OrderCtrl">
-  <ion-nav-view class="header">
-    <ion-view>
-      <ion-content scroll="false">
-        <img ng-src="img/felgen.png" class="headerImage" alt="">
-      </ion-content>
-    </ion-view>
-  </ion-nav-view>
+<ion-view view-title="Order" ng-controller="OrderCtrl">
   <ion-content class="header-padding">
     <order order-data="order"></order>
     <div class="order-buttons">
@@ -16,5 +9,6 @@
       <button ng-click="navigateToConfirmDelivery()">Confirm Delivery</button>
       <button>Print Barcodes</button>
     </div>
+    <ion-nav-back-button>Back</ion-nav-back-button>
   </ion-content>
 </ion-view>

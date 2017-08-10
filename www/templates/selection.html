@@ -1,16 +1,9 @@
-<ion-view view-title="Login" name="login-view" ng-controller="SelectionCtrl">
-  <ion-nav-view class="header">
-    <ion-view>
-      <ion-content scroll="false">
-        <img ng-src="img/felgen.png" class="headerImage" alt="">
-      </ion-content>
-    </ion-view>
-  </ion-nav-view>
+<ion-view view-title="Main" name="login-view" ng-controller="SelectionCtrl" hide-back-button="true">
   <ion-content scroll="false" class="header-padding has-footer">
     <div class="button button-full btn-heaven" ng-click="scanQrCode()">
       <span class="button-title">Scan Barcode</span>
     </div>
-    <div class="button button-full btn-heaven" ng-click=select()>
+    <div class="button button-full btn-heaven" ng-click="select()">
       <span class="button-title">Search Order</span>
     </div>
     <div class="row responsive-sm padding">
@@ -20,7 +13,7 @@
       <p>+49 (0) 6761-2238</p>
     </div>
   </ion-content>
-  <div class="bar bar-footer">
-    <div class="button button-small button-calm btn-logout col-offset-80" ng-click = logout()>Logout</div>
-  </div>
+  <!--<div class="bar bar-footer">-->
+    <!--<div class="button button-small button-calm btn-logout col-offset-80" ng-click = "logout()">Logout</div>-->
+  <!--</div>-->
 </ion-view>

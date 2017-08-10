@@ -11,29 +11,6 @@
 
 }
 
-.headerImage {
-  /*width: 90%;*/
-  max-height: 70px;
-}
-.header-padding {
-  padding-top: 110px;
-}
-.header {
-  height: 70px;
-  text-align: center;
-
-  h2 {
-    height: 100%;
-    line-height: 70px;
-    vertical-align: middle;
-  }
-
-}
-
-.has-header {
-  top: 70px;
-}
-
 .btn-back {
   width: 90px;
 }
@@ -131,4 +108,16 @@ ion-item.white-placeholder-children > input::placeholder {
 
 body {
   font: 14px sans-serif;
+}
+
+.bar-custom {
+  background-color: #8cb1d7;
+}
+
+.bar-custom.title{
+  text-align: center;
+}
+
+.has-header{
+  padding-top:20px;
 }

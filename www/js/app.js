@@ -14,18 +14,70 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'ngCordova', 'ngCo
       .fallbackLanguage('de')
       .determinePreferredLanguage()
       .useSanitizeValueStrategy('escapeParameters');
+
     $stateProvider
-      .state('login', {
+      .state('app', {
+        url: '/app',
+        abstract: true,
+        templateUrl: 'templates/menu.html'
+      })
+      .state('app.login', {
         url: '/login',
         views: {
-          'mainContent': {
+          'mainContent@app': {
             templateUrl: 'templates/login.html'
           }
         },
         controller: 'LoginCtrl',
         authenticate: false
       })
-      .state('further-contacts', { //TODO make it children of order
+      .state('app.selection', {
+        url:'/selection',
+        views: {
+          'mainContent': {
+            templateUrl: 'templates/selection.html'
+          }
+        },
+        authenticate: true
+      })
+      .state('app.order', {
+        url:'/order',
+        views: {
+          'mainContent': {
+            templateUrl: 'templates/order.html'
+          }
+        },
+        authenticate: true,
+        params: {
+          order: null
+        }
+      })
+      .state('app.order.status-update', {
+        url: '/status-update',
+        views: {
+          'mainContent@app': {
+            templateUrl: 'templates/status_update.html'
+          }
+        },
+        controller: 'StatusUpdateCtrl',
+        authenticate: false,
+        params: {
+          order: null
+        }
+      })
+      .state('app.order.confirm-delivery', {
+        url:'/confirm-delivery',
+        views: {
+          'mainContent@app': {
+            templateUrl: 'templates/confirm-delivery.html'
+          }
+        },
+        authenticate: true,
+        params: {
+          order:null
+        }
+      })
+      .state('app.further-contacts', {
         url: '/further-contacts',
         views: {
           'mainContent': {
@@ -38,23 +90,11 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'ngCordova', 'ngCo
           order: null
         }
       })
-      .state('status-update', { //TODO make it children of order
-        url: '/status-update',
-        views: {
-          'mainContent': {
-            templateUrl: 'templates/status_update.html'
-          }
-        },
-        controller: 'StatusUpdateCtrl',
-        authenticate: false,
-        params: {
-          order: null
-        }
-      })
-      .state('take-photo', {
+
+      .state('app.order.take-photo', {
         url: '/take-photo',
         views: {
-          'mainContent': {
+          'mainContent@app': {
             templateUrl: 'templates/take_photo.html'
           }
         },
@@ -65,10 +105,10 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'ngCordova', 'ngCo
         }
       })
 
-      .state('assign-driver', {
+      .state('app.order.assign-driver', {
         url: '/assign-driver',
         views: {
-          'mainContent': {
+          'mainContent@app': {
             templateUrl: 'templates/assign_driver.html'
           }
         },
@@ -85,53 +125,52 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'ngCordova', 'ngCo
             return deferred.promise;
           }
         }
-      })
-      .state('selection', {
-        url:'/selection',
-        views: {
-          'mainContent': {
-            templateUrl: 'templates/selection.html'
-          }
-        },
-        authenticate: true
-      })
-      .state('confirm-delivery', {
-        url:'/confirm-delivery',
-        views: {
-          'mainContent': {
-            templateUrl: 'templates/confirm-delivery.html'
-          }
-        },
-        authenticate: true,
-        params: {
-          order:null
-        }
-      })
-      .state('order', {
-        url:'/order',
-        views: {
-          'mainContent': {
-            templateUrl: 'templates/order.html'
-          }
-        },
-        authenticate: true,
-        params: {
-          order: null
-        }
       });
 
-    $urlRouterProvider.otherwise('/selection')
+    $urlRouterProvider.otherwise('/app/selection')
 
   })
-  .run(function ($ionicPlatform, $rootScope, AuthService, $state, $location) {
+  .run(function ($ionicPlatform, $rootScope, AuthService, $state, $location, $ionicHistory) {
+
+    $ionicPlatform.registerBackButtonAction(function(e){
+      if ($rootScope.backButtonPressedOnceToExit) {
+        ionic.Platform.exitApp();
+      }
+
+      else if ($ionicHistory.backView()) {
+        $ionicHistory.goBack();
+      }
+      else {
+        $rootScope.backButtonPressedOnceToExit = true;
+        window.plugins.toast.showShortBottom(
+          "Press back button again to exit",function(a){},function(b){}
+        );
+        setTimeout(function(){
+          $rootScope.backButtonPressedOnceToExit = false;
+        },2000);
+      }
+      e.preventDefault();
+      return false;
+    },101);
+
     function onChangeStageStart(event, toState, toParams, fromState, fromParams) {
       if (!AuthService.checkAuth()){
-        if (toState.name !== 'login'){
-          $location.path('/login');
+        if (toState.name !== 'app.login'){
+          $location.path('/app/login');
         }
       }
     }
+
+    function onChangeStateSuccess(event, toState, toParams, fromState, fromParams){
+      if(toState.name ==='app.login'){
+        $ionicHistory.nextViewOptions({
+          disableBack: true
+        });
+      }
+    }
+
     $rootScope.$on('$stateChangeStart', onChangeStageStart);
+    $rootScope.$on('$stateChangeSuccess', onChangeStateSuccess);
 
     $ionicPlatform.ready(function () {
       if (window.cordova && window.cordova.plugins.Keyboard) {

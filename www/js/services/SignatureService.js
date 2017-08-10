@@ -1,6 +1,6 @@
 angular.module('starter')
 
-.service("SignatureService", function ($http) {
+.service("SignatureService", function ($http, $state) {
   return{
     saveSignature: saveSignature
   };
@@ -21,6 +21,7 @@ angular.module('starter')
     $http.post(url, data, config)
       .success(function (data) {
         console.log(data);
+        $state.go('app.order');
       })
       .error(function (data, status) {
         console.log(data, status);

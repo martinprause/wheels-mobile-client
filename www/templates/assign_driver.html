@@ -1,11 +1,4 @@
 <ion-view view-title="Further Contacts" name="further-contacts-view" ng-controller="AssignDriverCtrl as ctrl">
-  <ion-nav-view class="header">
-    <ion-view>
-      <ion-content scroll="false">
-        <h2>Assign Driver</h2>
-      </ion-content>
-    </ion-view>
-  </ion-nav-view>
   <ion-content class="has-header has-footer" scroll="false">
     <div class="card">
       <div class="row">
@@ -27,7 +20,7 @@
       <div class="row">
         <div class="col">{{ctrl.order.customerNumberOrder}}</div>
         <div class="col">{{getCurrentOrder().driver.firstname + " " + getCurrentOrder().driver.lastname}}</div>
-      </div>
+      </div>`
     </div>
     <div class="text-center">
       <button class="button button-positive" ng-disabled="!(ctrl.userRole === 'DRIVER')">Assign me</button>

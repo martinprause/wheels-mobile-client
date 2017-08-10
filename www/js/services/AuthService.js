@@ -1,6 +1,6 @@
 angular.module('starter')
 
-.service('AuthService', function ($http, $location, $state) {
+.service('AuthService', function ($http, $location, $state, $ionicHistory) {
   return {
       login: login,
       logout: logout,
@@ -9,14 +9,17 @@ angular.module('starter')
 
     function logout(){
       window.localStorage.removeItem('Authorization');
-      $state.go("login");
+      $state.go("app.login");
     }
 
     function login(user){
       window.localStorage.setItem("Authorization", "Basic " + btoa(user.login + ":" + user.password));
       return $http.get('/login')
         .then(function () {
-          $state.go("selection");
+          $state.go("app.selection");
+          $ionicHistory.nextViewOptions({
+            disableBack: true
+          });
         }).catch(function (error) {
           console.log(error);
           console.log($http);

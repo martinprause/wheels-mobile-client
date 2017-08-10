@@ -26,7 +26,7 @@ angular.module('starter')
     $http.get('/order/orderNo/' + orderId)
       .then(function (response) {
         console.log(response.data);
-        $state.go('order', {order: response.data});
+        $state.go('app.order', {order: response.data});
       })
   }
 

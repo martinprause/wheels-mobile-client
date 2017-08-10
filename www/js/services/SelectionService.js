@@ -6,15 +6,7 @@ angular.module('starter')
   };
 
   function select() {
-    $http.get('/order/2')
-      .then(function(result) {
-        console.log(result.data);
-        $state.go('app.further-contacts', {order:result.data});
-      })
-      .catch(function (error) {
-        console.log(error);
-        console.log($http);
-      })
+    $state.go('app.search-order');
   }
 
 });

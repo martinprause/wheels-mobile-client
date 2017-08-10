@@ -6,7 +6,7 @@ angular.module('starter')
       return this.order;
     };
     $scope.getFurtherContacts = function () {
-      return this.order.customer.customerContacts
+      return this.order.customer.customerContacts;
     }
 
   });

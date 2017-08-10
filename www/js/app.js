@@ -1,4 +1,10 @@
-angular.module('starter', ['ionic', 'pascalprecht.translate', 'ngCordova', 'ngCordova.plugins.camera'])
+angular.module('starter', [
+  'ionic',
+  'pascalprecht.translate',
+  'ngCordova',
+  'ngCordova.plugins.camera',
+  'ionic-datepicker'
+])
   .config(function ($stateProvider, $urlRouterProvider,$httpProvider, $translateProvider) {
     $httpProvider.interceptors.push('AuthInterceptor');
     $translateProvider
@@ -32,10 +38,19 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'ngCordova', 'ngCo
         authenticate: false
       })
       .state('app.selection', {
-        url:'/selection',
+        url: '/selection',
         views: {
-          'mainContent': {
+          'mainContent@app': {
             templateUrl: 'templates/selection.html'
+          }
+        },
+        authenticate: true
+      })
+      .state('app.search-order', {
+        url: '/search-order',
+        views: {
+          'mainContent@app': {
+            templateUrl: 'templates/search-order.html'
           }
         },
         authenticate: true
@@ -126,9 +141,7 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'ngCordova', 'ngCo
           }
         }
       });
-
     $urlRouterProvider.otherwise('/app/selection')
-
   })
   .run(function ($ionicPlatform, $rootScope, AuthService, $state, $location, $ionicHistory) {
 

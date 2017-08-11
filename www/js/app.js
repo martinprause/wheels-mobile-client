@@ -160,7 +160,7 @@ angular.module('starter', [
         );
         setTimeout(function(){
           $rootScope.backButtonPressedOnceToExit = false;
-        },2000);
+        },1000);
       }
       e.preventDefault();
       return false;

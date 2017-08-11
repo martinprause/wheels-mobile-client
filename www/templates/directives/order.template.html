@@ -5,18 +5,18 @@
   </div>
   <div class="order-row">
     <div class="order-col order-field">Customer <span ng-bind="orderData.customer.firstname"></span></div>
-    <div class="order-col order-field">Created: <br><span ng-bind="orderData.created | date:'dd.mm.yyyy'"></span></div>
+    <div class="order-col order-field">Created: <br><span ng-bind="orderData.created"></span></div>
   </div>
   <div class="order-row">
     <div class="order-col order-field">Customer <span ng-bind="orderData.customer.lastname"></span></div>
-    <div class="order-col order-field">Deadline: <br><span ng-bind="orderData.deadlineFinish | date:'dd.mm.yyyy'"></span></div>
+    <div class="order-col order-field">Deadline: <br><span ng-bind="orderData.deadlineFinish"></span></div>
   </div>
   <div class="order-row">
     <div class="order-col order-field">Customer <span ng-bind="orderData.customer.companyName"></span></div>
-    <div class="order-col order-field">Delivery: <br><span ng-bind="orderData.deadlineDelivery | date:'dd.mm.yyyy'"></span></div>
+    <div class="order-col order-field">Delivery: <br><span ng-bind="orderData.deadlineDelivery"></span></div>
   </div>
   <div class="order-row">
     <div class="order-col order-field" ng-bind="orderData.customerNumberOrder"></div>
-    <div class="order-col order-field"><snap ng-bind="orderData.driver.firstname"></snap> <span ng-bind="orderData.driver.lastname"></span></div>
+    <div class="order-col order-field"><span ng-bind="orderData.driver.firstname"></span> <span ng-bind="orderData.driver.lastname"></span></div>
   </div>
 </div>

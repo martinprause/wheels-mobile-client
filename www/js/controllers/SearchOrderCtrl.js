@@ -20,7 +20,10 @@ angular.module('starter')
             return;
           }
           $scope.ALL_ORDERS_LIST = $scope.ALL_ORDERS_LIST.concat(result.data);
-          $scope.searchResult = $scope.ALL_ORDERS_LIST;
+          debugger;
+          $scope.searchResult = $scope.ALL_ORDERS_LIST.map(function (order) {
+            return formatOrder(order)
+          });
           if (handler) {
             handler();
           }
@@ -39,7 +42,9 @@ angular.module('starter')
     function openDatePicker() {
       ionicDatePicker.openDatePicker({
         callback: function (val) {
-          $scope.searchResult = $filter('filter')($scope.ALL_ORDERS_LIST, filterObjectBySelectedField(val));
+          $scope.searchResult = $filter('filter')($scope.ALL_ORDERS_LIST.map(function (order) {
+            return formatOrder(order)
+          }), filterObjectBySelectedField(val));
         },
         disabledDates: [],
         templateType: 'popup'
@@ -59,11 +64,33 @@ angular.module('starter')
 
     function resetFilters() {
       $scope.search = {};
-      $scope.searchResult = $scope.ALL_ORDERS_LIST;
+      $scope.searchResult = $scope.ALL_ORDERS_LIST.map(function (order) { return formatOrder(order) });
       $scope.selectedFilter.type = 'created';
     }
 
     function openOrderMenu(order) {
       $state.go('app.order', {order: order});
+    }
+
+    function formatOrder(order) {
+      return {
+        orderNo: order.orderNo,
+        status: order.status,
+        customer: {
+          firstname: (notNullValue(order.customer)).firstname,
+          lastname:  (notNullValue(order.customer)).lastname,
+          companyName:  (notNullValue(order.customer)).companyName
+        },
+        driver: {
+          firstname: (notNullValue(order.driver)).firstname,
+          lastname:  (notNullValue(order.driver)).lastname
+        },
+        created: order.created,
+        deadlineFinish: order.deadlineFinish,
+        deadlineDelivery: order.deadlineDelivery
+      };
+      function notNullValue(val) {
+        return val && val !== null ? val : {};
+      }
     }
   });

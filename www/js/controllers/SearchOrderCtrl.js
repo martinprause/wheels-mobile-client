@@ -68,9 +68,8 @@ angular.module('starter')
     }
 
     function openOrderMenu(order) {
-      debugger;
       var foundOrder = $scope.ALL_ORDERS_LIST.filter(function (fromList) {
-        return fromList.id = order.id;
+        return fromList.id === order.id;
       })[0];
       $state.go('app.order', {order: foundOrder});
     }

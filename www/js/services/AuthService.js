@@ -20,9 +20,6 @@ angular.module('starter')
           $ionicHistory.nextViewOptions({
             disableBack: true
           });
-        }).catch(function (error) {
-          console.log(error);
-          console.log($http);
         })
     }
 

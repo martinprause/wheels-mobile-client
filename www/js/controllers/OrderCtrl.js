@@ -14,6 +14,18 @@ angular.module('starter')
 
   $scope.navigateToConfirmDelivery = function () {
     $state.go('.confirm-delivery', {order: $scope.order});
-  }
+  };
+
+  $scope.navigateToOrderDetails = function () {
+    $state.go('.order-details', {order: $scope.order});
+  };
+
+  $scope.navigateToTakePhoto = function () {
+    $state.go('.take-photo', {order: $scope.order});
+  };
+
+  $scope.navigatoToPrintBarcodes = function () {
+    // TODO implement bar codes printing(connect with mobile app);
+  };
 
 });

@@ -1,6 +1,19 @@
 {
   "USERNAME" : "Benutzername",
   "PASSWORD" : "Passwort",
-  "RESULT" : "Ergebnis",
-  "LOGIN_BUTTON" : "Anmeldung"
+  "LOGIN_BUTTON" : "Anmeldung",
+  "SELECTION.CONTACTS.LABEL" : "Kontakt:",
+  "SELECTION.SCAN.BUTTON" : "QR-Code scannen",
+  "SELECTION.ORDERS.BUTTON" : "Suche bestellen",
+  "ORDER_TEMPLATE.CUSTOMER" : "Kunde:",
+  "ORDER_TEMPLATE.CREATED" : "Erstellt:",
+  "ORDER_TEMPLATE.DEADLINE" : "Frist:",
+  "ORDER_TEMPLATE.DELIVERY" : "Lieferung:",
+  "SEARCH_ORDER.GEN_FILTER" : "Allgemeiner Filter:",
+  "SEARCH_ORDER.DATE_FILTER" : "Datumsfilter:",
+  "SEARCH_ORDER.SELECT_DATE_BUTTON" : "Datum auswählen:",
+  "SEARCH_ORDER.RESET_FILTERS" : "Filter zurücksetzen",
+  "SEARCH_ORDER.DATE_FILTER.CREATED" : "Erstellt",
+  "SEARCH_ORDER.DATE_FILTER.DEADLINE" : "Frist",
+  "SEARCH_ORDER.DATE_FILTER.DELIVERY" : "Lieferung"
 }

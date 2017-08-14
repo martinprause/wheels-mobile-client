@@ -1,7 +1,7 @@
 angular.module('starter')
   .controller('SearchOrderCtrl', function ($scope, $filter, $state, $http, ionicDatePicker) {
-    $scope.selectedFilter = {type: 'created'};
-    $scope.filterTypes = ['created', 'deadlineFinish', 'deadlineDelivery'];
+    $scope.filterTypes = {type: ['created', 'deadlineFinish', 'deadlineDelivery']};
+    $scope.selectedFilter = {type: $scope.filterTypes[0]};
     $scope.moreData = true;
     $scope.pageNumber = 0;
     $scope.ALL_ORDERS_LIST = [];
@@ -68,11 +68,15 @@ angular.module('starter')
     }
 
     function openOrderMenu(order) {
-      $state.go('app.order', {order: order});
+      var foundOrder = $scope.ALL_ORDERS_LIST.filter(function (fromList) {
+        return fromList.id === order.id;
+      })[0];
+      $state.go('app.order', {order: foundOrder});
     }
 
     function formatOrder(order) {
       return {
+        id: order.id,
         orderNo: order.orderNo,
         status: order.status,
         customer: {

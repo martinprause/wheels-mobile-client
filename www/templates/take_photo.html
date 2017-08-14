@@ -1,5 +1,5 @@
 <ion-view view-title="Take Photo" name="take-photo-view" ng-controller="TakePhotoCtrl as ctrl">
-  <ion-content direction="y" class="has-header has-footer" scroll="true">
+  <ion-content direction="y" class="has-header" scroll="true">
     <order order-data="ctrl.order"></order>
     <div class="photo-panel">
       <div class="photo-panel-btn-wrapper">
@@ -22,7 +22,5 @@
       </ion-slide>
     </ion-slide-box>
   </ion-content>
-  <div class="bar bar-footer" data-ng-init="ctrl.init()">
-    <button class="button button-positive btn-back">Back</button>
-  </div>
+  <div data-ng-init="ctrl.init()"></div>
 </ion-view>

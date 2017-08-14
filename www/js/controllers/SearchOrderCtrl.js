@@ -27,7 +27,6 @@ angular.module('starter')
             handler();
           }
         });
-      console.log('Inited!');
     }
 
     function loadMoreOrders() {

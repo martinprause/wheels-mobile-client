@@ -1,0 +1,63 @@
+<ion-view view-title="Order details" ng-controller="OrderDetailsCtrl">
+  <ion-content class="header-padding" scroll="false" direction="y" overflow-scroll="false">
+    <order order-data="order"></order>
+    <div>
+      <div class="order-row">
+        <div class = "order-col order-field">
+          <b>Customer Contact</b>
+          <button ng-click="navigateToFurtherContacts()">Further Contacts</button>
+        </div>
+        <div class="order-row">
+          <div class="order-col order-no" ng-bind="order.customer.address1"></div>
+        </div>
+        <div class="order-row">
+          <div class="order-col order-no" ng-bind="order.customer.address2"></div>
+        </div>
+        <div class="order-row">
+          <div class="order-col order-no" ng-bind="zipCity"></div>
+        </div>
+        <div class="order-row">
+          <div class="order-col order-no" ng-bind="order.customer.country.description"></div>
+        </div>
+        <div class="order-row">
+          <div class="order-col order-no" ng-bind="order.customer.email"></div>
+        </div>
+        <div class="order-row">
+          <div class="order-col order-no" ng-bind="order.customer.phone"></div>
+        </div>
+        <div class="order-row">
+          <div class="order-col order-no" ng-bind="order.customer.mobile"></div>
+        </div>
+        <div class="order-row">
+          <button ng-click="showPictures()">Picture</button>
+          <button ng-click="showSignature()">Signature</button>
+        </div>
+      </div>
+    </div>
+    <ion-scroll style="height: 150px;">
+      <ion-list>
+        <ion-item ng-repeat="wheelRim in order.wheelRimPositions">
+          <div>
+            <div class="details-scroll-element">
+              <div ng-bind="wheelRim.manufacturerWheel.description"></div>
+              <div ng-bind="wheelRim.model.description"></div>
+              <div ng-bind="wheelRim.modelType.description"></div>
+              <div ng-bind="wheelRim.size"></div>
+              <div ng-bind="wheelRim.hubCover"></div>
+              <div ng-bind="wheelRim.valveType.description"></div>
+            </div>
+            <div class="details-scroll-element">
+              <div ng-bind="wheelRim.status"></div>
+              <div ng-bind="wheelRim.manufacturerRim.description"></div>
+              <div ng-bind="wheelRim.width"></div>
+              <div ng-bind="wheelRim.height"></div>
+              <div ng-bind="wheelRim.diameter"></div>
+              <div ng-bind="wheelRim.indexVal"></div>
+              <div ng-bind="wheelRim.speed"></div>
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-scroll>
+  </ion-content>
+</ion-view>

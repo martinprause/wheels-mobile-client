@@ -2,15 +2,19 @@
   <ion-content direction="y" class="has-header has-footer" overflow-scroll="false" scroll="false">
     <div class="search-input">
       <div class="search-filter">
-        <span>General filter:</span><input type="text" ng-model="search.$">
+        <span translate="SEARCH_ORDER.GEN_FILTER"></span>
+        <input type="text" ng-model="search.$">
       </div>
       <div class="date-filter">
-        <span>Date filter: </span>
-        <select ng-model="selectedFilter.type" ng-options="filterType as (filterType) for filterType in filterTypes">
+        <span translate="SEARCH_ORDER.DATE_FILTER"></span>
+        <select ng-model="selectedFilter.type" ng-selected="$first">
+          <option ng-value="filterTypes.type[0]" translate="SEARCH_ORDER.DATE_FILTER.CREATED"></option>
+          <option ng-value="filterTypes.type[1]" translate="SEARCH_ORDER.DATE_FILTER.DEADLINE"></option>
+          <option ng-value="filterTypes.type[2]" translate="SEARCH_ORDER.DATE_FILTER.DELIVERY"></option>
         </select>
-        <button ng-click="openDatePicker()">Select date</button>
+        <button ng-click="openDatePicker()" translate="SEARCH_ORDER.SELECT_DATE_BUTTON"></button>
       </div>
-      <button class="" ng-click="resetFilters()">Reset filters</button>
+      <button class="" ng-click="resetFilters()" translate="SEARCH_ORDER.RESET_FILTERS"></button>
     </div>
     <ion-scroll style="height: 400px;">
       <ion-list>

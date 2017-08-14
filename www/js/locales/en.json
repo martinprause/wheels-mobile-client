@@ -1,6 +1,19 @@
 {
   "USERNAME" : "Username",
   "PASSWORD" : "Password",
-  "RESULT" : "Result",
-  "LOGIN_BUTTON" : "Login"
+  "LOGIN_BUTTON" : "Login",
+  "SELECTION.CONTACTS.LABEL" : "Contact:",
+  "SELECTION.SCAN.BUTTON" : "Scan QR-code",
+  "SELECTION.ORDERS.BUTTON" : "Search Order",
+  "ORDER_TEMPLATE.CUSTOMER" : "Customer:",
+  "ORDER_TEMPLATE.CREATED" : "Created:",
+  "ORDER_TEMPLATE.DEADLINE" : "Deadline:",
+  "ORDER_TEMPLATE.DELIVERY" : "Delivery:",
+  "SEARCH_ORDER.GEN_FILTER" : "General filter:",
+  "SEARCH_ORDER.DATE_FILTER" : "Date filter:",
+  "SEARCH_ORDER.SELECT_DATE_BUTTON" : "Select date:",
+  "SEARCH_ORDER.RESET_FILTERS" : "Reset filters",
+  "SEARCH_ORDER.DATE_FILTER.CREATED" : "Created",
+  "SEARCH_ORDER.DATE_FILTER.DEADLINE" : "Deadline",
+  "SEARCH_ORDER.DATE_FILTER.DELIVERY" : "Delivery"
 }

@@ -2,12 +2,12 @@
   <ion-content class="header-padding">
     <order order-data="order"></order>
     <div class="order-buttons">
-      <button>Order Details</button>
+      <button ng-click="navigateToOrderDetails()">Order Details</button>
       <button ng-click="navigateToUpdateStatus()">Update Status</button>
       <button ng-click="navigateToAssignDriver()">Assign Driver</button>
-      <button>Take Photo</button>
+      <button ng-click="navigateToTakePhoto()">Take Photo</button>
       <button ng-click="navigateToConfirmDelivery()">Confirm Delivery</button>
-      <button>Print Barcodes</button>
+      <button ng-click="navigatoToPrintBarcodes()">Print Barcodes</button>
     </div>
     <ion-nav-back-button>Back</ion-nav-back-button>
   </ion-content>

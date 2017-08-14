@@ -1,19 +1,16 @@
 <ion-view view-title="Main" name="login-view" ng-controller="SelectionCtrl" hide-back-button="true">
   <ion-content scroll="false" class="header-padding has-footer">
     <div class="button button-full btn-heaven" ng-click="scanQrCode()">
-      <span class="button-title">Scan Barcode</span>
+      <span class="button-title" translate="SELECTION.SCAN.BUTTON"></span>
     </div>
     <div class="button button-full btn-heaven" ng-click="select()">
-      <span class="button-title">Search Order</span>
+      <span class="button-title" translate="SELECTION.ORDERS.BUTTON"></span>
     </div>
     <div class="row responsive-sm padding">
-      <h5>Contact:</h5>
+      <h5 translate="SELECTION.CONTACTS.LABEL"></h5>
       <p>www.felgen-wie-neu.com</p>
       <p>Gemundner Str. 20<br>55469 Simmern/Hunsruck</p>
       <p>+49 (0) 6761-2238</p>
     </div>
   </ion-content>
-  <!--<div class="bar bar-footer">-->
-    <!--<div class="button button-small button-calm btn-logout col-offset-80" ng-click = "logout()">Logout</div>-->
-  <!--</div>-->
 </ion-view>

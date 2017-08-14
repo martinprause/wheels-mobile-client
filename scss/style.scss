@@ -1,15 +1,4 @@
-.btn-heaven {
-  color: #000 !important;
-  font-size: 35px;
-  background-color: #8cb1d7;
-  padding: 5vh 0;
 
-  .button-title {
-    width: 60vw;
-    text-align: left;
-  }
-
-}
 
 .btn-back {
   width: 90px;
@@ -90,11 +79,18 @@ ion-item.white-placeholder-children > input::placeholder {
 }
 
 .login-image-background {
-  background: url("../img/login-background.jpg");
-  background-size: cover;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
+  background:
+    url("../img/felgen.png") no-repeat,
+  url("../img/login-background.jpg") no-repeat;
+  background-size: contain, cover;
+  -moz-background-size: contain, cover;
+  -webkit-background-size: contain, cover;
+  -o-background-size: contain, cover;
+  .item-checkbox{
+    background: transparent;
+    border: none;
+    color: white;
+  }
 }
 
 .no-padding {
@@ -121,3 +117,5 @@ body {
 .has-header{
   padding-top:20px;
 }
+
+

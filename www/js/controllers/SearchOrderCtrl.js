@@ -20,7 +20,6 @@ angular.module('starter')
             return;
           }
           $scope.ALL_ORDERS_LIST = $scope.ALL_ORDERS_LIST.concat(result.data);
-          debugger;
           $scope.searchResult = $scope.ALL_ORDERS_LIST.map(function (order) {
             return formatOrder(order)
           });

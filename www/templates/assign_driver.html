@@ -1,5 +1,5 @@
 <ion-view view-title="Further Contacts" name="further-contacts-view" ng-controller="AssignDriverCtrl as ctrl">
-  <ion-content class="has-header has-footer" scroll="false">
+  <ion-content class="has-header has-footer padding" scroll="false">
     <div class="card">
       <div class="row">
         <div class="col h4">{{ctrl.order.orderNo}}</div>
@@ -23,17 +23,14 @@
       </div>`
     </div>
     <div class="text-center">
-      <button class="button button-positive" ng-disabled="!(ctrl.userRole === 'DRIVER')">Assign me</button>
+      <button class="button button-positive button-full" ng-disabled="!(ctrl.userRole === 'DRIVER')">Assign me</button>
       <h2>or</h2>
       <div class="padding-bottom padding-top">
-        <select name="drivers" id="driverSelect" ng-model="ctrl.order.driver.id" title="Drivers list"
+        <select  class="item item-input item-select col" name="drivers" id="driverSelect" ng-model="ctrl.order.driver.id" title="Drivers list"
                 ng-options="driver.id as (driver.firstname + ' ' + driver.lastname) for driver in ctrl.getAllDrivers()">
         </select>
       </div>
-      <button class="button button-positive" ng-click="ctrl.assignDriver()">Assign another driver</button>
+      <button class="button button-positive button-full" ng-click="ctrl.assignDriver()">Assign another driver</button>
     </div>
   </ion-content>
-  <div class="bar bar-footer">
-    <button class="button button-positive btn-back" ui-sref="selection">Back</button>
-  </div>
 </ion-view>

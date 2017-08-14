@@ -1,0 +1,21 @@
+.search-order-page{
+  .has-header{
+    padding-top: inherit;
+  }
+  margin: 0;
+  padding: 0;
+  .search-input{
+    height: 140px;
+    .row{
+      margin: 4px 0;
+    }
+    .custom-search{
+      margin: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+  ion-scroll{
+    height: calc(100% - 140px);
+  }
+}

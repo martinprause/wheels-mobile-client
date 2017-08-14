@@ -1,5 +1,20 @@
-.order-buttons button{
-  width: 100px;
-  height: 100px;
-  font-size: 11px;
+.order-page{
+  .order-buttons{
+    .row{
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+    button{
+      background: white;
+      width: 30vw;
+      height: 30vw;
+      border: solid black 2px;
+      border-radius: 6px;
+      i{
+        display: block;
+        font-size: xx-large;
+      }
+    }
+  }
 }
+

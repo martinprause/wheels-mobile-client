@@ -18,4 +18,10 @@
   ion-scroll{
     height: calc(100% - 140px);
   }
+  .no-wrap{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 8px;
+  }
 }

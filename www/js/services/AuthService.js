@@ -9,7 +9,7 @@ angular.module('starter')
 
     function logout(){
       window.localStorage.removeItem('Authorization');
-      $state.go("app.login");
+      $state.go("login");
     }
 
     function login(user){

@@ -1,0 +1,34 @@
+<div class="modal transparent center-block" ng-click="closeOrder()" id="signature">
+  <div class="card padding">
+    <div class="row">
+      <div class="col"> <b ng-bind="orderData.orderNo"></b></div>
+      <!--<div class="col-50 order-status" ng-bind="orderData.status"></div>-->
+    </div>
+    <div class="order-row">
+    </div>
+    <div class="row">
+      <div  class="col-33 padding-vertical order-field" translate="ORDER_TEMPLATE.CUSTOMER"></div>
+      <span class="col padding-vertical"  >{{::orderData.customer.firstname}} {{::orderData.customer.lastname}} {{::orderData.customer.companyName}}</span>
+    </div>
+    <div class="row">
+      <div  class="col-33 padding-vertical order-field" translate="ORDER_TEMPLATE.STATUS"></div>
+      <span class="col padding-vertical" ng-bind="orderData.status"></span>
+    </div>
+    <div class="row">
+      <div  class="col-33 padding-vertical order-field" translate="ORDER_TEMPLATE.DRIVER"></div>
+      <span class="col padding-vertical" >{{::orderData.driver.firstname}} {{::orderData.driver.lastname}}</span>
+    </div>
+    <div class="row">
+      <div  class="col-33 padding-vertical order-field" translate="ORDER_TEMPLATE.DEADLINE"></div>
+      <span class="col padding-vertical" ng-bind="orderData.deadlineFinish"></span>
+    </div>
+    <div class="row">
+      <div  class="col-33 padding-vertical order-field" translate="ORDER_TEMPLATE.CREATED"></div>
+      <span class="col padding-vertical" ng-bind="orderData.created"></span>
+    </div>
+    <div class="row">
+      <div  class="col-33 padding-vertical order-field" translate="ORDER_TEMPLATE.CUSTOMER_NO"></div>
+      <span class="col padding-vertical" ng-bind="orderData.customerNumberOrder"></span>
+    </div>
+  </div>
+</div>

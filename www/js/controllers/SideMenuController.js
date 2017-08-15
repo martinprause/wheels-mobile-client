@@ -1,7 +1,7 @@
 angular.module('starter')
 
 .controller('SideMenuController', function($scope, AuthService, $ionicHistory, $translate){
-  $scope.currentLang = 'en';
+  $scope.currentLang = 'de';
 
   $scope.changeLocale = function () {
     // $scope.currentLang = $scope.currentLang === 'de' ? 'en' : 'de';

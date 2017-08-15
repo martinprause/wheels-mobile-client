@@ -12,6 +12,7 @@
   "ORDER_TEMPLATE.STATUS" : "Status:",
   "ORDER_TEMPLATE.DRIVER" : "Driver:",
   "ORDER_TEMPLATE.DETAILS" : "More Details",
+  "ORDER_TEMPLATE.CUSTOMER_NO" : "Customer order No",
   "SEARCH_ORDER.GEN_FILTER" : "General filter:",
   "SEARCH_ORDER.DATE_FILTER" : "Date filter:",
   "SEARCH_ORDER.SELECT_DATE_BUTTON" : "Select date:",

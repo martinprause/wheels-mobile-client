@@ -10,3 +10,6 @@ hooks/*
 /resources/android/
 /resources/ios/
 /www/lib/
+/www/css/
+www/css/ionic.app.css
+www/css/ionic.app.min.css

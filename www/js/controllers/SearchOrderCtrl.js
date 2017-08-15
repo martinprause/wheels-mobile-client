@@ -87,6 +87,7 @@ angular.module('starter')
           firstname: (notNullValue(order.driver)).firstname,
           lastname:  (notNullValue(order.driver)).lastname
         },
+        customerNumberOrder: order.customerNumberOrder,
         created: order.created,
         deadlineFinish: order.deadlineFinish,
         deadlineDelivery: order.deadlineDelivery

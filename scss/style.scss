@@ -131,3 +131,14 @@ body {
 .margin-block{
   margin: 4px 2px;
 }
+
+.center-block{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .card{
+
+  }
+}

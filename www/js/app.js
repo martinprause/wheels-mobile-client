@@ -5,9 +5,7 @@ angular.module('starter', [
   'ngCordova.plugins.camera',
   'ionic-datepicker'
 ])
-  .config(function ($stateProvider, $urlRouterProvider,$httpProvider, $translateProvider, $ionicConfigProvider) {
-    $ionicConfigProvider.backButton.previousTitleText(false).text('').icon('ion-chevron-left');
-
+  .config(function ($stateProvider, $urlRouterProvider,$httpProvider, $translateProvider) {
     $httpProvider.interceptors.push('AuthInterceptor');
     if (window.localStorage.Locale == null){
       window.localStorage.setItem('Locale', 'de');
@@ -33,13 +31,9 @@ angular.module('starter', [
         abstract: true,
         templateUrl: 'templates/menu.html'
       })
-      .state('app.login', {
+      .state('login', {
         url: '/login',
-        views: {
-          'mainContent@app': {
-            templateUrl: 'templates/login.html'
-          }
-        },
+        templateUrl: 'templates/login.html',
         controller: 'LoginCtrl',
         authenticate: false
       })
@@ -186,14 +180,14 @@ angular.module('starter', [
 
     function onChangeStageStart(event, toState, toParams, fromState, fromParams) {
       if (!AuthService.checkAuth()){
-        if (toState.name !== 'app.login'){
-          $location.path('/app/login');
+        if (toState.name !== 'login'){
+          $location.path('/login');
         }
       }
     }
 
     function onChangeStateSuccess(event, toState, toParams, fromState, fromParams){
-      if(toState.name ==='app.login'){
+      if(toState.name ==='login'){
         $ionicHistory.nextViewOptions({
           disableBack: true
         });

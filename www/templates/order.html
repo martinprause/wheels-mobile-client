@@ -1,13 +1,74 @@
-<ion-view view-title="Order" ng-controller="OrderCtrl">
+<ion-view view-title="Order" ng-controller="OrderCtrl" class="order-page">
   <ion-content class="header-padding">
     <order order-data="order"></order>
-    <div class="order-buttons">
-      <button ng-click="navigateToOrderDetails()">Order Details</button>
-      <button ng-click="navigateToUpdateStatus()">Update Status</button>
-      <button ng-click="navigateToAssignDriver()">Assign Driver</button>
-      <button ng-click="navigateToTakePhoto()">Take Photo</button>
-      <button ng-click="navigateToConfirmDelivery()">Confirm Delivery</button>
-      <button ng-click="printQrCodes()">Print Barcodes</button>
+    <!--<div class="order-buttons">-->
+      <!--<div class="row">-->
+        <!--<div class="col-50  text-center">-->
+          <!--<button >-->
+            <!--<i class="icon ion-ios-search-strong"></i>-->
+            <!--Order Details-->
+          <!--</button>-->
+        <!--</div>-->
+        <!--<div class="col-50  text-center">-->
+          <!--<button ng-click="navigateToUpdateStatus()">-->
+            <!--<i class="icon ion-android-sync"></i>-->
+            <!--Update Status-->
+          <!--</button>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="row">-->
+        <!--<div class="col-50  text-center">-->
+          <!--<button ng-click="navigateToAssignDriver()">-->
+            <!--<i class="icon ion-gear-a"></i>-->
+            <!--Assign Driver</button>-->
+
+        <!--</div>-->
+        <!--<div class="col-50  text-center">-->
+          <!--<button ng-click="navigateToTakePhoto()">-->
+            <!--<i class="icon ion-camera"></i>-->
+            <!--Take Photo-->
+          <!--</button>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="row">-->
+        <!--<div class="col-50  text-center">-->
+          <!--<button  ng-click="navigateToConfirmDelivery()">-->
+            <!--<i class="icon ion-ios-home"></i>-->
+            <!--Confirm Delivery</button>-->
+        <!--</div>-->
+        <!--<div class="col-50  text-center">-->
+          <!--<button >-->
+            <!--<i class="icon ion-ios-barcode-outline "></i>-->
+            <!--Print Barcodes</button>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <div>
+      <button class="button button-block button-positive">
+        <i class="icon ion-ios-search-strong"></i>
+        Order Details
+      </button>
+      <button class="button button-block button-positive" ng-click="navigateToUpdateStatus()">
+        <i class="icon ion-android-sync"></i>
+        Update Status
+      </button>
+      <button class="button button-block button-positive" ng-click="navigateToAssignDriver()">
+        <i class="icon ion-gear-a"></i>
+        Assign Driver
+      </button>
+      <button class="button button-block button-positive" ng-click="navigateToTakePhoto()">
+        <i class="icon ion-camera"></i>
+        Take Photo
+      </button>
+      <button class="button button-block button-positive" ng-click="navigateToConfirmDelivery()">
+        <i class="icon ion-ios-home"></i>
+        Confirm Delivery
+      </button>
+      <button class="button button-positive button-block">
+        <i class="icon ion-ios-barcode-outline "></i>
+        Print Barcodes
+      </button>
     </div>
   </ion-content>
 </ion-view>

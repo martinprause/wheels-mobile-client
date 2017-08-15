@@ -2,14 +2,24 @@
   <ion-pane>
     <ion-content class="header-padding">
       <order order-data="order"></order>
-      <div>Name*:</div>
-      <input placeholder="Signature name" value="{{signatureName}}">
-      <div>Signature*:</div>
-      <canvas id='signatureCanvas' width='300' height='180' style='border: 1px solid black;'></canvas>
+      <div >
+        <label class="item item-input padding-left">
+          <span class="input-label">Username</span>
+          <input placeholder="Signature name" value="{{signatureName}}" type="text">
+        </label>
+      </div>
+
+      <h5 class="input-label padding-left"> Signature*:</h5>
+      <div>
+
+      </div>
+        <canvas id='signatureCanvas' width='300' height='180' style='border: 1px solid black;'></canvas>
       <img ng-src='{{signature}}' ng-if="signed"/>
       <div class='button-bar'>
-        <a class='button' ng-click='saveSignature()'>Confirm</a>
-        <a class='button' ng-click='clearSignature()'>Clear</a>
+        <a class='button button-positive' ng-click='saveSignature()'>Confirm</a>
+        <a class='button button-positive' ng-click='clearSignature()'>Clear</a>
+      </div>
+      <br>
       </div>
     </ion-content>
   </ion-pane>

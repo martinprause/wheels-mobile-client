@@ -89,6 +89,21 @@ ion-item.white-placeholder-children > input::placeholder {
   border-radius: 4px;
 }
 
+.login-image-background {
+  background:
+    url("../img/felgen.png") no-repeat,
+  url("../img/login-background.jpg") no-repeat;
+  background-size: contain, cover;
+  -moz-background-size: contain, cover;
+  -webkit-background-size: contain, cover;
+  -o-background-size: contain, cover;
+  .item-checkbox{
+    background: transparent;
+    border: none;
+    color: white;
+  }
+}
+
 .no-padding {
   padding: 0 0 0 0;
 }

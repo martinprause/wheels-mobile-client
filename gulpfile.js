@@ -15,6 +15,10 @@ gulp.task('sass', function() {
   return gulp.src('./scss/**/*.scss')
     .pipe(sass({outputStyle:'compressed'}))
     .pipe(concat('style.css'))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(rename({
       suffix:'.min'
     }))

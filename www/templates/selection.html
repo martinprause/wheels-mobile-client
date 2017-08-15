@@ -1,13 +1,20 @@
-<ion-view view-title="Main" name="login-view" ng-controller="SelectionCtrl" hide-back-button="true">
+<ion-view view-title="Main" name="login-view" ng-controller="SelectionCtrl" hide-back-button="true" class="section-page">
   <ion-content scroll="false" class="header-padding has-footer">
-    <div class="button button-full btn-heaven" ng-click="scanQrCode()">
-      <span class="button-title" translate="SELECTION.SCAN.BUTTON"></span>
-    </div>
-    <div class="button button-full btn-heaven" ng-click="select()">
-      <span class="button-title" translate="SELECTION.ORDERS.BUTTON"></span>
+
+    <div class="list">
+      <div class="item item-icon-left item-icon-right" ng-click="scanQrCode()">
+        <i class="icon ion-ios-barcode-outline"></i>
+        <span class="button-title" translate="SELECTION.SCAN.BUTTON"></span>
+        <i class="icon ion-chevron-right"></i>
+      </div>
+      <div class="item item-icon-left item-icon-right" ng-click="select()">
+        <i class="icon ion-ios-list-outline"></i>
+        <span class="button-title" translate="SELECTION.ORDERS.BUTTON"></span>
+        <i class="icon ion-chevron-right"></i>
+      </div>
     </div>
     <div class="row responsive-sm padding">
-      <h5 translate="SELECTION.CONTACTS.LABEL"></h5>
+      <h5> <b translate="SELECTION.CONTACTS.LABEL"></b></h5>
       <p>www.felgen-wie-neu.com</p>
       <p>Gemundner Str. 20<br>55469 Simmern/Hunsruck</p>
       <p>+49 (0) 6761-2238</p>

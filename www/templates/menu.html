@@ -1,4 +1,4 @@
-<ion-side-menus enable-menu-with-back-views="true" ng-controller="SideMenuController">
+<ion-side-menus enable-menu-with-back-views="true">
   <ion-side-menu-content>
     <ion-nav-bar class="bar-positive" align-title="center">
       <ion-nav-back-button align="left">
@@ -16,9 +16,24 @@
     <ion-header-bar class="bar-stable">
       <h1 class="title">Menu</h1>
     </ion-header-bar>
-    <ion-content>
-      <button menu-close="true" class="button button-small button-calm btn-logout col-offset-80"  ng-click = "logout()">Logout</button>
-      <button menu-close="true" class="button button-calm"  ng-click = "changeLocale()">Change locale</button>
+    <ion-content  ng-controller="SideMenuController">
+      <div class="list">
+
+        <label class="item item-input item-select">
+          <span class="input-label">
+            Change locale
+          </span>
+          <select  ng-model="currentLang" ng-change="changeLocale()">
+            <option value="en">EN</option>
+            <option selected value="de">DE</option>
+          </select>
+        </label>
+        <a href="#" class="item" ng-click = "logout()">
+          Logout
+        </a>
+      </div>
+      <!--<button menu-close="true" class="button button-small button-calm btn-logout col-offset-80"  >Logout</button>-->
+      <!--<button menu-close="true" class="button button-calm"  ng-click = "changeLocale()">Change locale</button>-->
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>

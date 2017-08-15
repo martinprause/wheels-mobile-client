@@ -3,7 +3,7 @@ angular.module('starter')
   .controller('StatusUpdateCtrl', function($scope, $http, $ionicPopup, $stateParams, StatusUpdateService){
     this.order = StatusUpdateService.order;
     var self = this;
-
+    console.log(this.order);
     $scope.showPopup = function() {
       $scope.data = {};
 
@@ -38,4 +38,7 @@ angular.module('starter')
     $scope.updateStatus = function (value) {
       StatusUpdateService.updateStatus(value)
     };
+    $scope.wheelHasChanged = function (index) {
+      console.log(index,self.order.wheelRimPositions[index])
+    }
   });

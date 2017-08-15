@@ -1,10 +1,10 @@
 <ion-view view-title="Take Photo" name="take-photo-view" ng-controller="TakePhotoCtrl as ctrl">
   <ion-content direction="y" class="has-header" scroll="true">
     <order order-data="ctrl.order"></order>
-    <div class="photo-panel">
-      <div class="photo-panel-btn-wrapper">
-        <button class="photo-panel-btn" ng-click="ctrl.submitPhoto()">Submit photo</button>
-        <button class="photo-panel-btn" ng-click="ctrl.clearPhoto()">Clear photo</button>
+    <div class="button-block">
+      <div class="row">
+        <button class="button button-positive button-full margin-block" ng-click="ctrl.submitPhoto()">Submit photo</button>
+        <button class="button button-positive button-full margin-block" ng-click="ctrl.clearPhoto()">Clear photo</button>
       </div>
     </div>
     <ion-slide-box show-pager="true" class="slider-panel" on-slide-changed="ctrl.onSlideChanged(index)">

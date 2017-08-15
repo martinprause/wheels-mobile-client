@@ -1,38 +1,29 @@
-<div class="order-panel">
+<div class="padding-left">
   <div class="row">
-    <div class="col-50 order-no" ng-bind="orderData.orderNo"></div>
-    <div class="col-50 order-status" ng-bind="orderData.status"></div>
+    <div class="col order-no" ng-bind="orderData.orderNo"></div>
+    <!--<div class="col-50 order-status" ng-bind="orderData.status"></div>-->
   </div>
   <div class="order-row">
-
   </div>
   <div class="row">
-    <div class="col-50 padding-vertical">
-      <div class="order-col order-field" translate="ORDER_TEMPLATE.CUSTOMER"></div>
-      <span ng-bind="orderData.customer.firstname"></span>
-    </div>
-    <div class="col order-field padding-vertical" translate="ORDER_TEMPLATE.CREATED"></div>
-    <span class="col padding-vertical" ng-bind="orderData.created"></span>
+      <div  class="col-33 padding-vertical order-field" translate="ORDER_TEMPLATE.CUSTOMER"></div>
+      <span class="col padding-vertical"  >{{::orderData.customer.firstname}} {{::orderData.customer.lastname}} {{::orderData.customer.companyName}}</span>
   </div>
   <div class="row">
-    <div class="col-50 padding-vertical">
-      <div class="order-col order-field" translate="ORDER_TEMPLATE.CUSTOMER"></div>
-      <span ng-bind="orderData.customer.lastname"></span>
-    </div>
-    <div class="col order-field" translate="ORDER_TEMPLATE.DEADLINE"></div>
-    <span class="col" ng-bind="orderData.deadlineFinish"></span>
+      <div  class="col-33 padding-vertical order-field" translate="ORDER_TEMPLATE.STATUS"></div>
+      <span class="col padding-vertical" ng-bind="orderData.status"></span>
   </div>
   <div class="row">
-    <div class="col-50 padding-vertical">
-    <div class="order-col order-field" translate="ORDER_TEMPLATE.CUSTOMER"></div>
-    <span ng-bind="orderData.customer.companyName"></span>
-    </div>
-    <div class="col order-field" translate="ORDER_TEMPLATE.DELIVERY"></div>
-    <span class="col" ng-bind="orderData.deadlineDelivery"></span>
+      <div  class="col-33 padding-vertical order-field" translate="ORDER_TEMPLATE.DRIVER"></div>
+      <span class="col padding-vertical" >{{::orderData.driver.firstname}} {{::orderData.driver.lastname}}</span>
   </div>
-  <div class="order-row">
-    <div class="order-col order-field" ng-bind="orderData.customerNumberOrder"></div>
-    <div class="order-col order-field"></div>
-    <span ng-bind="orderData.driver.firstname"></span><span ng-bind="orderData.driver.lastname"></span>
+  <div class="row">
+    <div  class="col-33 padding-vertical order-field" translate="ORDER_TEMPLATE.DEADLINE"></div>
+    <span class="col padding-vertical" ng-bind="orderData.deadlineFinish"></span>
+  </div>
+  <div class="row" ng-if="detailes">
+    <div class="col text-right">
+      <button class="button button-positive button-small" translate="ORDER_TEMPLATE.DETAILS" ng-click="showDetailes()"></button>
+    </div>
   </div>
 </div>

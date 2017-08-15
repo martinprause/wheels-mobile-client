@@ -13,11 +13,13 @@
       <div>
 
       </div>
-        <canvas id='signatureCanvas' width='300' height='180' style='border: 1px solid black;'></canvas>
+      <div class="text-center">
+        <canvas class="col-" id='signatureCanvas' width='300' height='180' style='border: 1px solid black;'></canvas>
+      </div>
       <img ng-src='{{signature}}' ng-if="signed"/>
       <div class='button-bar'>
-        <a class='button button-positive' ng-click='saveSignature()'>Confirm</a>
-        <a class='button button-positive' ng-click='clearSignature()'>Clear</a>
+        <a class='button button-positive margin-block' ng-click='saveSignature()'>Confirm</a>
+        <a class='button button-positive margin-block' ng-click='clearSignature()'>Clear</a>
       </div>
       <br>
       </div>

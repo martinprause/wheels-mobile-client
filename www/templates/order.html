@@ -1,51 +1,8 @@
 <ion-view view-title="Order" ng-controller="OrderCtrl" class="order-page">
   <ion-content class="header-padding">
-    <order order-data="order"></order>
-    <!--<div class="order-buttons">-->
-      <!--<div class="row">-->
-        <!--<div class="col-50  text-center">-->
-          <!--<button >-->
-            <!--<i class="icon ion-ios-search-strong"></i>-->
-            <!--Order Details-->
-          <!--</button>-->
-        <!--</div>-->
-        <!--<div class="col-50  text-center">-->
-          <!--<button ng-click="navigateToUpdateStatus()">-->
-            <!--<i class="icon ion-android-sync"></i>-->
-            <!--Update Status-->
-          <!--</button>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="row">-->
-        <!--<div class="col-50  text-center">-->
-          <!--<button ng-click="navigateToAssignDriver()">-->
-            <!--<i class="icon ion-gear-a"></i>-->
-            <!--Assign Driver</button>-->
-
-        <!--</div>-->
-        <!--<div class="col-50  text-center">-->
-          <!--<button ng-click="navigateToTakePhoto()">-->
-            <!--<i class="icon ion-camera"></i>-->
-            <!--Take Photo-->
-          <!--</button>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="row">-->
-        <!--<div class="col-50  text-center">-->
-          <!--<button  ng-click="navigateToConfirmDelivery()">-->
-            <!--<i class="icon ion-ios-home"></i>-->
-            <!--Confirm Delivery</button>-->
-        <!--</div>-->
-        <!--<div class="col-50  text-center">-->
-          <!--<button >-->
-            <!--<i class="icon ion-ios-barcode-outline "></i>-->
-            <!--Print Barcodes</button>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-
+    <order order-data="order" detailes="true"></order>
     <div>
-      <button class="button button-block button-positive">
+      <button class="button button-block button-positive"  ng-click="navigateToOrderDetails()">
         <i class="icon ion-ios-search-strong"></i>
         Order Details
       </button>

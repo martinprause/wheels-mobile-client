@@ -1,12 +1,12 @@
 angular.module('starter')
 
 .controller('SideMenuController', function($scope, AuthService, $ionicHistory, $translate){
-  $scope.currentLang = 'en';
+
+  $scope.currentLang = window.localStorage.Locale;
 
   $scope.changeLocale = function () {
-    // $scope.currentLang = $scope.currentLang === 'de' ? 'en' : 'de';
-    console.log('adsasd',$scope.currentLang);
     $translate.use($scope.currentLang);
+    window.localStorage.setItem("Locale", $scope.currentLang);
   };
 
   $scope.logout = function () {

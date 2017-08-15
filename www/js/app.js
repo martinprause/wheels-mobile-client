@@ -9,6 +9,10 @@ angular.module('starter', [
     $ionicConfigProvider.backButton.previousTitleText(false).text('').icon('ion-chevron-left');
 
     $httpProvider.interceptors.push('AuthInterceptor');
+    if (window.localStorage.Locale == null){
+      window.localStorage.setItem('Locale', 'de');
+    }
+
     $translateProvider
       .useStaticFilesLoader({
         prefix: 'js/locales/',
@@ -18,8 +22,8 @@ angular.module('starter', [
         'en': 'en', 'en_GB': 'en', 'en_US': 'en',
         'de': 'de', 'de_DE': 'de', 'de_CH': 'de'
       })
-      .preferredLanguage('de')
-      .fallbackLanguage('de')
+      .preferredLanguage(window.localStorage.Locale)
+      .fallbackLanguage(window.localStorage.Locale)
       .determinePreferredLanguage()
       .useSanitizeValueStrategy('escapeParameters');
 

@@ -5,7 +5,9 @@ angular.module('starter', [
   'ngCordova.plugins.camera',
   'ionic-datepicker'
 ])
-  .config(function ($stateProvider, $urlRouterProvider,$httpProvider, $translateProvider) {
+  .config(function ($stateProvider, $urlRouterProvider,$httpProvider, $translateProvider, $ionicConfigProvider) {
+    $ionicConfigProvider.backButton.previousTitleText(false).text('').icon('ion-chevron-left');
+
     $httpProvider.interceptors.push('AuthInterceptor');
     $translateProvider
       .useStaticFilesLoader({

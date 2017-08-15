@@ -3,9 +3,9 @@
     <order order-data="order"></order>
     <div>
       <div class="order-row">
-        <div class = "order-col order-field">
-          <b>Customer Contact</b>
-          <button ng-click="navigateToFurtherContacts()">Further Contacts</button>
+        <div class="row">
+          <b class="col-50 padding-vertical">Customer Contact</b>
+          <button class=" button button-positive  " ng-click="navigateToFurtherContacts()">Further Contacts</button>
         </div>
         <div class="order-row">
           <div class="order-col order-no" ng-bind="order.customer.address1"></div>
@@ -28,9 +28,9 @@
         <div class="order-row">
           <div class="order-col order-no" ng-bind="order.customer.mobile"></div>
         </div>
-        <div class="order-row">
-          <button ng-click="showPictures()">Picture</button>
-          <button ng-click="showSignature()">Signature</button>
+        <div class="row">
+          <button class="button button-positive button-full margin-block" ng-click="showPictures()">Picture</button>
+          <button class="button button-positive button-full margin-block" ng-click="showSignature()">Signature</button>
         </div>
       </div>
     </div>

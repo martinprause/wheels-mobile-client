@@ -1,5 +1,11 @@
 <div class="modal image-modal transparent" ng-click="closeSignature()" id="signature">
-  <figcaption>{{order.signatureName}}</figcaption>
-  <img ng-src="{{signature}}" class="fullscreen-image" style="background-color: #fff">
-  <!--<span id="signatureName">{{order.signatureName}}</span>-->
+  <div class="img-center">
+    <div>
+      <img ng-src="{{signature}}">
+      <!--<span id="signatureName">{{order.signatureName}}</span>-->
+      <div class="row text-center">
+        <span>{{order.signatureName}}</span>
+      </div>
+    </div>
+     </div>
 </div>

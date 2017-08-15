@@ -92,10 +92,22 @@ angular.module('starter', [
           order:null
         }
       })
-      .state('app.further-contacts', {
+      .state('app.order.order-details', {
+        url:'/order-details',
+        views: {
+          'mainContent@app': {
+            templateUrl: 'templates/order-details.html'
+          }
+        },
+        authenticate: true,
+        params: {
+          order:null
+        }
+      })
+      .state('app.order.order-details.further-contacts', {
         url: '/further-contacts',
         views: {
-          'mainContent': {
+          'mainContent@app': {
             templateUrl: 'templates/further_contacts.html'
           }
         },

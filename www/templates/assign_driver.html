@@ -1,27 +1,6 @@
-<ion-view view-title="Further Contacts" name="further-contacts-view" ng-controller="AssignDriverCtrl as ctrl">
+<ion-view view-title="Assign driver" name="further-contacts-view" ng-controller="AssignDriverCtrl as ctrl">
   <ion-content class="has-header has-footer padding" scroll="false">
-    <div class="card">
-      <div class="row">
-        <div class="col h4">{{ctrl.order.orderNo}}</div>
-        <div class="col h4">{{ctrl.order.status}}</div>
-      </div>
-      <div class="row">
-        <div class="col">{{ctrl.order.customer.firstname}}</div>
-        <div class="col">Created: {{ctrl.order.created | date:'dd.mm.yyyy'}}</div>
-      </div>
-      <div class="row">
-        <div class="col">{{ctrl.order.customer.lastname}}</div>
-        <div class="col">Deadline: {{ctrl.order.deadlineFinish | date:'dd.mm.yyyy'}}</div>
-      </div>
-      <div class="row">
-        <div class="col">{{ctrl.order.customer.companyName}}</div>
-        <div class="col">Delivery: {{ctrl.order.deadlineDelivery | date:'dd.mm.yyyy'}}</div>
-      </div>
-      <div class="row">
-        <div class="col">{{ctrl.order.customerNumberOrder}}</div>
-        <div class="col">{{getCurrentOrder().driver.firstname + " " + getCurrentOrder().driver.lastname}}</div>
-      </div>`
-    </div>
+   <order order-data ="ctrl.order"></order>
     <div class="text-center">
       <button class="button button-positive button-full" ng-disabled="!(ctrl.userRole === 'DRIVER')">Assign me</button>
       <h2>or</h2>

@@ -1,6 +1,7 @@
 angular.module('starter')
 
   .controller('AssignDriverCtrl', function ($scope, AssignDriverService) {
+
     this.userRole = AssignDriverService.userRole;
     this.order = AssignDriverService.order;
     this.getAllDrivers = getAllDrivers;

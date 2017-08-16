@@ -1,6 +1,6 @@
 angular.module('starter')
 
-.controller('OrderCtrl', function ($scope, $stateParams, $state, OrderService) {
+.controller('OrderCtrl', function ($scope, $stateParams, $state, $ionicPopup, $http) {
 
   $scope.order = $stateParams.order;
 
@@ -24,8 +24,23 @@ angular.module('starter')
     $state.go('.take-photo', {order: $scope.order});
   };
 
-  $scope.navigatoToPrintBarcodes = function () {
-    // TODO implement bar codes printing(connect with mobile app);
+  $scope.printQrCodes = function () {
+
+    $http.post('/print-job?orderId=' + $scope.order.id + '&userId=' + 0)
+      .then(function (result) {
+          console.log(result);
+          $ionicPopup.alert({
+            title: 'Print',
+            template: 'Order has been sent to the printer'
+          });
+        },
+        function (error) {
+          $ionicPopup.alert({
+            title: 'Print',
+            template: 'Order has not been sent to the printer'
+          });
+        }
+      );
   };
 
 });

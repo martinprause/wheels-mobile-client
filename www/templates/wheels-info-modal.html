@@ -1,0 +1,33 @@
+<div class="modal">
+  <ion-header-bar>
+    <h1 class="title">Wheels list</h1>
+    <button class="button button-icon" ng-click="hideWheelsInfo()">
+      <i class="icon ion-close"></i>
+    </button>
+  </ion-header-bar>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="wheelRim in order.wheelRimPositions">
+        <div>
+          <div class="details-scroll-element">
+            <div ng-bind="wheelRim.manufacturerWheel.description"></div>
+            <div ng-bind="wheelRim.model.description"></div>
+            <div ng-bind="wheelRim.modelType.description"></div>
+            <div ng-bind="wheelRim.size"></div>
+            <div ng-bind="wheelRim.hubCover"></div>
+            <div ng-bind="wheelRim.valveType.description"></div>
+          </div>
+          <div class="details-scroll-element">
+            <div ng-bind="wheelRim.status"></div>
+            <div ng-bind="wheelRim.manufacturerRim.description"></div>
+            <div ng-bind="wheelRim.width"></div>
+            <div ng-bind="wheelRim.height"></div>
+            <div ng-bind="wheelRim.diameter"></div>
+            <div ng-bind="wheelRim.indexVal"></div>
+            <div ng-bind="wheelRim.speed"></div>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</div>

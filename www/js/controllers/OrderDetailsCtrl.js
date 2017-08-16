@@ -24,6 +24,12 @@ angular.module('starter')
     scope: $scope,
     animation: 'scale-in'
   });
+  $ionicModal.fromTemplateUrl('templates/wheels-info-modal.html', function(modal) {
+    $scope.wheelsInfo = modal;
+  }, {
+    scope: $scope,
+    animation: 'scale-in'
+  });
 
   $scope.navigateToFurtherContacts = function(){
     $state.go('.further-contacts', {order: $scope.order});
@@ -31,6 +37,14 @@ angular.module('starter')
 
 
   //Todo: change modal event close animation
+
+  $scope.showWheelsInfo = function() {
+    $scope.wheelsInfo.show();
+  };
+  $scope.hideWheelsInfo = function() {
+    $scope.wheelsInfo.hide();
+  };
+
 
   $scope.showPictures = function () {
     init();

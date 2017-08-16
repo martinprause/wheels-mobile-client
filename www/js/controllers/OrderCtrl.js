@@ -1,8 +1,10 @@
 angular.module('starter')
 
-.controller('OrderCtrl', function ($scope, $stateParams, $state, $ionicPopup, $http) {
+.controller('OrderCtrl', function ($scope, $stateParams, $state, $ionicPopup, $http, orderData) {
+  console.log('sadsdfsadf');
+  console.log('sdasd',orderData);
 
-  $scope.order = $stateParams.order;
+  $scope.order =orderData;
 
   $scope.navigateToUpdateStatus = function () {
     $state.go('.status-update', {order: $scope.order});

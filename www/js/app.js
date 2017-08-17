@@ -56,16 +56,20 @@ angular.module('starter', [
         authenticate: true
       })
       .state('app.order', {
-        url:'/order',
+        url:'/order/:orderId',
         views: {
           'mainContent': {
-            templateUrl: 'templates/order.html'
+            templateUrl: 'templates/order.html',
+            controller: 'OrderCtrl'
           }
         },
         authenticate: true,
-        params: {
-          order: null
-        }
+        resolve : {
+          orderData:  function(OrderService, $stateParams){
+            return OrderService.getOrderById($stateParams.orderId);
+          }
+        },
+
       })
       .state('app.order.status-update', {
         url: '/status-update',

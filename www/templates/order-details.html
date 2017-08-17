@@ -1,63 +1,49 @@
 <ion-view view-title="Order details" ng-controller="OrderDetailsCtrl">
-  <ion-content class="header-padding" scroll="false" direction="y" overflow-scroll="false">
-    <order order-data="order" detailes="true"></order>
+  <ion-content class="header-padding padding" scroll="true" direction="y" overflow-scroll="false">
+    <order order-data="order"  detailes="true"></order>
     <div>
-      <div class="order-row">
-        <div class="row">
-          <b class="col-50 padding-vertical">Customer Contact</b>
-          <button class=" button button-positive  " ng-click="navigateToFurtherContacts()">Further Contacts</button>
+      <div class="list">
+        <div class="item row">
+          <b class="col text-center padding-vertical">Customer Contact</b>
         </div>
-        <div class="order-row">
-          <div class="order-col order-no" ng-bind="order.customer.address1"></div>
+        <div class="item row">
+          <span class="col-33 padding-vertical bold-text" translate="ORDER_DETAILS.ADDRESS1"></span>
+          <div class="col padding-vertical" ng-bind="order.customer.address1"></div>
         </div>
-        <div class="order-row">
-          <div class="order-col order-no" ng-bind="order.customer.address2"></div>
+        <div class="item row">
+          <span class="col-33 padding-vertical bold-text" translate="ORDER_DETAILS.ADDRESS2"></span>
+          <div class="col padding-vertical" ng-bind="order.customer.address2"></div>
         </div>
-        <div class="order-row">
-          <div class="order-col order-no" ng-bind="zipCity"></div>
+        <div class="item row">
+          <span class="col-33 padding-vertical bold-text" translate="ORDER_DETAILS.ZIP"></span>
+          <div class="col padding-vertical" ng-bind="zipCity"></div>
         </div>
-        <div class="order-row">
-          <div class="order-col order-no" ng-bind="order.customer.country.description"></div>
+        <div class="item row">
+          <span class="col-33 padding-vertical bold-text" translate="ORDER_DETAILS.COUNTRY"></span>
+          <div class="col padding-vertical" ng-bind="order.customer.country.description"></div>
         </div>
-        <div class="order-row">
-          <div class="order-col order-no" ng-bind="order.customer.email"></div>
+        <div class="item row">
+          <span class="col-33 padding-vertical bold-text" translate="ORDER_DETAILS.EMAIL"></span>
+          <div class="col padding-vertical" ng-bind="order.customer.email"></div>
         </div>
-        <div class="order-row">
-          <div class="order-col order-no" ng-bind="order.customer.phone"></div>
+        <div class="item row">
+          <span class="col-33 padding-vertical bold-text" translate="ORDER_DETAILS.PHONE"></span>
+          <div class="col padding-vertical" ng-bind="order.customer.phone"></div>
         </div>
-        <div class="order-row">
-          <div class="order-col order-no" ng-bind="order.customer.mobile"></div>
-        </div>
-        <div class="row">
-          <button class="button button-positive button-full margin-block" ng-click="showPictures()">Picture</button>
-          <button class="button button-positive button-full margin-block" ng-click="showSignature()">Signature</button>
+        <div class="item row">
+          <span class="col-33 padding-vertical bold-text" translate="ORDER_DETAILS.MOBILE"></span>
+          <div class="col padding-vertical" ng-bind="order.customer.mobile"></div>
         </div>
       </div>
+      <div class="row ">
+        <button class="button button-positive col no-wrap margin-block button-small" ng-click="showPictures()">Picture</button>
+        <button class="button button-positive col no-wrap margin-block button-small" ng-click="showSignature()">Signature</button>
+      </div>
+      <div class="row">
+        <button class=" button button-positive  col no-wrap margin-block button-small" ng-click="navigateToFurtherContacts()">Further Contacts</button>
+        <button class=" button button-positive  col no-wrap margin-block button-small" ng-click="showWheelsInfo()">Wheels Info</button>
+      </div>
     </div>
-    <ion-scroll style="height: 150px;">
-      <ion-list>
-        <ion-item ng-repeat="wheelRim in order.wheelRimPositions">
-          <div>
-            <div class="details-scroll-element">
-              <div ng-bind="wheelRim.manufacturerWheel.description"></div>
-              <div ng-bind="wheelRim.model.description"></div>
-              <div ng-bind="wheelRim.modelType.description"></div>
-              <div ng-bind="wheelRim.size"></div>
-              <div ng-bind="wheelRim.hubCover"></div>
-              <div ng-bind="wheelRim.valveType.description"></div>
-            </div>
-            <div class="details-scroll-element">
-              <div ng-bind="wheelRim.status"></div>
-              <div ng-bind="wheelRim.manufacturerRim.description"></div>
-              <div ng-bind="wheelRim.width"></div>
-              <div ng-bind="wheelRim.height"></div>
-              <div ng-bind="wheelRim.diameter"></div>
-              <div ng-bind="wheelRim.indexVal"></div>
-              <div ng-bind="wheelRim.speed"></div>
-            </div>
-          </div>
-        </ion-item>
-      </ion-list>
-    </ion-scroll>
+
   </ion-content>
 </ion-view>

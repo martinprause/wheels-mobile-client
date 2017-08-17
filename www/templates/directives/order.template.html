@@ -1,9 +1,8 @@
 <div class="">
   <div class="row">
     <div class="col padding-vertical">
-      <b class="list-header" ng-bind="orderData.orderNo"></b>
+      <b class="order-no" ng-bind="orderData.orderNo"></b>
     </div>
-    <!--<div class="col-50 order-status" ng-bind="orderData.status"></div>-->
     <div class="col text-right" ng-if="detailes">
       <button class="button button-positive button-small" translate="ORDER_TEMPLATE.DETAILS" ng-click="showDetailes()"></button>
     </div>

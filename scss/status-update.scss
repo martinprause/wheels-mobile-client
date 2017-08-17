@@ -7,4 +7,14 @@
       }
     }
   }
+  .empty-message{
+    text-align: center;
+    padding-top: 100px;
+    position: absolute;
+    width: 100%;
+      span{
+        color: #880000;
+        font-weight: 600;
+      }
+    }
 }

@@ -26,5 +26,6 @@
   "SEARCH_ORDER.RESET_FILTERS" : "Filter zurücksetzen",
   "SEARCH_ORDER.DATE_FILTER.CREATED" : "Erstellt",
   "SEARCH_ORDER.DATE_FILTER.DEADLINE" : "Frist",
-  "SEARCH_ORDER.DATE_FILTER.DELIVERY" : "Lieferung"
+  "SEARCH_ORDER.DATE_FILTER.DELIVERY" : "Lieferung",
+  "STATUS_UPDATE.EMPTY_MESSAGE": "Keine Radfelgen in der Reihenfolge präsentiert"
 }

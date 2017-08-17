@@ -9,7 +9,6 @@ angular.module('starter')
         'detailes': '@?'
       },
       controller: ['$scope', '$ionicModal', function ($scope, $ionicModal) {
-        console.log('init order');
         if($scope.detailes){
           $ionicModal.fromTemplateUrl('templates/order-modal.html', function(modal) {
             $scope.ordeModel = modal;
@@ -25,6 +24,6 @@ angular.module('starter')
         $scope.closeOrder = function () {
           $scope.ordeModel.hide();
         };
-      }],
+      }]
     }
   });

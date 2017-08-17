@@ -1,23 +1,52 @@
 angular.module('starter')
 
-  .controller('AssignDriverCtrl', function ($scope, AssignDriverService) {
+  .controller('AssignDriverCtrl', function ($scope, $window, $ionicPopup, AssignDriverService, orderData, AuthService) {
 
-    this.userRole = AssignDriverService.userRole;
-    this.order = AssignDriverService.order;
-    this.getAllDrivers = getAllDrivers;
-    this.assignDriver = assignDriver;
-    var self = this;
+    $scope.currentUser = AuthService.getCurrentUser();
+    console.log(AuthService.getCurrentUser());
+    $scope.order = orderData.data;
+    $scope.getAllDrivers = getAllDrivers;
+    $scope.assignDriver = assignDriver;
+    $scope.assignMe = assignMe;
+    $scope.assignMe1 = assignMe1;
 
     function getAllDrivers() {
       return AssignDriverService.getAllDrivers();
     }
+    function assignMe1() {
+      $scope.currentUser = JSON.parse($window.localStorage.currentUser);
+
+      return AssignDriverService.getAllDrivers();
+    }
+
+    function assignMe(){
+      $ionicPopup.confirm({
+        title: 'Update status',
+        template: 'Do you want to assign you as a driver to order?'
+      }).then(function (result) {
+        if (result) {
+          AssignDriverService.assignDriver($scope.currentUser.id, $scope.order.id).then(function (result) {
+            $scope.order = result.data;
+            $scope.order = result.data;
+          })
+        }
+      });
+    }
 
     function assignDriver() {
-      if (self.order.driver) {
-        AssignDriverService.assignDriver(self.order.driver)
-      } else {
-        //TODO show popup
-      }
+      $ionicPopup.confirm({
+        title: 'Update status',
+        template: 'Do you want to assign this driver to order?'
+      }).then(function (result) {
+        if (result){
+          if ($scope.order.driver) {
+            AssignDriverService.assignDriver($scope.order.driver.id, $scope.order.id)
+              .then(function (result) {
+                $scope.order = result.data;
+              })
+          }
+        }
+      });
 
     }
   });

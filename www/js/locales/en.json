@@ -26,5 +26,6 @@
   "SEARCH_ORDER.RESET_FILTERS" : "Reset filters",
   "SEARCH_ORDER.DATE_FILTER.CREATED" : "Created",
   "SEARCH_ORDER.DATE_FILTER.DEADLINE" : "Deadline",
-  "SEARCH_ORDER.DATE_FILTER.DELIVERY" : "Delivery"
+  "SEARCH_ORDER.DATE_FILTER.DELIVERY" : "Delivery",
+  "STATUS_UPDATE.EMPTY_MESSAGE": "No wheel rims presented in order"
 }

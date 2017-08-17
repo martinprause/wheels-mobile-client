@@ -68,22 +68,60 @@ angular.module('starter', [
           orderData:  function(OrderService, $stateParams){
             return OrderService.getOrderById($stateParams.orderId);
           }
+        }
+      })
+      .state('app.order.order-details', {
+        url:'/order-details',
+        views: {
+          'mainContent@app': {
+            templateUrl: 'templates/order-details.html',
+            controller: 'OrderDetailsCtrl'
+          }
         },
-
+        authenticate: true,
+        resolve: {
+          orderData: function(OrderService, $stateParams){
+            return OrderService.getOrderById($stateParams.orderId);
+          }
+        }
       })
       .state('app.order.status-update', {
         url: '/status-update',
         views: {
           'mainContent@app': {
-            templateUrl: 'templates/status_update.html'
+            templateUrl: 'templates/status_update.html',
+            controller:  'StatusUpdateCtrl'
           }
         },
-        controller: 'StatusUpdateCtrl',
-        authenticate: false,
-        params: {
-          order: null
+        authenticate: true,
+        resolve : {
+          orderData:  function(OrderService, $stateParams){
+            return OrderService.getOrderById($stateParams.orderId);
+          }
         }
       })
+      .state('app.order.assign-driver', {
+          url: '/assign-driver',
+          views: {
+            'mainContent@app': {
+              templateUrl: 'templates/assign_driver.html',
+              controller: 'AssignDriverCtrl'
+            }
+          },
+          authenticate: true,
+          resolve: {
+            drivers: function ($q, $stateParams, AssignDriverService) {
+              var deferred = $q.defer();
+              AssignDriverService.loadAllDrivers().then(deferred.resolve, deferred.resolve);
+              AssignDriverService.order = $stateParams.order;
+              return deferred.promise;
+            },
+            orderData:  function(OrderService, $stateParams){
+              return OrderService.getOrderById($stateParams.orderId);
+            }
+          },
+        cache: false
+        })
       .state('app.order.confirm-delivery', {
         url:'/confirm-delivery',
         views: {
@@ -96,18 +134,7 @@ angular.module('starter', [
           order:null
         }
       })
-      .state('app.order.order-details', {
-        url:'/order-details',
-        views: {
-          'mainContent@app': {
-            templateUrl: 'templates/order-details.html'
-          }
-        },
-        authenticate: true,
-        params: {
-          order:null
-        }
-      })
+
       .state('app.order.order-details.further-contacts', {
         url: '/further-contacts',
         views: {
@@ -133,28 +160,6 @@ angular.module('starter', [
         authenticate: false,
         params: {
           order: null
-        }
-      })
-
-      .state('app.order.assign-driver', {
-        url: '/assign-driver',
-        views: {
-          'mainContent@app': {
-            templateUrl: 'templates/assign_driver.html'
-          }
-        },
-        controller: 'AssignDriverCtrl',
-        authenticate: false,
-        params: {
-          order: null
-        },
-        resolve: {
-          drivers: function ($q, $stateParams, AssignDriverService) {
-            var deferred = $q.defer();
-            AssignDriverService.loadAllDrivers().then(deferred.resolve, deferred.resolve);
-            AssignDriverService.order = $stateParams.order;
-            return deferred.promise;
-          }
         }
       });
     $urlRouterProvider.otherwise('/app/selection')
@@ -210,11 +215,21 @@ angular.module('starter', [
         StatusBar.styleDefault();
       }
     });
-  });
+  })
+
+.filter('ifEmpty', function() {
+  return function (input, defaultValue) {
+    if (angular.isUndefined(input) || input === null || input === '' || input.trim() === '') {
+      return defaultValue;
+    }
+
+    return input;
+  }
+});
 
 if (!String.prototype.endsWith) {
   Object.defineProperty(String.prototype, 'endsWith', {
-    value: function(searchString, position) {
+    value: function (searchString, position) {
       var subjectString = this.toString();
       if (position === undefined || position > subjectString.length) {
         position = subjectString.length;

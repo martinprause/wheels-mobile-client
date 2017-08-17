@@ -6,29 +6,10 @@ angular.module('starter')
       config.headers = config.headers || {};
       if (!config.url.endsWith('.html') && !config.url.endsWith('.json')) {
         config.url = 'http://192.168.88.97:8080' + config.url;
+        // config.url = 'http://34.202.124.10/mobile' + config.url;
         config.headers.Authorization = $window.localStorage.Authorization;
       }
       return config;
-    },
-    response: function (response) {
-      var responseData = response.data;
-      if (typeof responseData === 'string' || responseData instanceof String) {
-        if (responseData === 'ADMIN' || responseData === 'ENGINEER' || responseData === 'DRIVER') {
-          $rootScope.USER_ROLE = responseData;
-        }
-      }
-      return response;
-    },
-    responseError: function (response) {
-      if (response.status === 401) {
-        $location.path('/');
-        $injector.invoke(function ($http, AuthService) {
-          AuthService.logout();
-          console.log("Logout")
-        });
-        return $q.reject();
-      }
-      return $q.reject(response);
     }
   };
 });

@@ -1,29 +1,26 @@
 angular.module('starter')
 
 .controller('OrderCtrl', function ($scope, $stateParams, $state, $ionicPopup, $http, orderData) {
-  console.log('sadsdfsadf');
-  console.log('sdasd',orderData);
+  $scope.order = orderData.data;
 
-  $scope.order =orderData;
+  $scope.navigateToOrderDetails = function () {
+    $state.go('.order-details', {order: $scope.order.id});
+  };
 
   $scope.navigateToUpdateStatus = function () {
-    $state.go('.status-update', {order: $scope.order});
+    $state.go('.status-update', {order: $scope.order.id});
   };
 
   $scope.navigateToAssignDriver = function () {
-    $state.go('.assign-driver', {order: $scope.order});
-  };
-
-  $scope.navigateToConfirmDelivery = function () {
-    $state.go('.confirm-delivery', {order: $scope.order});
-  };
-
-  $scope.navigateToOrderDetails = function () {
-    $state.go('.order-details', {order: $scope.order});
+    $state.go('.assign-driver', {order: $scope.order.id});
   };
 
   $scope.navigateToTakePhoto = function () {
     $state.go('.take-photo', {order: $scope.order});
+  };
+
+  $scope.navigateToConfirmDelivery = function () {
+    $state.go('.confirm-delivery', {order: $scope.order});
   };
 
   $scope.printQrCodes = function () {

@@ -1,7 +1,7 @@
 angular.module('starter')
 
-.controller('OrderDetailsCtrl', function ($scope, $state, $stateParams, $ionicModal) {
-  $scope.order = $stateParams.order;
+.controller('OrderDetailsCtrl', function ($scope, $state, $stateParams, $ionicModal, orderData) {
+  $scope.order = orderData.data;
   $scope.EMPTY_IMG_PATH = 'img/no_image.png';
   $scope.BASE64_PREFIX = "data:image/jpeg;base64,";
   $scope.zipCity = $scope.order.customer.zipCode + " " + $scope.order.customer.city;

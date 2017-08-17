@@ -1,44 +1,37 @@
 angular.module('starter')
 
-  .controller('StatusUpdateCtrl', function($scope, $http, $ionicPopup, $stateParams, StatusUpdateService){
-    this.order = StatusUpdateService.order;
-    var self = this;
-    console.log(this.order);
-    $scope.showPopup = function() {
-      $scope.data = {};
+  .controller('StatusUpdateCtrl', function($scope, $http, $ionicPopup, $stateParams, StatusUpdateService, orderData){
+    $scope.order = orderData.data;
+    $scope.currentPosition = null;
+    $scope.currentPositionIndex = 0;
 
-      // Custom popup
-      var myPopup = $ionicPopup.show({
-        title: 'Title',
-        subTitle: 'Subtitle',
-        scope: $scope,
-
-        buttons: [
-          { text: 'Cancel' }, {
-            text: '<b>Save</b>',
-            type: 'button-positive',
-            onTap: function(e) {
-
-              if (!$scope.data.model) {
-                //don't allow the user to close unless he enters model...
-                e.preventDefault();
-              } else {
-                return $scope.data.model;
-              }
-            }
-          }
-        ]
-      });
-
-      myPopup.then(function(res) {
-        console.log('Tapped!', res);
-      });
-    };
+      if ($scope.order.wheelRimPositions.length !== 0){
+        $scope.currentPosition = $scope.order.wheelRimPositions[0];
+      }
 
     $scope.updateStatus = function (value) {
-      StatusUpdateService.updateStatus(value)
+      if ($scope.order.wheelRimPositions.length === 0){
+        $ionicPopup.alert({
+          title: 'Error',
+          template: 'No wheel rims presented in order! '
+        })
+      }
+      else{
+        $ionicPopup.confirm({
+          title: 'Update status',
+          template: 'Do you want to update status of current wheel rim?'
+        }).then(function (result) {
+          if (result){
+            StatusUpdateService.updateStatus(value, $scope.currentPosition).then(function (result) {
+              $scope.order.wheelRimPositions[$scope.currentPositionIndex].status = result.data.status;
+            });
+          }
+        });
+      }
     };
+
     $scope.wheelHasChanged = function (index) {
-      console.log(index,self.order.wheelRimPositions[index])
+      $scope.currentPosition = $scope.order.wheelRimPositions[index];
+      $scope.currentPositionIndex = index;
     }
   });

@@ -19,7 +19,7 @@
   </div>
   <div class="row">
       <div  class="col-33 padding-vertical bold-text" translate="ORDER_TEMPLATE.DRIVER"></div>
-      <span class="col padding-vertical" >{{::orderData.driver.firstname}} {{::orderData.driver.lastname}}</span>
+      <span class="col padding-vertical" ng-bind="orderData.driver.firstname + ' ' + orderData.driver.lastname | ifEmpty : 'hui'"></span>
   </div>
   <div class="row">
     <div  class="col-33 padding-vertical  bold-text" translate="ORDER_TEMPLATE.DEADLINE"></div>

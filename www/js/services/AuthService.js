@@ -25,8 +25,6 @@ angular.module('starter')
           $ionicHistory.nextViewOptions({
             disableBack: true
           });
-        }).catch(function () {
-          logout();
         })
     }
 

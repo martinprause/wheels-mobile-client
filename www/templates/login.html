@@ -31,7 +31,7 @@
             <input type="password" translate translate-attr-placeholder="PASSWORD" translate-value-browser="{{app.browser}}" ng-model="user.password">
           </ion-item>
         </div>
-        <ion-label>{{ authMessage }}</ion-label>
+        <ion-label class="bad-creds-label">{{ authMessage }}</ion-label>
         <button class="button button-block button-calm" ng-click="login()" translate="LOGIN_BUTTON"></button>
       </div>
     </div>

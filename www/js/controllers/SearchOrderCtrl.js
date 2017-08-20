@@ -6,7 +6,7 @@ angular.module('starter')
     $scope.pageNumber = 0;
     $scope.ALL_ORDERS_LIST = [];
     $scope.showLoader = false;
-    $scope.formattedValue = 'No data selected';
+    $scope.formattedValue = '';
 
     $scope.searchOrder = searchOrder;
     $scope.openDatePicker = openDatePicker;
@@ -71,7 +71,7 @@ angular.module('starter')
       $scope.search = {};
       $scope.searchResult = $scope.ALL_ORDERS_LIST.map(function (order) { return formatOrder(order) });
       $scope.selectedFilter.type = 'created';
-      $scope.formattedValue = 'No data selected';
+      $scope.formattedValue = '';
     }
 
     function openOrderMenu(order) {

@@ -17,7 +17,7 @@
         </select>
         <div ng-click="openDatePicker()" class="calendar-block">
           <img src="img/calendar.png">
-          <label ng-bind="formattedValue"></label>
+          <span  ng-bind="formattedValue | ifEmpty : 'No data selected'"></span>
         </div>
       </div>
     <div class="row">

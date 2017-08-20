@@ -1,10 +1,6 @@
 angular.module('starter')
 
-.factory('AuthService', function ($http, $location, $state, $ionicHistory, $window) {
-
-  // var fabric = {
-  //   currentUser: {}
-  // };
+.service('AuthService', function ($http, $location, $state, $ionicHistory, $window) {
 
   return {
       getCurrentUser: getCurrentUser,
@@ -29,6 +25,8 @@ angular.module('starter')
           $ionicHistory.nextViewOptions({
             disableBack: true
           });
+        }).catch(function () {
+          logout();
         })
     }
 

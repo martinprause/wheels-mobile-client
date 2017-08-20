@@ -18,5 +18,17 @@
   ion-scroll{
     height: calc(100% - 140px);
   }
+  .calendar-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    *{
+      margin: 0 5px;
+    }
+  }
 
+
+  .item-margin{
+    margin-right: 10px;
+  }
 }

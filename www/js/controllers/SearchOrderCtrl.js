@@ -5,6 +5,8 @@ angular.module('starter')
     $scope.moreData = true;
     $scope.pageNumber = 0;
     $scope.ALL_ORDERS_LIST = [];
+    $scope.showLoader = false;
+    $scope.formattedValue = 'No data selected';
 
     $scope.searchOrder = searchOrder;
     $scope.openDatePicker = openDatePicker;
@@ -13,6 +15,7 @@ angular.module('starter')
     $scope.openOrderMenu = openOrderMenu;
 
     function searchOrder(handler) {
+      $scope.showLoader = true;
       $http.get('/order/page/' + ($scope.pageNumber++))
         .then(function (result) {
           if (result.data === null || result.data.length === 0) {
@@ -26,6 +29,9 @@ angular.module('starter')
           if (handler) {
             handler();
           }
+        })
+        .finally(function () {
+          $scope.showLoader = false;
         });
     }
 
@@ -49,13 +55,14 @@ angular.module('starter')
       });
 
       function filterObjectBySelectedField(val) {
-        var formattedValue = moment(val).format('DD-MM-YYYY');
+        $scope.formattedValue = moment(val).format('DD-MM-YYYY');
+        console.log($scope.formattedValue);
         if ($scope.selectedFilter.type === 'created') {
-          return {'created': formattedValue}
+          return {'created': $scope.formattedValue}
         } else if ($scope.selectedFilter.type === 'deadlineFinish') {
-          return {'deadlineFinish': formattedValue}
+          return {'deadlineFinish': $scope.formattedValue}
         } else if ($scope.selectedFilter.type === 'deadlineDelivery') {
-          return {'deadlineDelivery': formattedValue};
+          return {'deadlineDelivery': $scope.formattedValue};
         }
       }
     }
@@ -64,6 +71,7 @@ angular.module('starter')
       $scope.search = {};
       $scope.searchResult = $scope.ALL_ORDERS_LIST.map(function (order) { return formatOrder(order) });
       $scope.selectedFilter.type = 'created';
+      $scope.formattedValue = 'No data selected';
     }
 
     function openOrderMenu(order) {

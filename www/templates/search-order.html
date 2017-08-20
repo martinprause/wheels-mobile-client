@@ -10,21 +10,24 @@
       </div>
       <div class="date-filter row">
         <span class="col-25 padding-vertical" translate="SEARCH_ORDER.DATE_FILTER"></span>
-        <select class="item item-input item-select col"  ng-model="selectedFilter.type" ng-selected="$first">
+        <select class="item item-input item-select item-margin"  ng-model="selectedFilter.type" ng-selected="$first">
           <option ng-value="filterTypes.type[0]" translate="SEARCH_ORDER.DATE_FILTER.CREATED"></option>
           <option ng-value="filterTypes.type[1]" translate="SEARCH_ORDER.DATE_FILTER.DEADLINE"></option>
           <option ng-value="filterTypes.type[2]" translate="SEARCH_ORDER.DATE_FILTER.DELIVERY"></option>
         </select>
-        <button class=" button button-positive button-small  col-20 no-wrap .margin-left " translate="SEARCH_ORDER.SELECT_DATE_BUTTON" ng-click="openDatePicker()">Select date</button>
+        <div ng-click="openDatePicker()" class="calendar-block">
+          <img src="img/calendar.png">
+          <label ng-bind="formattedValue"></label>
+        </div>
       </div>
-      <div class="row">
-        <button class="button button-positive button-small" translate="SEARCH_ORDER.RESET_FILTERS" ng-click="resetFilters()">Reset filters</button>
-      </div>
+    <div class="row">
+      <button class="button button-positive button-small" translate="SEARCH_ORDER.RESET_FILTERS" ng-click="resetFilters()">Reset filters</button>
+    </div>
     </div>
     <ion-scroll>
       <ion-list>
         <div  class="no-margin no-padding" ng-repeat="result in searchResult | filter:search" ng-click="openOrderMenu(result)">
-            <order order-data="result"></order>
+          <order order-data="result"></order>
           <hr>
         </div>
       </ion-list>

@@ -164,3 +164,7 @@ body {
 .order-no{
   font-size: 14px;
 }
+
+.submitted .ng-invalid{
+  border-bottom: 1px solid red;
+}

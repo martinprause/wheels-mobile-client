@@ -1,11 +1,13 @@
 angular.module('starter')
 
-.controller('SignatureCtrl', function ($scope, $stateParams, $http, SignatureService) {
+.controller('SignatureCtrl', function ($scope, $http, SignatureService, orderData, $state, $ionicPopup) {
 
-  $scope.order = $stateParams.order;
+  $scope.order = orderData.data;
   $scope.signature = "data:image/png;base64," + $scope.order.signaturePicture;
   $scope.signed = false;
-  $scope.signatureName = "";
+  $scope.signatureName = {
+    value: ''
+  };
 
   var canvas = document.getElementById('signatureCanvas');
   var signaturePad = new window.SignaturePad(canvas);
@@ -15,10 +17,18 @@ angular.module('starter')
   };
 
   $scope.saveSignature = function() {
-    $scope.signature = signaturePad.toDataURL();
-    SignatureService.saveSignature($scope.signature, $scope.order.id, $scope.signatureName);
-    $scope.signed = true;
-    canvas.style.display = "none";
+    $ionicPopup.confirm({
+      title: 'Confirm delivery',
+      template: 'Do you want to confirm delivery?'
+    }).then(function (result) {
+      if (result) {
+        $scope.signature = signaturePad.toDataURL();
+        SignatureService.saveSignature($scope.signature, $scope.order.id, $scope.signatureName.value).then(function (result) {
+          $scope.order = result.data;
+          $state.go('app.order', {orderId: $scope.order.id})
+        });
+      }
+    });
   };
 
 });

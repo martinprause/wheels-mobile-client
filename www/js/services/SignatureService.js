@@ -1,6 +1,6 @@
 angular.module('starter')
 
-.service("SignatureService", function ($http, $state) {
+.service("SignatureService", function ($http) {
   return{
     saveSignature: saveSignature
   };
@@ -17,15 +17,7 @@ angular.module('starter')
     };
 
     var url = "/file/signature/" + id + "?" + "name=" + name;
-    console.log(url);
-    $http.post(url, data, config)
-      .success(function (data) {
-        console.log(data);
-        $state.go('app.order');
-      })
-      .error(function (data, status) {
-        console.log(data, status);
-      });
+    return $http.post(url, data, config);
   }
 
   function dataURItoBlob(dataURI) {

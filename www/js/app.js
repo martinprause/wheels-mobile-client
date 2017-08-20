@@ -5,10 +5,10 @@ angular.module('starter', [
   'ngCordova.plugins.camera',
   'ionic-datepicker'
 ])
-  .config(function ($stateProvider, $urlRouterProvider,$httpProvider, $translateProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $httpProvider, $translateProvider) {
     $httpProvider.interceptors.push('AuthInterceptor');
     if (window.localStorage.Locale == null){
-      window.localStorage.setItem('Locale', 'de');
+      window.localStorage.setItem('Locale', 'en');
     }
 
     $translateProvider
@@ -68,7 +68,8 @@ angular.module('starter', [
           orderData:  function(OrderService, $stateParams){
             return OrderService.getOrderById($stateParams.orderId);
           }
-        }
+        },
+        cache: false
       })
       .state('app.order.order-details', {
         url:'/order-details',
@@ -126,12 +127,15 @@ angular.module('starter', [
         url:'/confirm-delivery',
         views: {
           'mainContent@app': {
-            templateUrl: 'templates/confirm-delivery.html'
+            templateUrl: 'templates/confirm-delivery.html',
+            controller: "SignatureCtrl"
           }
         },
         authenticate: true,
-        params: {
-          order:null
+        resolve : {
+          orderData:  function(OrderService, $stateParams){
+            return OrderService.getOrderById($stateParams.orderId);
+          }
         }
       })
 

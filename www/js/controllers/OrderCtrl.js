@@ -20,7 +20,7 @@ angular.module('starter')
   };
 
   $scope.navigateToConfirmDelivery = function () {
-    $state.go('.confirm-delivery', {order: $scope.order});
+    $state.go('.confirm-delivery', {order: $scope.order.id});
   };
 
   $scope.printQrCodes = function () {

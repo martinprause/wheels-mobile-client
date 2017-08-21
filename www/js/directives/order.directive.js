@@ -1,5 +1,5 @@
 angular.module('starter')
-  .directive('order', function() {
+  .directive('order', function(utility) {
 
     return {
       restrict: 'E',
@@ -24,6 +24,7 @@ angular.module('starter')
         $scope.closeOrder = function () {
           $scope.ordeModel.hide();
         };
+        $scope.translateDefaultValue = utility.translate;
       }]
     }
   });

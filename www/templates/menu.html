@@ -15,22 +15,19 @@
 
   <ion-side-menu side="left">
     <ion-header-bar class="bar-stable">
-      <h1 class="title">Menu</h1>
+      <h1 class="title" translate="MENU_TITLE">Menu</h1>
     </ion-header-bar>
     <ion-content  ng-controller="SideMenuController">
       <div class="list">
 
         <label class="item item-input item-select">
-          <span class="input-label">
-            Change locale
-          </span>
-          <select  ng-model="currentLang" ng-change="changeLocale()">
+          <span class="input-label" translate="MENU_CHANGE_LOCALE"></span>
+          <select class="locale-select" ng-model="currentLang" ng-change="changeLocale()">
             <option value="en">EN</option>
             <option value="de">DE</option>
           </select>
         </label>
-        <a menu-close href="#" class="item" ng-click = "logout()">
-          Logout
+        <a menu-close href="#" class="item" ng-click = "logout()" translate="MENU_LOGOUT">Logout
         </a>
       </div>
     </ion-content>

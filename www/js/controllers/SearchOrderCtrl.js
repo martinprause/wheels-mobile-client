@@ -1,5 +1,5 @@
 angular.module('starter')
-  .controller('SearchOrderCtrl', function ($scope, $filter, $state, $http, ionicDatePicker) {
+  .controller('SearchOrderCtrl', function ($scope, $filter, $state, $http, ionicDatePicker, utility) {
     $scope.filterTypes = {type: ['created', 'deadlineFinish', 'deadlineDelivery']};
     $scope.selectedFilter = {type: $scope.filterTypes[0]};
     $scope.moreData = true;
@@ -13,6 +13,7 @@ angular.module('starter')
     $scope.resetFilters = resetFilters;
     $scope.loadMoreOrders = loadMoreOrders;
     $scope.openOrderMenu = openOrderMenu;
+    $scope.translateDefaultValue = utility.translate;
 
     function searchOrder(handler) {
       $scope.showLoader = true;

@@ -1,15 +1,19 @@
-<ion-view view-title="Assign driver" name="further-contacts-view">
+<ion-view view-title="{{'ASSIGN_DRIVER.TITLE' | translate}}" name="further-contacts-view">
   <ion-content class="has-header has-footer padding" scroll="false">
    <order order-data ="order"></order>
     <div class="text-center">
-      <button class="button button-positive button-full" ng-disabled="!(currentUser.role === 'DRIVER')" ng-click="assignMe()">Assign me</button>
-      <h2>or</h2>
+      <button class="button button-positive button-full" ng-disabled="!(currentUser.role === 'DRIVER')" ng-click="assignMe()">
+        <span translate="ASSIGN_DRIVER.ASSIGN_ME"></span>
+      </button>
+      <h2 translate="ASSIGN_DRIVER.OR"></h2>
       <div class="padding-bottom padding-top">
         <select  class="item item-input item-select col" name="drivers" id="driverSelect" ng-model="order.driver.id" title="Drivers list"
                 ng-options="driver.id as (driver.firstname + ' ' + driver.lastname) for driver in getAllDrivers()">
         </select>
       </div>
-      <button class="button button-positive button-full" ng-click="assignDriver()">Assign another driver</button>
+      <button class="button button-positive button-full" ng-click="assignDriver()">
+        <span translate="ASSIGN_DRIVER.ANOTHER"></span>
+      </button>
     </div>
   </ion-content>
 </ion-view>

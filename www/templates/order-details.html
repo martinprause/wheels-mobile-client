@@ -1,10 +1,10 @@
-<ion-view view-title="Order details">
+<ion-view view-title="{{ 'ORDER_DETAILS.TITLE' | translate }}">
   <ion-content class="header-padding padding" scroll="true" direction="y" overflow-scroll="false">
     <order order-data="order"  detailes="true"></order>
     <div>
       <div class="list">
         <div class="item row">
-          <b class="col text-center padding-vertical">Customer Contact</b>
+          <b class="col text-center padding-vertical" translate="ORDER_DETAILS.CUSTOMER_CONTACT"></b>
         </div>
         <div class="item row">
           <span class="col-33 padding-vertical bold-text" translate="ORDER_DETAILS.ADDRESS1"></span>
@@ -36,12 +36,12 @@
         </div>
       </div>
       <div class="row ">
-        <button class="button button-positive col no-wrap margin-block button-small" ng-click="showPictures()">Picture</button>
-        <button class="button button-positive col no-wrap margin-block button-small" ng-click="showSignature()">Signature</button>
+        <button class="button button-positive col no-wrap margin-block button-small" ng-click="showPictures()" translate="ORDER_DETAILS.PICTURE"></button>
+        <button class="button button-positive col no-wrap margin-block button-small" ng-click="showSignature()" translate="ORDER_DETAILS.SIGNATURE"></button>
       </div>
       <div class="row">
-        <button class=" button button-positive  col no-wrap margin-block button-small" ng-click="navigateToFurtherContacts()">Further Contacts</button>
-        <button class=" button button-positive  col no-wrap margin-block button-small" ng-click="showWheelsInfo()">Wheels Info</button>
+        <button class=" button button-positive  col no-wrap margin-block button-small" ng-click="navigateToFurtherContacts()" translate="ORDER_DETAILS.FURTHER_CONTACTS"></button>
+        <button class=" button button-positive  col no-wrap margin-block button-small" ng-click="showWheelsInfo()" translate="ORDER_DETAILS.WHEEL_RIMS"></button>
       </div>
     </div>
 

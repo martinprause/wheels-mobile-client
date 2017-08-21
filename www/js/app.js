@@ -168,27 +168,30 @@ angular.module('starter', [
       });
     $urlRouterProvider.otherwise('/app/selection')
   })
-  .run(function ($ionicPlatform, $rootScope, AuthService, $state, $location, $ionicHistory) {
-
+  .run(function ($ionicPlatform, $rootScope, AuthService, $state, $location, $ionicHistory, $translate) {
     $ionicPlatform.registerBackButtonAction(function(e){
-      if ($rootScope.backButtonPressedOnceToExit) {
-        ionic.Platform.exitApp();
-      }
+      var title = 'test';
+      $translate('BACK_BUTTON_TITLE').then(function (translation) {
+        title = translation;
+        if ($rootScope.backButtonPressedOnceToExit) {
+          ionic.Platform.exitApp();
+        }
 
-      else if ($ionicHistory.backView()) {
-        $ionicHistory.goBack();
-      }
-      else {
-        $rootScope.backButtonPressedOnceToExit = true;
-        window.plugins.toast.showShortBottom(
-          "Press back button again to exit",function(a){},function(b){}
-        );
-        setTimeout(function(){
-          $rootScope.backButtonPressedOnceToExit = false;
-        },1000);
-      }
-      e.preventDefault();
-      return false;
+        else if ($ionicHistory.backView()) {
+          $ionicHistory.goBack();
+        }
+        else {
+          $rootScope.backButtonPressedOnceToExit = true;
+          window.plugins.toast.showShortBottom(
+            title, function(a){}, function(b){}
+          );
+          setTimeout(function(){
+            $rootScope.backButtonPressedOnceToExit = false;
+          },1000);
+        }
+        e.preventDefault();
+        return false;
+      })
     },101);
 
     function onChangeStageStart(event, toState, toParams, fromState, fromParams) {
@@ -221,12 +224,17 @@ angular.module('starter', [
     });
   })
 
-.filter('ifEmpty', function() {
+  .service('utility', function ($filter) {
+    this.translate = function(value) {
+      return $filter('translate')(value)
+    }
+  })
+
+.filter('ifEmpty', function($filter) {
   return function (input, defaultValue) {
     if (angular.isUndefined(input) || input === null || input === '' || input.trim() === '') {
       return defaultValue;
     }
-
     return input;
   }
 });

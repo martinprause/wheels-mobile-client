@@ -1,10 +1,14 @@
-<ion-view view-title="Take Photo" name="take-photo-view" ng-controller="TakePhotoCtrl as ctrl">
+<ion-view view-title="{{'TAKE_PHOTO.TITLE' | translate}}" name="take-photo-view" ng-controller="TakePhotoCtrl as ctrl">
   <ion-content direction="y" class="has-header" scroll="true">
     <order order-data="ctrl.order"></order>
     <div class="button-block">
       <div class="row">
-        <button class="button button-positive button-full margin-block" ng-click="ctrl.submitPhoto()">Submit photo</button>
-        <button class="button button-positive button-full margin-block" ng-click="ctrl.clearPhoto()">Clear photo</button>
+        <button class="button button-positive button-full margin-block" ng-click="ctrl.submitPhoto()">
+          <span translate="TAKE_PHOTO.SUBMIT"></span>
+        </button>
+        <button class="button button-positive button-full margin-block" ng-click="ctrl.clearPhoto()">
+          <span translate="TAKE_PHOTO.CLEAR"></span>
+        </button>
       </div>
     </div>
     <ion-slide-box show-pager="true" class="slider-panel" on-slide-changed="ctrl.onSlideChanged(index)">

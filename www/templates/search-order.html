@@ -1,11 +1,11 @@
-<ion-view view-title="Search Order" name="search-order-view" ng-controller="SearchOrderCtrl" ng-init="searchOrder()" class="search-order-page">
+<ion-view view-title="{{ 'SEARCH_ORDER_TITLE' | translate }}" name="search-order-view" ng-controller="SearchOrderCtrl" ng-init="searchOrder()" class="search-order-page">
   <ion-content direction="y" class="has-header " overflow-scroll="false" scroll="false">
     <div class="search-input">
       <div class="search-filter row">
         <span class="col-25 padding-vertical" translate="SEARCH_ORDER.GEN_FILTER">General filter:</span>
         <label  class="item item-input col-75 custom-search">
           <i class="icon ion-search placeholder-icon"></i>
-          <input type="text" placeholder="Search" ng-model="search.$">
+          <input type="text" placeholder="{{ 'SEARCH_ORDER_PLACEHOLDER' | translate }}" ng-model="search.$">
         </label>
       </div>
       <div class="date-filter row">
@@ -17,7 +17,7 @@
         </select>
         <div ng-click="openDatePicker()" class="calendar-block">
           <img src="img/calendar.png">
-          <span  ng-bind="formattedValue | ifEmpty : 'No data selected'"></span>
+          <span ng-bind="formattedValue | ifEmpty : translateDefaultValue('ORDER_TEMPLATE.DATE_EMPTY')"></span>
         </div>
       </div>
     <div class="row">

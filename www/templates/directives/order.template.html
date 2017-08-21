@@ -19,11 +19,11 @@
   </div>
   <div class="row">
       <div  class="col-33 padding-vertical bold-text" translate="ORDER_TEMPLATE.DRIVER"></div>
-      <span class="col padding-vertical" ng-bind="orderData.driver.firstname + ' ' + orderData.driver.lastname | ifEmpty : 'hui'"></span>
+      <span class="col padding-vertical" ng-bind="orderData.driver.firstname + ' ' + orderData.driver.lastname | ifEmpty : translateDefaultValue('ORDER_TEMPLATE.DRIVER_EMPTY')"></span>
   </div>
   <div class="row">
     <div  class="col-33 padding-vertical  bold-text" translate="ORDER_TEMPLATE.DEADLINE"></div>
-    <span class="col padding-vertical" ng-bind="orderData.deadlineFinish"></span>
+    <span class="col padding-vertical" ng-bind="orderData.deadlineFinish | ifEmpty: translateDefaultValue('ORDER_TEMPLATE.DATE_EMPTY')"></span>
   </div>
 
 </div>

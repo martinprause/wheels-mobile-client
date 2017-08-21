@@ -1,4 +1,4 @@
-<ion-view view-title="Update Status" name="status-update-view" class="status-update-page" >
+<ion-view view-title="{{'STATUS_UPDATE.TITLE' | translate}}" name="status-update-view" class="status-update-page" >
   <ion-content direction="y" class="has-header" scroll="false">
     <order order-data="order"></order>
     <div class="empty-message">
@@ -46,20 +46,24 @@
           <div >
             <button class="btn-status" ng-class="{'status-active' : currentPosition.status === 'IN_PROCESS'}" ng-click="updateStatus('IN_PROCESS')">
               <i class="icon ion-wrench"></i>
-              In Process</button>
+              <span translate="STATUS_UPDATE.IN_PROCESS"></span>
+            </button>
           </div>
         </div>
         <div class="col text-center">
-          <div >
+          <div>
             <button class="btn-status" ng-class="{'status-active' : currentPosition.status === 'PROCESSED'}" ng-click="updateStatus('PROCESSED')">
               <i class="icon ion-thumbsup"></i>
-              Processed</button>
+              <span translate="STATUS_UPDATE.PROCESSED"></span>
+            </button>
           </div>
         </div>
         <div class="col text-center">
           <div >
             <button class="btn-status" ng-class="{'status-active' : currentPosition.status === 'IN_DELIVERY'}" ng-click="updateStatus('IN_DELIVERY')">
-              <i class="icon ion-social-twitter"></i>In Delivery</button>
+              <i class="icon ion-social-twitter"></i>
+              <span  translate="STATUS_UPDATE.IN_DELIVERY"></span>
+            </button>
           </div>
         </div>
       </div>

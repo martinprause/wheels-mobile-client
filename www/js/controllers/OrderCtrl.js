@@ -1,6 +1,6 @@
 angular.module('starter')
 
-.controller('OrderCtrl', function ($scope, $stateParams, $state, $ionicPopup, $http, orderData) {
+.controller('OrderCtrl', function ($scope, $stateParams, $state, $ionicPopup, $http, orderData, $translate) {
   $scope.order = orderData.data;
 
   $scope.navigateToOrderDetails = function () {
@@ -27,17 +27,35 @@ angular.module('starter')
 
     $http.post('/print-job?orderId=' + $scope.order.id + '&userId=' + 0)
       .then(function (result) {
-          console.log(result);
-          $ionicPopup.alert({
-            title: 'Print',
-            template: 'Order has been sent to the printer'
-          });
+        var title = '';
+        var template = '';
+        $translate('PRINTER.POPUP_TITLE')
+          .then(function (translation) {
+            title = translation;
+            $translate('PRINTER.SUCCESS_POPUP').then(function(translation){
+              template = translation;
+              $ionicPopup.alert({
+                title: title,
+                template: template
+              });
+            })
+          })
         },
         function (error) {
-          $ionicPopup.alert({
-            title: 'Print',
-            template: 'Order has not been sent to the printer'
-          });
+          var title = '';
+          var template = '';
+          $translate('PRINTER.POPUP_TITLE')
+            .then(function (translation) {
+              title = translation;
+              $translate('PRINTER.SUCCESS_POPUP').then(function(translation){
+                template = translation;
+                $ionicPopup.alert({
+                  title: title,
+                  template: template
+                });
+              })
+            })
+
         }
       );
   };

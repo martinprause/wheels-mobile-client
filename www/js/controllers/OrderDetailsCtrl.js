@@ -11,7 +11,7 @@ angular.module('starter')
   $scope.wheelsRimPicture4 = "";
   $scope.signature = "";
 
-  $ionicModal.fromTemplateUrl('templates/wheels-modal.html', function(modal) {
+  $ionicModal.fromTemplateUrl('templates/picture-modal.html', function(modal) {
     $scope.pictureModal = modal;
   }, {
     scope: $scope,

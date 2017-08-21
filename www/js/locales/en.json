@@ -2,9 +2,18 @@
   "USERNAME" : "Username",
   "PASSWORD" : "Password",
   "LOGIN_BUTTON" : "Login",
+  "LOGIN_BAD_CREDENTIALS": "Bad credentials",
+  "LOGIN_TITLE": "Login",
+
+  "MENU_TITLE": "Menu",
+  "MENU_CHANGE_LOCALE": "Change locale",
+  "MENU_LOGOUT": "Logout",
+
   "SELECTION.CONTACTS.LABEL" : "Contact:",
   "SELECTION.SCAN.BUTTON" : "Scan QR-code",
   "SELECTION.ORDERS.BUTTON" : "Search Order",
+  "SELECTION_TITLE": "Main",
+
   "ORDER_TEMPLATE.CUSTOMER" : "Customer:",
   "ORDER_TEMPLATE.CREATED" : "Created:",
   "ORDER_TEMPLATE.DEADLINE" : "Deadline:",
@@ -13,6 +22,9 @@
   "ORDER_TEMPLATE.DRIVER" : "Driver:",
   "ORDER_TEMPLATE.DETAILS" : "More Details",
   "ORDER_TEMPLATE.CUSTOMER_NO" : "Customer order No",
+  "ORDER_TEMPLATE.DRIVER_EMPTY" : "No driver selected",
+  "ORDER_TEMPLATE.DATE_EMPTY": "No date selected",
+
   "ORDER_DETAILS.ADDRESS1" : "Address 1",
   "ORDER_DETAILS.ADDRESS2" : "Address 2",
   "ORDER_DETAILS.ZIP" : "Zip and City",
@@ -20,6 +32,13 @@
   "ORDER_DETAILS.EMAIL" : "Email",
   "ORDER_DETAILS.PHONE" : "Phone",
   "ORDER_DETAILS.MOBILE" : "Mobile",
+  "ORDER_DETAILS.CUSTOMER_CONTACT" : "Customer Contact",
+  "ORDER_DETAILS.PICTURE" : "Picture",
+  "ORDER_DETAILS.SIGNATURE" : "Signature",
+  "ORDER_DETAILS.FURTHER_CONTACTS" : "Further contacts",
+  "ORDER_DETAILS.WHEEL_RIMS" : "Wheel rims",
+  "ORDER_DETAILS.TITLE" : "Order details",
+
   "SEARCH_ORDER.GEN_FILTER" : "General filter:",
   "SEARCH_ORDER.DATE_FILTER" : "Date filter:",
   "SEARCH_ORDER.SELECT_DATE_BUTTON" : "Select date:",
@@ -27,5 +46,51 @@
   "SEARCH_ORDER.DATE_FILTER.CREATED" : "Created",
   "SEARCH_ORDER.DATE_FILTER.DEADLINE" : "Deadline",
   "SEARCH_ORDER.DATE_FILTER.DELIVERY" : "Delivery",
-  "STATUS_UPDATE.EMPTY_MESSAGE": "No wheel rims presented in order"
+  "SEARCH_ORDER_TITLE": "Search Order",
+  "SEARCH_ORDER_PLACEHOLDER": "Search",
+
+  "ORDER.ORDER_DETAILS": "Order Details",
+  "ORDER.UPDATE_STATUS": "Update Status",
+  "ORDER.ASSIGN_DRIVER": "Assign Driver",
+  "ORDER.TAKE_PHOTO": "Take Photo",
+  "ORDER.CONFIRM_DELIVERY": "Confirm Delivery",
+  "ORDER.PRINT_QRCODES": "Print QR-codes",
+  "ORDER.TITLE": "Order",
+
+  "STATUS_UPDATE.EMPTY_MESSAGE": "No wheel rims presented in order",
+  "STATUS_UPDATE.TITLE": "Update Status",
+  "STATUS_UPDATE.IN_PROCESS": "In Process",
+  "STATUS_UPDATE.PROCESSED": "Processed",
+  "STATUS_UPDATE.IN_DELIVERY": "In Delivery",
+  "STATUS_UPDATE.POPUP_TITLE_ERROR": "Error",
+  "STATUS_UPDATE.POPUP_BODY_ERROR": "No wheel rims presented in order!",
+  "STATUS_UPDATE.POPUP_TITLE_SUCCESS": "Update status",
+  "STATUS_UPDATE.POPUP_BODY_SUCCESS": "Do you want to update status of current wheel rim?",
+
+  "FURTHER_CONTACTS.TITLE": "Further Contacts",
+
+  "ASSIGN_DRIVER.TITLE": "Assign Driver",
+  "ASSIGN_DRIVER.ASSIGN_ME": "Assign me",
+  "ASSIGN_DRIVER.OR": "or",
+  "ASSIGN_DRIVER.ANOTHER": "Assign another driver",
+
+
+
+  "TAKE_PHOTO.TITLE": "Take Photo",
+  "TAKE_PHOTO.SUBMIT": "Submit Photo",
+  "TAKE_PHOTO.CLEAR": "Clear Photo",
+
+  "CONFIRM_DELIVERY.TITLE": "Confirm Delivery",
+  "CONFIRM_DELIVERY.USERNAME": "Username",
+  "CONFIRM_DELIVERY.PLACEHOLDER": "Signature name",
+  "CONFIRM_DELIVERY.SIGNATURE": "Signature*:",
+  "CONFIRM_DELIVERY.CONFIRM": "Confirm",
+  "CONFIRM_DELIVERY.CLEAR": "Clear",
+
+  "PRINTER.POPUP_TITLE": "Print",
+  "PRINTER.SUCCESS_POPUP": "Order has been sent to the printer!",
+  "PRINTER.FAIL_POPUP": "Order has not been sent to the printer!",
+
+  "BACK_BUTTON_TITLE": "Press back button again to exit"
+
 }

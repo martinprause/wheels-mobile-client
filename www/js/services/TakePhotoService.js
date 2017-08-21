@@ -1,11 +1,10 @@
 angular.module('starter')
 
-  .service('TakePhotoService', function ($http, $stateParams, $cordovaCamera) {
-    this.order = $stateParams.order;
-    this.takePhoto = takePhoto;
-    this.submitPhoto = submitPhoto;
-
-    var self = this;
+  .service('TakePhotoService', function ($http, $cordovaCamera) {
+    return {
+      takePhoto: takePhoto,
+      submitPhoto: submitPhoto
+    };
 
     function takePhoto(onSuccess, onFail) {
       var options = {
@@ -24,15 +23,15 @@ angular.module('starter')
       $cordovaCamera.getPicture(options).then(onSuccess, onFail);
     }
 
-    function submitPhoto() {
+    function submitPhoto(order) {
       var data = new FormData();
-      var wheelsRimPicture1 = self.order.wheelsRimPicture1;
+      var wheelsRimPicture1 = order.wheelsRimPicture1;
       data.append("wheel1", wheelsRimPicture1 === null ? null : data64toBlob(wheelsRimPicture1));
-      var wheelsRimPicture2 = self.order.wheelsRimPicture2;
+      var wheelsRimPicture2 = order.wheelsRimPicture2;
       data.append("wheel2", wheelsRimPicture2 === null ? null : data64toBlob(wheelsRimPicture2));
-      var wheelsRimPicture3 = self.order.wheelsRimPicture3;
+      var wheelsRimPicture3 = order.wheelsRimPicture3;
       data.append("wheel3", wheelsRimPicture3 === null ? null : data64toBlob(wheelsRimPicture3));
-      var wheelsRimPicture4 = self.order.wheelsRimPicture4;
+      var wheelsRimPicture4 = order.wheelsRimPicture4;
       data.append("wheel4", wheelsRimPicture4 === null ? null : data64toBlob(wheelsRimPicture4));
 
       var config = {
@@ -40,7 +39,7 @@ angular.module('starter')
           'Content-Type': undefined
         }
       };
-      var url = "/file/wheel-rim/?orderId=" + self.order.id;
+      var url = "/file/wheel-rim/?orderId=" + order.id;
       console.log(url);
       $http.post(url, data, config)
         .success(function (data) {

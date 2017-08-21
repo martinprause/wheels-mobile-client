@@ -1,27 +1,26 @@
 angular.module('starter')
 
-  .controller('TakePhotoCtrl', function ($scope, TakePhotoService) {
-    this.order = TakePhotoService.order;
-    this.EMPTY_IMG_PATH = 'img/no_image.png';
-    this.BASE64_PREFIX = "data:image/jpeg;base64,";
-    this.slides = ['wheelsRimPicture1', 'wheelsRimPicture2', 'wheelsRimPicture3', 'wheelsRimPicture4'];
-    this.selectedImg = document.querySelector('#photo1');
-    this.takePhoto = takePhoto;
-    this.clearPhoto = clearPhoto;
-    this.submitPhoto = submitPhoto;
-    this.onSlideChanged = onSlideChanged;
-    this.init = init;
+  .controller('TakePhotoCtrl', function ($scope, TakePhotoService, $stateParams, OrderService) {
 
-    var self = this;
+    $scope.EMPTY_IMG_PATH = 'img/no_image.png';
+    $scope.BASE64_PREFIX = "data:image/jpeg;base64,";
+    $scope.slides = ['wheelsRimPicture1', 'wheelsRimPicture2', 'wheelsRimPicture3', 'wheelsRimPicture4'];
+    $scope.selectedImg = document.querySelector('#photo1');
+    $scope.takePhoto = takePhoto;
+    $scope.clearPhoto = clearPhoto;
+    $scope.submitPhoto = submitPhoto;
+    $scope.onSlideChanged = onSlideChanged;
+    $scope.init = init;
+
     function takePhoto() {
-      if(self.selectedImg.src.indexOf(self.EMPTY_IMG_PATH) < 0){
+      if($scope.selectedImg.src.indexOf($scope.EMPTY_IMG_PATH) < 0){
         return;
       }
       TakePhotoService.takePhoto(onSuccess, onFail);
 
       function onSuccess(imageData) {
-        self.selectedImg.src = self.BASE64_PREFIX + imageData;
-        self.order[self.selectedImg.id] = imageData;
+        $scope.selectedImg.src = $scope.BASE64_PREFIX + imageData;
+        $scope.order[$scope.selectedImg.id] = imageData;
       }
 
       function onFail(message) {
@@ -30,45 +29,48 @@ angular.module('starter')
     }
 
     function clearPhoto() {
-      self.selectedImg.src = self.EMPTY_IMG_PATH;
-      self.order[self.selectedImg.id] = null;
+      $scope.selectedImg.src = $scope.EMPTY_IMG_PATH;
+      $scope.order[$scope.selectedImg.id] = null;
     }
 
     function submitPhoto() {
-      TakePhotoService.submitPhoto();
+      TakePhotoService.submitPhoto($scope.order);
     }
 
     function onSlideChanged(index) {
-      self.selectedImg = document.querySelector('#' + self.slides[index]);
-      console.log(self.selectedImg);
+      $scope.selectedImg = document.querySelector('#' + $scope.slides[index]);
+      console.log($scope.selectedImg);
     }
 
     function init() {
-      var wheelsRimPicture1 = document.querySelector('#' + self.slides[0]);
-      var wheelsRimPicture2 = document.querySelector('#' + self.slides[1]);
-      var wheelsRimPicture3 = document.querySelector('#' + self.slides[2]);
-      var wheelsRimPicture4 = document.querySelector('#' + self.slides[3]);
-      self.selectedImg = wheelsRimPicture1;
-      var order = self.order;
-      if(order.wheelsRimPicture1 !== null) {
-        wheelsRimPicture1.src = self.BASE64_PREFIX + order.wheelsRimPicture1;
-      } else {
-        wheelsRimPicture1.src = self.EMPTY_IMG_PATH;
-      }
-      if(order.wheelsRimPicture2 !== null) {
-        wheelsRimPicture2.src = self.BASE64_PREFIX + order.wheelsRimPicture2;
-      } else {
-        wheelsRimPicture2.src = self.EMPTY_IMG_PATH;
-      }
-      if(order.wheelsRimPicture3 !== null) {
-        wheelsRimPicture3.src = self.BASE64_PREFIX + order.wheelsRimPicture3;
-      } else {
-        wheelsRimPicture3.src = self.EMPTY_IMG_PATH;
-      }
-      if(order.wheelsRimPicture4 !== null) {
-        wheelsRimPicture4.src = self.BASE64_PREFIX + order.wheelsRimPicture4;
-      } else {
-        wheelsRimPicture4.src = self.EMPTY_IMG_PATH;
-      }
+      OrderService.getOrderById($stateParams.orderId).then(function (result) {
+        $scope.order = result.data;
+        var wheelsRimPicture1 = document.querySelector('#' + $scope.slides[0]);
+        var wheelsRimPicture2 = document.querySelector('#' + $scope.slides[1]);
+        var wheelsRimPicture3 = document.querySelector('#' + $scope.slides[2]);
+        var wheelsRimPicture4 = document.querySelector('#' + $scope.slides[3]);
+        $scope.selectedImg = wheelsRimPicture1;
+        var order = $scope.order;
+        if(order.wheelsRimPicture1 !== null) {
+          wheelsRimPicture1.src = $scope.BASE64_PREFIX + order.wheelsRimPicture1;
+        } else {
+          wheelsRimPicture1.src = $scope.EMPTY_IMG_PATH;
+        }
+        if(order.wheelsRimPicture2 !== null) {
+          wheelsRimPicture2.src = $scope.BASE64_PREFIX + order.wheelsRimPicture2;
+        } else {
+          wheelsRimPicture2.src = $scope.EMPTY_IMG_PATH;
+        }
+        if(order.wheelsRimPicture3 !== null) {
+          wheelsRimPicture3.src = $scope.BASE64_PREFIX + order.wheelsRimPicture3;
+        } else {
+          wheelsRimPicture3.src = $scope.EMPTY_IMG_PATH;
+        }
+        if(order.wheelsRimPicture4 !== null) {
+          wheelsRimPicture4.src = $scope.BASE64_PREFIX + order.wheelsRimPicture4;
+        } else {
+          wheelsRimPicture4.src = $scope.EMPTY_IMG_PATH;
+        }
+      });
     }
   });

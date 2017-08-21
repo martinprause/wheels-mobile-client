@@ -16,7 +16,7 @@ angular.module('starter')
   };
 
   $scope.navigateToTakePhoto = function () {
-    $state.go('.take-photo', {order: $scope.order});
+    $state.go('.take-photo', {order: $scope.order.id});
   };
 
   $scope.navigateToConfirmDelivery = function () {

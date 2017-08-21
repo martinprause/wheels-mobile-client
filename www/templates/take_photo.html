@@ -1,30 +1,30 @@
-<ion-view view-title="{{'TAKE_PHOTO.TITLE' | translate}}" name="take-photo-view" ng-controller="TakePhotoCtrl as ctrl">
+<ion-view view-title="{{'TAKE_PHOTO.TITLE' | translate}}" name="take-photo-view" ng-controller="TakePhotoCtrl">
   <ion-content direction="y" class="has-header" scroll="true">
-    <order order-data="ctrl.order"></order>
+    <order order-data="order"></order>
     <div class="button-block">
       <div class="row">
-        <button class="button button-positive button-full margin-block" ng-click="ctrl.submitPhoto()">
+        <button class="button button-positive button-full margin-block" ng-click="submitPhoto()">
           <span translate="TAKE_PHOTO.SUBMIT"></span>
         </button>
-        <button class="button button-positive button-full margin-block" ng-click="ctrl.clearPhoto()">
+        <button class="button button-positive button-full margin-block" ng-click="clearPhoto()">
           <span translate="TAKE_PHOTO.CLEAR"></span>
         </button>
       </div>
     </div>
-    <ion-slide-box show-pager="true" class="slider-panel" on-slide-changed="ctrl.onSlideChanged(index)">
-      <ion-slide ng-click="ctrl.takePhoto()">
+    <ion-slide-box show-pager="true" class="slider-panel" on-slide-changed="onSlideChanged(index)">
+      <ion-slide ng-click="takePhoto()">
         <img src="" height="200px" width="200px" id="wheelsRimPicture1">
       </ion-slide>
-      <ion-slide ng-click="ctrl.takePhoto()">
+      <ion-slide ng-click="takePhoto()">
         <img src="" height="200px" width="200px" id="wheelsRimPicture2">
       </ion-slide>
-      <ion-slide ng-click="ctrl.takePhoto()">
+      <ion-slide ng-click="takePhoto()">
         <img src="" height="200px" width="200px" id="wheelsRimPicture3">
       </ion-slide>
-      <ion-slide ng-click="ctrl.takePhoto()">
+      <ion-slide ng-click="takePhoto()">
         <img src="" height="200px" width="200px" id="wheelsRimPicture4">
       </ion-slide>
     </ion-slide-box>
   </ion-content>
-  <div data-ng-init="ctrl.init()"></div>
+  <div data-ng-init="init()"></div>
 </ion-view>

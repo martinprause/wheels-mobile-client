@@ -163,7 +163,7 @@ angular.module('starter', [
         controller: 'TakePhotoCtrl',
         authenticate: false,
         params: {
-          order: null
+          orderId: null
         }
       });
     $urlRouterProvider.otherwise('/app/selection')

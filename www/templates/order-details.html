@@ -37,7 +37,7 @@
       </div>
       <div class="row ">
         <button class="button button-positive col no-wrap margin-block button-small" ng-click="showPictures()" translate="ORDER_DETAILS.PICTURE"></button>
-        <button class="button button-positive col no-wrap margin-block button-small" ng-click="showSignature()" translate="ORDER_DETAILS.SIGNATURE"></button>
+        <button class="button button-positive col no-wrap margin-block button-small" ng-click="showSignature()" translate="ORDER_DETAILS.SIGNATURE" ng-disabled="order.status !== 'DELIVERED'"></button>
       </div>
       <div class="row">
         <button class=" button button-positive  col no-wrap margin-block button-small" ng-click="navigateToFurtherContacts()" translate="ORDER_DETAILS.FURTHER_CONTACTS"></button>

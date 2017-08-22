@@ -32,11 +32,11 @@ angular.module('starter')
     })
     .state('app.order', {
       url:'/order/:orderId',
+      cache: false,
       views: {
         'mainContent': {
           templateUrl: 'templates/order.html',
-          controller: 'OrderCtrl',
-          cash:false
+          controller: 'OrderCtrl'
         }
       },
       authenticate: true,
@@ -44,17 +44,15 @@ angular.module('starter')
         orderData:  function(OrderService, $stateParams){
           return OrderService.getOrderById($stateParams.orderId);
         }
-      },
-      cache: false
+      }
     })
     .state('app.order.order-details', {
-      cash:false,
       url:'/order-details',
+      cash: false,
       views: {
         'mainContent@app': {
           templateUrl: 'templates/order-details.html',
-          controller: 'OrderDetailsCtrl',
-          cash:false
+          controller: 'OrderDetailsCtrl'
         }
       },
       authenticate: true,
@@ -99,7 +97,6 @@ angular.module('starter')
           return OrderService.getOrderById($stateParams.orderId);
         }
       },
-      cache: false
     })
     .state('app.order.confirm-delivery', {
       url:'/confirm-delivery',

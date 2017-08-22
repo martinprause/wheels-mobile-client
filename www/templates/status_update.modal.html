@@ -1,0 +1,27 @@
+<div class="modal transparent">
+
+  <div class="transparent modal-container">
+    <div class="header-block" ng-click="closeSelect()">
+
+    </div>
+    <div class="buttons-block">
+      <div class="list">
+        <a class="item item-icon-left item-icon-right"  ng-click="updateStatus('IN_PROCESS')">
+          <i class="icon ion-wrench"></i>
+          In Process
+          <i class="icon ion-checkmark-round" ng-show="currentPosition.status === 'IN_PROCESS'"></i>
+        </a>
+        <a class="item item-icon-left item-icon-right"  ng-click="updateStatus('PROCESSED')">
+          <i class="icon ion-thumbsup"></i>
+          Processed
+          <i class="icon ion-checkmark-round" ng-show="currentPosition.status === 'PROCESSED'"></i>
+        </a>
+        <a class="item item-icon-left item-icon-right"  ng-click="updateStatus('IN_DELIVERY')">
+          <i class="icon ion-social-twitter"></i>
+          In Delivery
+          <i class="icon ion-checkmark-round" ng-show="currentPosition.status === 'IN_DELIVERY'"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

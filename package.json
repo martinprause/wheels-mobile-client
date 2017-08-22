@@ -48,13 +48,9 @@
         ]
     },
     "scripts": {
-      "clean": "ionic-app-scripts clean",
-      "build": "ionic cordova build android --prod ",
-      "lint": "ionic-app-scripts lint",
-      "ionic:build": "ionic-app-scripts build",
-      "ionic:serve": "ionic-app-scripts serve",
-      "signArm7": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore platforms/android/build/outputs/apk/android-release-unsigned.apk alias_name  -storepass justDoIt",
-      "optimizeArm7": "rm build/HypeArm7.apk &&  ~/Android/Sdk/build-tools/25.0.2/zipalign -v 4 platforms/android/build/outputs/apk/android-release-unsigned.apk build/HypeArm7.apk",
+      "build": "cordova build android --prod --release",
+      "signArm7": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.jks platforms/android/build/outputs/apk/android-release-unsigned.apk my-alias  -storepass justdoit",
+      "optimizeArm7": "rm FelgenWieNeu.apk && /home/gorbach/android-sdk-linux/build-tools/26.0.1/zipalign -v 4 platforms/android/build/outputs/apk/android-release-unsigned.apk FelgenWieNeu.apk",
       "build:apk": " npm run build && npm run signArm7 && npm run optimizeArm7"
     }
 }

@@ -32,28 +32,26 @@
   "ORDER_DETAILS.EMAIL" : "Email",
   "ORDER_DETAILS.PHONE" : "Phone",
   "ORDER_DETAILS.MOBILE" : "Mobile",
-
   "ORDER_DETAILS.MANUFACTURE" : "Manufacture Wheel",
   "ORDER_DETAILS.WHEEl" : "Wheel",
   "ORDER_DETAILS.MODEL" : "Model",
   "ORDER_DETAILS.MODEL_TYPE" : "Model Type",
-  "ORDER_DETAILS.SIUE" : "Siue",
   "ORDER_DETAILS.HUB_COVER" : "Hub Cover",
   "ORDER_DETAILS.VALVE" : "Valve",
   "ORDER_DETAILS.STATUS" : "STATUS",
-  "ORDER_DETAILS.MANUFACTURE_RIM" : "Manufacture Rim",
-  "ORDER_DETAILS.WIGHT" : "Wight",
+  "ORDER_DETAILS.MANUFACTURE_RIM" : "Manufacturer Rim",
+  "ORDER_DETAILS.WIDTH": "Wight",
   "ORDER_DETAILS.HEIGHT" : "Height",
   "ORDER_DETAILS.DIAMETER" : "Diameter",
   "ORDER_DETAILS.INDEX" : "Index",
   "ORDER_DETAILS.SPEED" : "Speed",
-
   "ORDER_DETAILS.CUSTOMER_CONTACT" : "Customer Contact",
   "ORDER_DETAILS.PICTURE" : "Picture",
   "ORDER_DETAILS.SIGNATURE" : "Signature",
   "ORDER_DETAILS.FURTHER_CONTACTS" : "Further contacts",
   "ORDER_DETAILS.WHEEL_RIMS" : "Wheel rims",
   "ORDER_DETAILS.TITLE" : "Order details",
+  "ORDER_DETAILS.MODAL.TITLE" : "Wheel rims",
 
   "SEARCH_ORDER.GEN_FILTER" : "General filter:",
   "SEARCH_ORDER.DATE_FILTER" : "Date filter:",
@@ -62,7 +60,6 @@
   "SEARCH_ORDER.DATE_FILTER.CREATED" : "Created",
   "SEARCH_ORDER.DATE_FILTER.DEADLINE" : "Deadline",
   "SEARCH_ORDER.DATE_FILTER.DELIVERY" : "Delivery",
-
   "SEARCH_ORDER_TITLE": "Search Order",
   "SEARCH_ORDER_PLACEHOLDER": "Search",
 
@@ -90,8 +87,6 @@
   "ASSIGN_DRIVER.ASSIGN_ME": "Assign me",
   "ASSIGN_DRIVER.OR": "or",
   "ASSIGN_DRIVER.ANOTHER": "Assign another driver",
-
-
 
   "TAKE_PHOTO.TITLE": "Take Photo",
   "TAKE_PHOTO.SUBMIT": "Submit Photo",

@@ -3,10 +3,11 @@
     <div class="search-input">
       <div class="search-filter row">
         <span class="col-25 padding-vertical" translate="SEARCH_ORDER.GEN_FILTER">General filter:</span>
-        <label  class="item item-input col-75 custom-search">
+        <label  class="item item-input col custom-search" style="display: inherit">
           <i class="icon ion-search placeholder-icon"></i>
           <input type="text" placeholder="{{ 'SEARCH_ORDER_PLACEHOLDER' | translate }}" ng-model="search.$">
         </label>
+        <button class="button button-positive button-small no-wrap margin-left" translate="SEARCH_ORDER.RESET_FILTERS" ng-click="resetFilters()">Reset filters</button>
       </div>
       <div class="date-filter row">
         <span class="col-25 padding-vertical" translate="SEARCH_ORDER.DATE_FILTER"></span>
@@ -20,9 +21,6 @@
           <span ng-bind="formattedValue | ifEmpty : translateDefaultValue('ORDER_TEMPLATE.DATE_EMPTY')"></span>
         </div>
       </div>
-    <div class="row">
-      <button class="button button-positive button-small" translate="SEARCH_ORDER.RESET_FILTERS" ng-click="resetFilters()">Reset filters</button>
-    </div>
     </div>
     <ion-scroll>
       <ion-list>

@@ -1,6 +1,6 @@
 .status-update-page{
   .slider-block{
-    height: 60vw;
+    //height: 60vw;
     .slider-slides{
       .no-margin-card{
         margin: 0 !important;
@@ -12,9 +12,22 @@
     padding-top: 100px;
     position: absolute;
     width: 100%;
-      span{
-        color: #880000;
-        font-weight: 600;
-      }
+    span{
+      color: #880000;
+      font-weight: 600;
     }
+  }
+}
+.modal-container{
+  position: absolute;
+  width: 100%;
+  flex-direction: column;
+  height: 100%;
+  display: flex;
+  .header-block{
+    flex: 1 1 auto
+  }
+  .buttons-block{
+    flex:  0 0 auto;
+  }
 }

@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
   .search-input{
-    height: 140px;
+    height: 100px;
     .row{
       margin: 4px 0;
     }
@@ -16,7 +16,7 @@
     }
   }
   ion-scroll{
-    height: calc(100% - 140px);
+    height: calc(100% - 100px);
   }
   .calendar-block{
     display: flex;

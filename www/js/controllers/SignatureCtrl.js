@@ -20,7 +20,8 @@ angular.module('starter')
     $ionicPopup.confirm({
       title: 'Confirm delivery',
       template: 'Do you want to confirm delivery?'
-    }).then(function (result) {
+    })
+      .then(function (result) {
       if (result) {
         $scope.signature = signaturePad.toDataURL();
         SignatureService.saveSignature($scope.signature, $scope.order.id, $scope.signatureName.value).then(function (result) {

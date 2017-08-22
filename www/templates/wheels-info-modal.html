@@ -6,28 +6,58 @@
     </button>
   </ion-header-bar>
   <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="wheelRim in order.wheelRimPositions">
-        <div>
-          <div class="details-scroll-element">
-            <div ng-bind="wheelRim.manufacturerWheel.description"></div>
-            <div ng-bind="wheelRim.model.description"></div>
-            <div ng-bind="wheelRim.modelType.description"></div>
-            <div ng-bind="wheelRim.size"></div>
-            <div ng-bind="wheelRim.hubCover"></div>
-            <div ng-bind="wheelRim.valveType.description"></div>
-          </div>
-          <div class="details-scroll-element">
-            <div ng-bind="wheelRim.status"></div>
-            <div ng-bind="wheelRim.manufacturerRim.description"></div>
-            <div ng-bind="wheelRim.width"></div>
-            <div ng-bind="wheelRim.height"></div>
-            <div ng-bind="wheelRim.diameter"></div>
-            <div ng-bind="wheelRim.indexVal"></div>
-            <div ng-bind="wheelRim.speed"></div>
-          </div>
+    <div class="list">
+      <div ng-repeat="wheelRim in order.wheelRimPositions | orderBy:'positionNo'">
+        <div class="item item-divider" >{{::'ORDER_DETAILS.WHEEl' | translate}} {{::wheelRim.positionNo}}</div>
+        <div class="item row">
+          <div class="col" translate="ORDER_DETAILS.MANUFACTURE"></div>
+          <span class="col" ng-bind="wheelRim.manufacturerWheel.description"></span>
         </div>
-      </ion-item>
-    </ion-list>
+        <div class="item row">
+          <div class="col" translate="ORDER_DETAILS.MODEL"></div>
+          <div class="col" ng-bind="wheelRim.model.description"></div>
+        </div>
+        <div class="item row">
+          <div class="col" translate="ORDER_DETAILS.MODEL_TYPE"></div>
+          <div class="col" ng-bind="wheelRim.modelType.description"></div>
+        </div>
+        <div class="item row">
+          <div class="col" translate="ORDER_DETAILS.HUB_COVER"></div>
+          <div class="col" ng-bind="wheelRim.hubCover"></div>
+        </div>
+        <div class="item row">
+          <div class="col" translate="ORDER_DETAILS.VALVE"></div>
+          <div class="col" ng-bind="wheelRim.valveType.description"></div>
+        </div>
+        <div class="item row">
+          <div class="col" translate="ORDER_DETAILS.STATUS"></div>
+          <div class="col" ng-bind="wheelRim.status"></div>
+        </div>
+        <div class="item row">
+          <div class="col" translate="ORDER_DETAILS.MANUFACTURE_RIM"></div>
+          <div class="col" ng-bind="wheelRim.manufacturerRim.description"></div>
+        </div>
+        <div class="item row">
+          <div class="col" translate="ORDER_DETAILS.WIGHT"></div>
+          <div class="col" ng-bind="wheelRim.width"></div>
+        </div>
+        <div class="item row">
+          <div class="col" translate="ORDER_DETAILS.HEIGHT"></div>
+          <div class="col" ng-bind="wheelRim.height"></div>
+        </div>
+        <div class="item row">
+          <div class="col" translate="ORDER_DETAILS.DIAMETER"></div>
+          <div class="col" ng-bind="wheelRim.diameter"></div>
+        </div>
+        <div class="item row">
+          <div class="col" translate="ORDER_DETAILS.INDEX"></div>
+          <div class="col" ng-bind="wheelRim.indexVal"></div>
+        </div>
+        <div class="item row">
+          <div class="col" translate="ORDER_DETAILS.SPEED"></div>
+          <div class="col" ng-bind="wheelRim.speed"></div>
+        </div>
+      </div>
+    </div>
   </ion-content>
 </div>

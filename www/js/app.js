@@ -57,9 +57,8 @@ angular.module('starter', [
     },101);
 
     function onChangeStageStart(event, toState, toParams, fromState, fromParams) {
-      console.log('onChangeStageStart');
+      console.log('onChangeStageStart',arguments);
       // event.preventDefault();
-
       $rootScope.stateIsLoading = true;
       if (!AuthService.checkAuth()){
         if (toState.name !== 'login'){
@@ -69,7 +68,7 @@ angular.module('starter', [
     }
 
     function onChangeStateSuccess(event, toState, toParams, fromState, fromParams){
-      console.log('onChangeStateSuccess');
+      console.log('onChangeStateSuccess',arguments);
       $rootScope.stateIsLoading = false;
       if(toState.name ==='login'){
         $ionicHistory.nextViewOptions({

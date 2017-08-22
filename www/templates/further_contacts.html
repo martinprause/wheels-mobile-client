@@ -4,16 +4,40 @@
     <ion-scroll style="height: 480px" scrollbar-y="false">
       <ul class="list" ng-repeat="contact in getFurtherContacts()">
         <li class="item">
-          <h3>{{contact.firstname + " " + contact.lastname}}</h3>
-          <div class="row"></div>
-          <div class="row"></div>
-          <div>{{contact.address1}}</div>
-          <div>{{contact.address2}}</div>
-          <div>{{contact.zip + " " + contact.city}}</div>
-          <div>{{contact.country.description}}</div>
-          <div>{{contact.email}}</div>
-          <div>{{contact.phone}}</div>
-          <div>{{contact.mobile}}</div>
+          <b>{{::(contact.firstname + " " + contact.lastname)}}</b>
+          <div class="row">
+            <div class="col " translate="ORDER_DETAILS.ADDRESS1"></div>
+            <div class="col">{{::contact.address1}}</div>
+          </div>
+
+          <div class="row">
+            <div class="col" translate="ORDER_DETAILS.ADDRESS2"></div>
+            <div class="col">{{::contact.address2}}</div>
+          </div>
+
+          <div class="row">
+            <div class="col" translate="ORDER_DETAILS.ZIP"></div>
+            <div class="col">{{::(contact.zip + " " + contact.city)}}</div>
+          </div>
+
+          <div class="row">
+            <div class="col" translate="ORDER_DETAILS.COUNTRY"></div>
+            <div class="col">{{::contact.country.description}}</div>
+          </div>
+
+          <div class="row">
+            <div class="col" translate="ORDER_DETAILS.EMAIL"></div>
+            <div class="col">{{::contact.country.description}}</div>
+          </div>
+          <div class="row">
+            <div class="col" translate="ORDER_DETAILS.PHONE"></div>
+            <div class="col">{{::contact.phone}}</div>
+          </div>
+          <div class="row">
+            <div class="col" translate="ORDER_DETAILS.MOBILE"></div>
+            <div class="col">{{::contact.mobile}}</div>
+          </div>
+
         </li>
       </ul>
     </ion-scroll>

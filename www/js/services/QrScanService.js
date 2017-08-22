@@ -1,6 +1,6 @@
 angular.module('starter')
 
-.service('QrScanService', function ($cordovaBarcodeScanner, $state, $http) {
+.service('QrScanService', function ($cordovaBarcodeScanner, $state, $http, $ionicPopup) {
   return{
     scanQrCode: scanQrCode
   };
@@ -13,21 +13,18 @@ angular.module('starter')
         console.log(orderId);
         $http.get('/order/orderNo/' + orderId)
           .then(function (response) {
-            console.log(response.data);
-            $state.go('app.order', {orderId: response.data.id});
+            if (response.data !== ""){
+              $state.go('app.order', {orderId: response.data.id});
+            }
+            else {
+              $ionicPopup.alert({
+                title: 'Invalid qr-code',
+                template: 'No order found with qr-code'
+              })
+            }
           })
       }, function(error) {
         console.log(error);
       });
   }
-
-  // function scanQrCode() {
-  //   var orderId = 20170718133300;
-  //   $http.get('/order/orderNo/' + orderId)
-  //     .then(function (response) {
-  //       console.log(response.data);
-  //       $state.go('app.order', {order: response.data});
-  //     })
-  // }
-
 });

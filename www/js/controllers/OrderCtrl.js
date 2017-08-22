@@ -1,8 +1,14 @@
 angular.module('starter')
 
-.controller('OrderCtrl', function ($scope, $stateParams, $state, $ionicPopup, $http, orderData, $translate) {
-  $scope.order = orderData.data;
-
+.controller('OrderCtrl', function ($scope, $stateParams, $state, $ionicPopup, $http, OrderService, $translate) {
+  // $scope.order = orderData.data;
+  $scope.$on("$ionicView.beforeEnter", function(event, data){
+    // handle event
+    return OrderService.getOrderById(data.stateParams.orderId)
+      .then(function (orderData) {
+        $scope.order = orderData.data
+      })
+  });
   $scope.navigateToOrderDetails = function () {
     $state.go('.order-details', {order: $scope.order.id});
   };

@@ -39,7 +39,7 @@ angular.module('starter')
           controller: 'OrderCtrl'
         }
       },
-      authenticate: true,
+      // authenticate: true,
       resolve : {
         orderData:  function(OrderService, $stateParams){
           return OrderService.getOrderById($stateParams.orderId);
@@ -48,7 +48,7 @@ angular.module('starter')
     })
     .state('app.order.order-details', {
       url:'/order-details',
-      cash: false,
+      cache: false,
       views: {
         'mainContent@app': {
           templateUrl: 'templates/order-details.html',
@@ -56,11 +56,11 @@ angular.module('starter')
         }
       },
       authenticate: true,
-      resolve: {
-        orderData: function(OrderService, $stateParams){
-          return OrderService.getOrderById($stateParams.orderId);
-        }
-      }
+      // resolve: {
+      //   orderData: function(OrderService, $stateParams){
+      //     return OrderService.getOrderById($stateParams.orderId);
+      //   }
+      // }
     })
     .state('app.order.status-update', {
       url: '/status-update',

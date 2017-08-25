@@ -21,16 +21,18 @@ angular.module('starter')
       function onSuccess(imageData) {
         $scope.selectedImg.src = $scope.BASE64_PREFIX + imageData;
         $scope.order[$scope.selectedImg.id] = imageData;
+        submitPhoto();
       }
 
       function onFail(message) {
-        alert('Failed because: ' + message);
+        console.log('Failed because: ' + message);
       }
     }
 
     function clearPhoto() {
       $scope.selectedImg.src = $scope.EMPTY_IMG_PATH;
       $scope.order[$scope.selectedImg.id] = null;
+      submitPhoto();
     }
 
     function submitPhoto() {

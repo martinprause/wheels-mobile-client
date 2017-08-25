@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="2" id="com.doitsolutions.felgenwieneu" ios-CFBundleVersion="2" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="3" id="com.doitsolutions.felgenwieneu" ios-CFBundleVersion="3" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>FelgenWieNeu</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <description>Mobile app of order management solution of </description>
+    <author email="denis.gorbach@do-it.co" href="https://do-it-solutions.com">DoIT Programming Solutions</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="*" />

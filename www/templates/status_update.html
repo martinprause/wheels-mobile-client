@@ -4,36 +4,11 @@
     <div class="empty-message">
       <span ng-if="order.wheelRimPositions.length === 0" translate="STATUS_UPDATE.EMPTY_MESSAGE"></span>
     </div>
-    <!--<div class="card card-without-shadow">-->
-      <!--<div class="row">-->
-        <!--<div class="col text-center">-->
-          <!--<div >-->
-            <!--<button class="btn-status" ng-class="{'status-active' : currentPosition.status === 'IN_PROCESS'}" ng-click="updateStatus('IN_PROCESS')">-->
-              <!--<i class="icon ion-wrench"></i>-->
-              <!--In Process</button>-->
-          <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col text-center">-->
-          <!--<div >-->
-            <!--<button class="btn-status" ng-class="{'status-active' : currentPosition.status === 'PROCESSED'}" ng-click="updateStatus('PROCESSED')">-->
-              <!--<i class="icon ion-thumbsup"></i>-->
-              <!--Processed</button>-->
-          <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col text-center">-->
-          <!--<div >-->
-            <!--<button class="btn-status" ng-class="{'status-active' : currentPosition.status === 'IN_DELIVERY'}" ng-click="updateStatus('IN_DELIVERY')">-->
-              <!--<i class="icon ion-social-twitter"></i>In Delivery</button>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-
     <div class="slider-block">
       <div class="">
-        <div class="list card" ng-repeat="wheelRim in order.wheelRimPositions" ng-click="openSelect($index)">
+        <div class="list card" ng-repeat="wheelRim in order.wheelRimPositions | orderBy:'positionNo'" ng-click="openSelect($index)">
           <div class="row">
-            <div class="col"><h4 style="font-weight: bolder">{{wheelRim.positionNo}}</h4  ></div>
+            <div class="col"><h4 style="font-weight: bolder">{{wheelRim.positionNo}}</h4></div>
           </div>
           <div class="item row">
             <div class="col bold-text" translate="ORDER_DETAILS.MANUFACTURE"></div>
@@ -49,7 +24,9 @@
           </div>
           <div class="item row">
             <div class="col bold-text" translate="ORDER_DETAILS.HUB_COVER"></div>
-            <div class="col" ng-bind="wheelRim.hubCover"></div>
+            <label class="col checkbox">
+              <input type="checkbox" ng-model="wheelRim.hubCover" disabled>
+            </label>
           </div>
           <div class="item row">
             <div class="col bold-text" translate="ORDER_DETAILS.VALVE"></div>
@@ -64,7 +41,7 @@
             <div class="col" ng-bind="wheelRim.manufacturerRim.description"></div>
           </div>
           <div class="item row">
-            <div class="col bold-text" translate="ORDER_DETAILS.WIGHT"></div>
+            <div class="col bold-text" translate="ORDER_DETAILS.WIDTH"></div>
             <div class="col" ng-bind="wheelRim.width"></div>
           </div>
           <div class="item row">
@@ -83,12 +60,6 @@
             <div class="col bold-text" translate="ORDER_DETAILS.SPEED"></div>
             <div class="col" ng-bind="wheelRim.speed"></div>
           </div>
-          <!--<div class="button-bar">-->
-            <!--<a class="button ion-wrench"  ng-class="{'status-active' : wheelRim.status === 'IN_PROCESS'}" ng-click="updateStatus('PROCESSED', $index)"> In Process</a>-->
-            <!--<a class="button ion-thumbsup"  ng-class="{'status-active' : wheelRim.status === 'PROCESSED'}" ng-click="updateStatus('PROCESSED', $index)"> Processed</a>-->
-            <!--<a class="button ion-social-twitter"  ng-class="{'status-active' : wheelRim.status === 'IN_DELIVERY'}"  ng-click="updateStatus('IN_DELIVERY', $index)"> In Delivery</a>-->
-          <!--</div>-->
-
         </div>
       </div>
     </div>

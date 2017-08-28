@@ -64,12 +64,17 @@
   "SEARCH_ORDER_PLACEHOLDER": "Search",
 
   "ORDER.ORDER_DETAILS": "Order Details",
+  "ORDER.INSTRUCTIONS": "Instructions",
   "ORDER.UPDATE_STATUS": "Update Status",
   "ORDER.ASSIGN_DRIVER": "Assign Driver",
   "ORDER.TAKE_PHOTO": "Take Photo",
   "ORDER.CONFIRM_DELIVERY": "Confirm Delivery",
   "ORDER.PRINT_QRCODES": "Print QR-codes",
   "ORDER.TITLE": "Order",
+  "ORDER.GUIDELINES": "Guidelines:",
+  "ORDER.COMMENT": "Comment:",
+  "ORDER.EMPTY_GUIDELINES": "No guidelines presented in order",
+  "ORDER.EMPTY_COMMENT": "No comment",
 
   "STATUS_UPDATE.EMPTY_MESSAGE": "No wheel rims presented in order",
   "STATUS_UPDATE.TITLE": "Update Status",

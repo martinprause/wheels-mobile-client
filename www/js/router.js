@@ -39,7 +39,6 @@ angular.module('starter')
           controller: 'OrderCtrl'
         }
       },
-      // authenticate: true,
       resolve : {
         orderData:  function(OrderService, $stateParams){
           return OrderService.getOrderById($stateParams.orderId);
@@ -55,12 +54,23 @@ angular.module('starter')
           controller: 'OrderDetailsCtrl'
         }
       },
+      authenticate: true
+    })
+    .state('app.order.guidelines', {
+      url:'/guidelines',
+      cache: false,
+      views: {
+        'mainContent@app': {
+          templateUrl: 'templates/guidelines.html',
+          controller: 'OrderGuidelinesCtrl'
+        }
+      },
       authenticate: true,
-      // resolve: {
-      //   orderData: function(OrderService, $stateParams){
-      //     return OrderService.getOrderById($stateParams.orderId);
-      //   }
-      // }
+      resolve : {
+        orderData:  function(OrderService, $stateParams){
+          return OrderService.getOrderById($stateParams.orderId);
+        }
+      }
     })
     .state('app.order.status-update', {
       url: '/status-update',
@@ -96,7 +106,7 @@ angular.module('starter')
         orderData:  function(OrderService, $stateParams){
           return OrderService.getOrderById($stateParams.orderId);
         }
-      },
+      }
     })
     .state('app.order.confirm-delivery', {
       url:'/confirm-delivery',

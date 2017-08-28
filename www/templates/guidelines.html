@@ -1,0 +1,20 @@
+<ion-view cache-view="false" view-title="{{'ORDER.INSTRUCTIONS' | translate}}" class="order-page" cache-view="false">
+  <ion-content class="header-padding">
+    <order order-data="order" detailes="true"></order>
+    <h5 class="padding-left" style="font-weight: 600" translate="ORDER.GUIDELINES"></h5>
+    <div class="empty-guidelines">
+      <span ng-if="order.guidelines.length === 0" translate="ORDER.EMPTY_GUIDELINES"></span>
+    </div>
+    <ion-scroll style="height: 175px" scrollbar-y="false" ng-if="order.guidelines.length !== 0">
+      <div class="card" style="margin:2px 10px" ng-repeat="guideline in order.guidelines">
+          <div class="col">{{guideline.description}}</div>
+      </div>
+    </ion-scroll>
+    <h5 class="padding-left" style="font-weight: 600" translate="ORDER.COMMENT"></h5>
+    <div class="empty-guidelines">
+      <span ng-if="!order.comment" translate="ORDER.EMPTY_COMMENT"></span>
+    </div>
+    <div class="margin-left" ng-bind="order.comment" ng-if="order.comment"></div>
+  </ion-content>
+</ion-view>
+

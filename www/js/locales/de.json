@@ -64,12 +64,17 @@
   "SEARCH_ORDER_PLACEHOLDER": "Suche",
 
   "ORDER.ORDER_DETAILS": "Auftragdetails",
+  "ORDER.INSTRUCTIONS": "Anleitung",
   "ORDER.UPDATE_STATUS": "Update Status",
   "ORDER.ASSIGN_DRIVER": "Fahrer zuweisen",
   "ORDER.TAKE_PHOTO": "Foto machen",
   "ORDER.CONFIRM_DELIVERY": "Lieferung bestätigen",
   "ORDER.PRINT_QRCODES": "QR-Codes drucken",
   "ORDER.TITLE": "Auftrag",
+  "ORDER.GUIDELINES": "Richtlinien:",
+  "ORDER.COMMENT": "Kommentar:",
+  "ORDER.EMPTY_GUIDELINES": "Keine Richtlinien in der Reihenfolge vorgestellt",
+  "ORDER.EMPTY_COMMENT": "Kein Kommentar",
 
   "STATUS_UPDATE.EMPTY_MESSAGE": "Keine Positionen im Auftrag enthalten!",
   "STATUS_UPDATE.TITLE": "Update Status",

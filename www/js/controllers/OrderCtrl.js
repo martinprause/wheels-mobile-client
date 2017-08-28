@@ -13,6 +13,10 @@ angular.module('starter')
     $state.go('.order-details', {order: $scope.order.id});
   };
 
+  $scope.navigateToGuidelines = function () {
+    $state.go('.guidelines', {order: $scope.order.id});
+  };
+
   $scope.navigateToUpdateStatus = function () {
     $state.go('.status-update', {order: $scope.order.id});
   };

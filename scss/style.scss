@@ -191,3 +191,13 @@ body {
 .state-loading .spinner svg {
 
 }
+
+.empty-guidelines{
+  text-align: center;
+  margin-top:20px;
+  width: 100%;
+  span{
+    color: #880000;
+    font-weight: 600;
+  }
+}

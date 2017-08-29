@@ -1,6 +1,6 @@
-<ion-view view-title="{{'CONFIRM_DELIVERY.TITLE' | translate}}" name="login-view">
+<ion-view view-title="{{'CONFIRM_DELIVERY.TITLE' | translate}}" name="confirm-view">
   <ion-pane>
-    <ion-content class="header-padding">
+    <ion-content class="header-padding" overflow-scroll="false" scroll="true">
       <order order-data="order"></order>
       <form ng-submit="saveSignature()" ng-class="{'submitted': submitted}">
         <div>

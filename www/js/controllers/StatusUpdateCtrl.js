@@ -21,7 +21,7 @@ angular.module('starter')
       $scope.currentPositionIndex = index;
       $scope.currentPosition = $scope.order.wheelRimPositions[index];
       $scope.checkModel.show();
-    },
+    };
       $scope.updateStatus = function (value) {
         var title = '';
         var template = '';
@@ -50,7 +50,8 @@ angular.module('starter')
                 }).then(function (result) {
                   if (result) {
                     StatusUpdateService.updateStatus(value, $scope.currentPosition).then(function (result) {
-                      $scope.order.wheelRimPositions[$scope.currentPositionIndex].status = result.data.status;
+                      $scope.order = result.data;
+                      $scope.currentPosition.status = value;
                     });
                   }
                 });

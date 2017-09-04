@@ -53,10 +53,10 @@
   "ORDER_DETAILS.SPEED" : "Geschwindigkeit",
   "ORDER_DETAILS.MODAL.TITLE" : "Felgen",
 
-  "SEARCH_ORDER.GEN_FILTER" : "Allgemeiner Filter:",
-  "SEARCH_ORDER.DATE_FILTER" : "Datumsfilter:",
+  "SEARCH_ORDER.GEN_FILTER" : "Filter:",
+  "SEARCH_ORDER.DATE_FILTER" : "Datum:",
   "SEARCH_ORDER.SELECT_DATE_BUTTON" : "Datum auswählen:",
-  "SEARCH_ORDER.RESET_FILTERS" : "Filter zurücksetzen",
+  "SEARCH_ORDER.RESET_FILTERS" : "Reset",
   "SEARCH_ORDER.DATE_FILTER.CREATED" : "Erstellt",
   "SEARCH_ORDER.DATE_FILTER.DEADLINE" : "Fertig am",
   "SEARCH_ORDER.DATE_FILTER.DELIVERY" : "Lieferung",

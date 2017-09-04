@@ -13,6 +13,7 @@
   "SELECTION.SCAN.BUTTON" : "Scan QR-code",
   "SELECTION.ORDERS.BUTTON" : "Search Order",
   "SELECTION_TITLE": "Main",
+  "SELECTION.CURRENT_USER.TITLE": "Current user:",
 
   "ORDER_TEMPLATE.CUSTOMER" : "Customer:",
   "ORDER_TEMPLATE.CREATED" : "Created:",

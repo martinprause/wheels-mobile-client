@@ -52,6 +52,7 @@ angular.module('starter')
                     StatusUpdateService.updateStatus(value, $scope.currentPosition).then(function (result) {
                       $scope.order = result.data;
                       $scope.currentPosition.status = value;
+                      $scope.closeSelect();
                     });
                   }
                 });

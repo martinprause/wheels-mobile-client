@@ -24,7 +24,7 @@
     </div>
     <ion-scroll>
       <ion-list>
-        <div  class="no-margin no-padding" ng-repeat="result in searchResult | filter:search" ng-click="openOrderMenu(result)">
+        <div  class="no-margin no-padding" ng-repeat="result in searchResult | filter:search | orderBy:'orderNo':true" ng-click="openOrderMenu(result)">
           <order order-data="result"></order>
           <hr>
         </div>

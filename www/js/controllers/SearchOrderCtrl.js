@@ -14,7 +14,11 @@ angular.module('starter')
     $scope.loadMoreOrders = loadMoreOrders;
     $scope.openOrderMenu = openOrderMenu;
     $scope.translateDefaultValue = utility.translate;
-
+    $scope.$on("$ionicView.afterEnter", function(event, data){
+      // handle event
+      console.log("State Params: ", data.stateParams);
+      searchOrder();
+    });
     function searchOrder(handler) {
       $scope.showLoader = true;
       $http.get('/order/page/' + ($scope.pageNumber++))

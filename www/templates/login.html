@@ -13,27 +13,28 @@
       text-align: center;
     }
   </style>
-
-  <ion-content class="padding login-image-background">
+  <ion-content class="padding login-image-background" overflow-scroll="true" scroll="false">
     <div class="text-center login-inner-background">
-      <div class="with-padding" style="background: transparent;">
-        <div class="list list-inset transparent-background">
-          <ion-item class="white-placeholder-children no-padding">
-            <ion-label translate="USERNAME"></ion-label>
-          </ion-item>
-          <ion-item class="item no-margin item-input login-input white-placeholder-children">
-            <input type="text" translate translate-attr-placeholder="USERNAME" translate-value-browser="{{app.browser}}" ng-model="user.login">
-          </ion-item>
-          <ion-item class="white-placeholder-children no-padding">
-            <ion-label translate="PASSWORD"></ion-label>
-          </ion-item>
-          <ion-item class="item no-margin item-input login-input white-placeholder-children">
-            <input type="password" translate translate-attr-placeholder="PASSWORD" translate-value-browser="{{app.browser}}" ng-model="user.password">
-          </ion-item>
+      <form ng-submit="login()" novalidate class="scroll">
+        <div class="with-padding" style="background: transparent;">
+          <div class="list list-inset transparent-background">
+            <ion-item class="white-placeholder-children no-padding">
+              <ion-label translate="USERNAME"></ion-label>
+            </ion-item>
+            <ion-item class="item no-margin item-input login-input white-placeholder-children">
+              <input type="text" translate translate-attr-placeholder="USERNAME" translate-value-browser="{{app.browser}}" ng-model="user.login">
+            </ion-item>
+            <ion-item class="white-placeholder-children no-padding">
+              <ion-label translate="PASSWORD"></ion-label>
+            </ion-item>
+            <ion-item class="item no-margin item-input login-input white-placeholder-children">
+              <input type="password" translate translate-attr-placeholder="PASSWORD" translate-value-browser="{{app.browser}}" ng-model="user.password">
+            </ion-item>
+          </div>
+          <ion-label class="bad-creds-label">{{ authMessage }}</ion-label>
+          <button class="button button-block button-calm" type="submit" translate="LOGIN_BUTTON"></button>
         </div>
-        <ion-label class="bad-creds-label">{{ authMessage }}</ion-label>
-        <button class="button button-block button-calm" ng-click="login()" translate="LOGIN_BUTTON"></button>
-      </div>
+      </form>
     </div>
   </ion-content>
 </ion-view>

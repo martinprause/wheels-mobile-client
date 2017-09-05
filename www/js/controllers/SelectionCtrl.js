@@ -2,7 +2,11 @@ angular.module('starter')
 
 .controller('SelectionCtrl', function ($scope, $stateParams, SelectionService, AuthService, QrScanService) {
 
-  $scope.currentUser = AuthService.getCurrentUser();
+  try {
+    $scope.currentUser = AuthService.getCurrentUser();
+  }
+  catch (error){
+  }
 
   console.log($scope.currentUser);
 

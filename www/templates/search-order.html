@@ -1,5 +1,5 @@
-<ion-view view-title="{{ 'SEARCH_ORDER_TITLE' | translate }}" name="search-order-view" ng-controller="SearchOrderCtrl" ng-init="searchOrder()" class="search-order-page">
-  <ion-content direction="y" class="has-header " overflow-scroll="false" scroll="false">
+<ion-view view-title="{{ 'SEARCH_ORDER_TITLE' | translate }}" name="search-order-view" ng-controller="SearchOrderCtrl" class="search-order-page">
+  <ion-content direction="y" class="has-header" has-bouncing="false" overflow-scroll="false" scroll="false">
     <div class="search-input">
       <div class="search-filter row">
         <span class="col-25 padding-vertical" translate="SEARCH_ORDER.GEN_FILTER">General filter:</span>
@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-    <ion-scroll>
+    <ion-scroll zooming="false" direction="y" >
       <ion-list>
         <div  class="no-margin no-padding" ng-repeat="result in searchResult | filter:search | orderBy:'orderNo':true" ng-click="openOrderMenu(result)">
           <order order-data="result"></order>

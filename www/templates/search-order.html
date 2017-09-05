@@ -7,7 +7,6 @@
           <i class="icon ion-search placeholder-icon"></i>
           <input type="text" placeholder="{{ 'SEARCH_ORDER_PLACEHOLDER' | translate }}" ng-model="search.$">
         </label>
-        <button class="button button-positive button-small no-wrap margin-left" translate="SEARCH_ORDER.RESET_FILTERS" ng-click="resetFilters()">Reset filters</button>
       </div>
       <div class="date-filter row">
         <span class="col-25 padding-vertical" translate="SEARCH_ORDER.DATE_FILTER"></span>
@@ -16,13 +15,18 @@
           <option ng-value="filterTypes.type[1]" translate="SEARCH_ORDER.DATE_FILTER.DEADLINE"></option>
           <option ng-value="filterTypes.type[2]" translate="SEARCH_ORDER.DATE_FILTER.DELIVERY"></option>
         </select>
+      </div>
+      <div class="row">
         <div ng-click="openDatePicker()" class="calendar-block">
           <img src="img/calendar.png">
           <span ng-bind="formattedValue | ifEmpty : translateDefaultValue('ORDER_TEMPLATE.DATE_EMPTY')"></span>
         </div>
       </div>
+      <div class="row reset">
+        <button class="button button-positive button-small no-wrap margin-left col" translate="SEARCH_ORDER.RESET_FILTERS" ng-click="resetFilters()">Reset filters</button>
+      </div>
     </div>
-    <ion-scroll zooming="false" direction="y" overflow-scroll="true" >
+    <ion-scroll zooming="false" direction="y" overflow-scroll="false">
       <ion-list>
         <div  class="no-margin no-padding" ng-repeat="result in searchResult | filter:search | orderBy:'orderNo':true" ng-click="openOrderMenu(result)">
           <order order-data="result"></order>

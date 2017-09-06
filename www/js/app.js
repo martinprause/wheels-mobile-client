@@ -3,11 +3,13 @@ angular.module('starter', [
   'pascalprecht.translate',
   'ngCordova',
   'ngCordova.plugins.camera',
-  'ionic-datepicker',
-  'LocalStorageModule'
+  'ionic-datepicker'
 ])
-  .config(['$httpProvider', '$translateProvider' ,function ($httpProvider, $translateProvider) {
+  .config(function ($httpProvider, $translateProvider) {
     $httpProvider.interceptors.push('AuthInterceptor');
+    if (window.localStorage.Locale == null){
+      window.localStorage.setItem('Locale', 'en');
+    }
 
     $translateProvider
       .useStaticFilesLoader({
@@ -18,22 +20,16 @@ angular.module('starter', [
         'en': 'en', 'en_GB': 'en', 'en_US': 'en',
         'de': 'de', 'de_DE': 'de', 'de_CH': 'de'
       })
-      .preferredLanguage('en')
-      .fallbackLanguage('en')
+      .preferredLanguage(window.localStorage.Locale)
+      .fallbackLanguage(window.localStorage.Locale)
       .determinePreferredLanguage()
       .useSanitizeValueStrategy('escapeParameters');
-  }])
+  })
   .config(function ($ionicConfigProvider) {
     $ionicConfigProvider.views.maxCache(0);
     $ionicConfigProvider.views.swipeBackEnabled(false);
     $ionicConfigProvider.scrolling.jsScrolling(false);
   })
-  .run(['localStorageService', '$translate',function (localStorageService, $translate) {
-    if (!localStorageService.get('Locale')){
-      localStorageService.set('Locale', 'en');
-    }
-    $translate.use(localStorageService.get('Locale'))
-  }])
   .run(function ($ionicPlatform, $rootScope, AuthService, $state, $location, $ionicHistory, $translate) {
     $ionicPlatform.registerBackButtonAction(function(e){
       var title = 'test';

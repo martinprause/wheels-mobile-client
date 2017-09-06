@@ -5,7 +5,9 @@
         <span class="col-25 padding-vertical" translate="SEARCH_ORDER.GEN_FILTER">General filter:</span>
         <label  class="item item-input col custom-search" style="display: inherit">
           <i class="icon ion-search placeholder-icon"></i>
-          <input type="text" placeholder="{{ 'SEARCH_ORDER_PLACEHOLDER' | translate }}" ng-model="search.$">
+          <form ng-submit="hideKeyboard()" novalidate>
+            <input type="text" placeholder="{{ 'SEARCH_ORDER_PLACEHOLDER' | translate }}" ng-model="search.$">
+          </form>
         </label>
       </div>
       <div class="date-filter row">
@@ -26,7 +28,7 @@
         <button class="button button-positive button-small no-wrap margin-left col" translate="SEARCH_ORDER.RESET_FILTERS" ng-click="resetFilters()">Reset filters</button>
       </div>
     </div>
-    <ion-scroll zooming="false" direction="y" overflow-scroll="false">
+    <ion-scroll zooming="false" direction="y" overflow-scroll="isIOS">
       <ion-list>
         <div  class="no-margin no-padding" ng-repeat="result in searchResult | filter:search | orderBy:'orderNo':true" ng-click="openOrderMenu(result)">
           <order order-data="result"></order>

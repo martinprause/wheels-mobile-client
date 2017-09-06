@@ -7,6 +7,7 @@ angular.module('starter')
     $scope.ALL_ORDERS_LIST = [];
     $scope.showLoader = false;
     $scope.formattedValue = '';
+    $scope.isIOS = ionic.Platform.isIOS();
 
     $scope.searchOrder = searchOrder;
     $scope.openDatePicker = openDatePicker;
@@ -14,6 +15,11 @@ angular.module('starter')
     $scope.loadMoreOrders = loadMoreOrders;
     $scope.openOrderMenu = openOrderMenu;
     $scope.translateDefaultValue = utility.translate;
+
+    $scope.hideKeyboard = function () {
+      cordova.plugins.Keyboard.close();
+    };
+
     $scope.$on("$ionicView.afterEnter", function(event, data){
       // handle event
       console.log("State Params: ", data.stateParams);

@@ -31,6 +31,7 @@ angular.module('starter', [
     $ionicConfigProvider.scrolling.jsScrolling(false);
   })
   .run(function ($ionicPlatform, $rootScope, AuthService, $state, $location, $ionicHistory, $translate) {
+    $translate.use(window.localStorage.Locale);
     $ionicPlatform.registerBackButtonAction(function(e){
       var title = 'test';
       $translate('BACK_BUTTON_TITLE').then(function (translation) {

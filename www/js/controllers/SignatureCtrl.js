@@ -16,20 +16,22 @@ angular.module('starter')
     signaturePad.clear();
   };
 
-  $scope.saveSignature = function() {
-    $ionicPopup.confirm({
-      title: 'Confirm delivery',
-      template: 'Do you want to confirm delivery?'
-    })
-      .then(function (result) {
-      if (result) {
-        $scope.signature = signaturePad.toDataURL();
-        SignatureService.saveSignature($scope.signature, $scope.order.id, $scope.signatureName.value).then(function (result) {
-          $scope.order = result.data;
-          $state.go('app.order', {orderId: $scope.order.id})
+  $scope.saveSignature = function(confirmForm) {
+    if (confirmForm.$valid){
+      $ionicPopup.confirm({
+        title: 'Confirm delivery',
+        template: 'Do you want to confirm delivery?'
+      })
+        .then(function (result) {
+          if (result) {
+            $scope.signature = signaturePad.toDataURL();
+            SignatureService.saveSignature($scope.signature, $scope.order.id, $scope.signatureName.value).then(function (result) {
+              $scope.order = result.data;
+              $state.go('app.order', {orderId: $scope.order.id})
+            });
+          }
         });
-      }
-    });
+    }
   };
 
 });

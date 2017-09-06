@@ -2,7 +2,7 @@
   <ion-pane>
     <ion-content class="header-padding" overflow-scroll="false" scroll="true">
       <order order-data="order"></order>
-      <form ng-submit="saveSignature()" ng-class="{'submitted': submitted}">
+      <form name="confirmForm" ng-submit="saveSignature(confirmForm)" ng-class="{'submitted': submitted}" novalidate>
         <div>
           <label class="item item-input padding-left">
             <span class="input-label" translate="CONFIRM_DELIVERY.USERNAME"></span>

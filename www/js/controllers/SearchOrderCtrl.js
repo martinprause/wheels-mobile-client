@@ -7,7 +7,6 @@ angular.module('starter')
     $scope.ALL_ORDERS_LIST = [];
     $scope.showLoader = false;
     $scope.formattedValue = '';
-    $scope.isIOS = ionic.Platform.isIOS();
 
     $scope.searchOrder = searchOrder;
     $scope.openDatePicker = openDatePicker;
@@ -22,12 +21,13 @@ angular.module('starter')
 
     $scope.$on("$ionicView.afterEnter", function(event, data){
       // handle event
-      console.log("State Params: ", data.stateParams);
-      searchOrder();
+      $scope.showLoader = true;
+      searchOrder().then(function () {
+        $scope.showLoader = false;
+      });
     });
     function searchOrder(handler) {
-      $scope.showLoader = true;
-      $http.get('/order/page/' + ($scope.pageNumber++))
+      return $http.get('/order/page/' + ($scope.pageNumber++))
         .then(function (result) {
           if (result.data === null || result.data.length === 0) {
             $scope.moreData = false;
@@ -35,14 +35,11 @@ angular.module('starter')
           }
           $scope.ALL_ORDERS_LIST = $scope.ALL_ORDERS_LIST.concat(result.data);
           $scope.searchResult = $scope.ALL_ORDERS_LIST.map(function (order) {
-            return formatOrder(order)
+            return formatOrder(order);
           });
           if (handler) {
             handler();
           }
-        })
-        .finally(function () {
-          $scope.showLoader = false;
         });
     }
 
@@ -115,4 +112,5 @@ angular.module('starter')
         return val && val !== null ? val : {};
       }
     }
+
   });

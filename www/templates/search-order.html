@@ -29,6 +29,9 @@
       </div>
     </div>
     <ion-scroll zooming="false" direction="y" overflow-scroll="false">
+      <div class="spinner">
+        <ion-spinner ng-show="showLoader"></ion-spinner>
+      </div>
       <ion-list>
         <div  class="no-margin no-padding" ng-repeat="result in searchResult | filter:search | orderBy:'orderNo':true" ng-click="openOrderMenu(result)">
           <order order-data="result"></order>

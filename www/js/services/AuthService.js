@@ -18,7 +18,7 @@ angular.module('starter')
 
     function login(user){
       window.localStorage.setItem("Authorization", "Basic " + btoa(user.login + ":" + user.password));
-      return $http.get('/login')
+      return $http.get('/login', {timeout: 2500})
         .then(function (result) {
           $state.go("app.selection");
           $window.localStorage.currentUser = JSON.stringify(result.data);

@@ -17,6 +17,7 @@ angular.module('starter')
         $translate('LOGIN_BAD_CREDENTIALS').then(function (translation) {
           $scope.authMessage = translation;
           $scope.showLoader = false;
+          cordova.plugins.Keyboard.close();
         });
       });
   };

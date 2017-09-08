@@ -11,6 +11,7 @@ angular.module('starter')
         AuthService.logout();
         $translate('LOGIN_BAD_CREDENTIALS').then(function (translation) {
           $scope.authMessage = translation;
+          cordova.plugins.Keyboard.close();
         });
       });
   };

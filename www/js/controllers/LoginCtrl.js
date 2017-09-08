@@ -4,13 +4,19 @@ angular.module('starter')
   window.scope = $scope;
   $scope.user = {login: '', password: ''};
   $scope.authMessage = "";
+  $scope.showLoader = false;
 
   $scope.login = function(){
-    AuthService.login($scope.user)
+    $scope.showLoader = true;
+    AuthService.login($scope.user).
+    then(function () {
+      $scope.showLoader = false;
+    })
       .catch(function () {
         AuthService.logout();
         $translate('LOGIN_BAD_CREDENTIALS').then(function (translation) {
           $scope.authMessage = translation;
+          $scope.showLoader = false;
         });
       });
   };

@@ -32,6 +32,9 @@
                 <input type="password" translate translate-attr-placeholder="PASSWORD" translate-value-browser="{{app.browser}}" ng-model="user.password">
               </ion-item>
             </div>
+            <div class="spinner">
+              <ion-spinner ng-show="showLoader"></ion-spinner>
+            </div>
             <ion-label class="bad-creds-label">{{ authMessage }}</ion-label>
             <button class="button button-block button-calm" type="submit" translate="LOGIN_BUTTON"></button>
           </div>

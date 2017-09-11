@@ -11,9 +11,11 @@ angular.module('starter')
 
 
     function logout(){
-      window.localStorage.removeItem('Authorization');
-      window.localStorage.removeItem('currentUser');
-      $state.go("login");
+      $http.get('/login?logout').then(function () {
+        window.localStorage.removeItem('Authorization');
+        window.localStorage.removeItem('currentUser');
+        $state.go("login");
+      })
     }
 
     function login(user){

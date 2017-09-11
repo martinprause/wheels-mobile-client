@@ -13,7 +13,7 @@
   "SELECTION.SCAN.BUTTON" : "QR-Code scannen",
   "SELECTION.ORDERS.BUTTON" : "Auftrag suchen",
   "SELECTION_TITLE": "Home",
-  "SELECTION.CURRENT_USER.TITLE": "Aktueller Benutzer:",
+  "SELECTION.CURRENT_USER.TITLE": "Angemeldet als:",
 
   "ORDER_TEMPLATE.CUSTOMER" : "Kunde:",
   "ORDER_TEMPLATE.CREATED" : "Erstellt:",

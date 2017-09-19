@@ -1,9 +1,9 @@
 angular.module('starter')
 
-.controller('OrderCtrl', function ($scope, $stateParams, $state, $ionicPopup, $http, OrderService, $translate) {
-  // $scope.order = orderData.data;
+.controller('OrderCtrl', function ($scope, $stateParams, $state, $ionicPopup, $http, OrderService, $translate, AuthService) {
+  $scope.currentUser = AuthService.getCurrentUser();
   $scope.$on("$ionicView.beforeEnter", function(event, data){
-    // handle event
+
     return OrderService.getOrderById(data.stateParams.orderId)
       .then(function (orderData) {
         $scope.order = orderData.data

@@ -54,7 +54,11 @@ angular.module('starter')
           controller: 'OrderDetailsCtrl'
         }
       },
-      authenticate: true
+      resolve : {
+        orderData:  function(OrderService, $stateParams){
+          return OrderService.getOrderById($stateParams.orderId);
+        }
+      }
     })
     .state('app.order.guidelines', {
       url:'/guidelines',

@@ -3,7 +3,6 @@ angular.module('starter')
   .controller('AssignDriverCtrl', function ($scope, $window, $ionicPopup, AssignDriverService, orderData, AuthService) {
 
     $scope.currentUser = AuthService.getCurrentUser();
-    console.log(AuthService.getCurrentUser());
     $scope.order = orderData.data;
     $scope.getAllDrivers = getAllDrivers;
     $scope.assignDriver = assignDriver;

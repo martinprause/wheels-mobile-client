@@ -10,7 +10,7 @@
         <i class="icon ion-model-s"></i>
         <span translate="ORDER.INSTRUCTIONS"></span>
       </button>
-      <button class="button button-block button-positive" ng-click="navigateToUpdateStatus()">
+      <button class="button button-block button-positive" ng-click="navigateToUpdateStatus()" ng-disabled="order.status === 'DELIVERED' && !(currentUser.role === 'ADMIN')">
         <i class="icon ion-android-sync"></i>
         <span translate="ORDER.UPDATE_STATUS"></span>
       </button>
